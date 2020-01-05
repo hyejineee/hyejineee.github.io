@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Julia Doe`,
+    title: `🧞‍♂️ hyejineee 🧞‍♂️`,
     subtitle: `software developer`,
     description: `A minimal blog starter built with Gatsbyjs. The needed Gatsby files are included.`,
     author: `@niklasmtj`,
