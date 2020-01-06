@@ -29,6 +29,7 @@
     "typeface-nunito": "0.0.72"
   },
   "devDependencies": {
+    "gh-pages": "2.0.0",
     "prettier": "^1.17.1"
   },
   "keywords": [
@@ -37,7 +38,8 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby build && gh-pages -d public -b master",
+    "develop": "gatsby develop",
+    "deploy": "gatsby build && gh-pages -d public -b master -r https://github.com/hyejineee/hyejineee.github.io",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -45,7 +47,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/hyejineee/gatsby-starter-julia"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
