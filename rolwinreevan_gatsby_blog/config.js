@@ -16,9 +16,8 @@ module.exports = {
   },
   social: {
     github: 'https://github.com/hyejineee',
-    facebook: 'https://www.facebook.com/rolwin.monteiro',
-    twitter: 'https://twitter.com/rolwin100',
-    instagram: 'https://www.instagram.com/reevan100/',
+    facebook: 'https://www.facebook.com/hyejin.hyun.562',
+    instagram: 'https://www.instagram.com/active_hyejineee/',
     rss: '/rss.xml',
   },
   contactFormUrl: process.env.CONTACT_FORM_ENDPOINT || 'https://getform.io/f/09a3066f-c638-40db-ad59-05e4ed71e451',
@@ -66,7 +65,12 @@ module.exports = {
     },
     kotlin: {
       name: 'kotlin',
-      description: 'A general purpose programming language that is widely used for developing various applications.',
+      description: 'kotlin이다아아ㅏ',
+      color: '#f9c646',
+    },
+    me: {
+      name: 'me',
+      description: '나다ㅏ',
       color: '#f9c646',
     },
 

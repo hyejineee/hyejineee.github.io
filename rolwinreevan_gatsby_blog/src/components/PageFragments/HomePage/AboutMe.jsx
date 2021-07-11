@@ -7,7 +7,7 @@ import SEO from '../../Seo';
 
 const pageText = {
 
-  paraOne: '안녕하세요! 개발자 현혜진입니다!dkdkdkdkdkektldkfakldjflkadsflkj',
+  paraOne: '안녕하세요! 개발자 현혜진입니다!',
 
   paraTwo: `Currently I work mostly with Javascript technologies like ReactJS and NodeJS. I also
     have hands on experience working with cloud infrastructures like <b>AWS/GCP</b> and have deployed applications
