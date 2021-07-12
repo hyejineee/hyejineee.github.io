@@ -7,7 +7,7 @@ import SEO from '../../Seo';
 
 const pageText = {
 
-  paraOne: '안녕하세요! 개발자 현혜진입니다!',
+  paraOne: '안녕하세요. 현혜진입니다!<br> 근복적인 것에 대해 공부하는 것을 좋아합니다. 객체지향과 클린 아키텍처에 대해서 관심이 많습니다.',
 
   paraTwo: `Currently I work mostly with Javascript technologies like ReactJS and NodeJS. I also
     have hands on experience working with cloud infrastructures like <b>AWS/GCP</b> and have deployed applications
@@ -27,9 +27,8 @@ const AboutMe = () => {
           keywords={['Rolwin', 'Reevan', 'Monteiro', 'FullStack developer', 'Javascript', 'ReactJS', 'NodeJS', 'Gatsby']}
         />
         <h1 className="titleSeparate">About Me</h1>
-        <p>
-          {pageText.paraOne}
-        </p>
+        <p dangerouslySetInnerHTML={domHtml(pageText.paraOne)} />
+
         <p dangerouslySetInnerHTML={domHtml(pageText.paraTwo)} />
       </div>
       <Row gutter={[20, 20]}>
