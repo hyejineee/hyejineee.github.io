@@ -21,6 +21,7 @@ const Tags = ({ data }) => {
     .sort(); // Remove duplicates and sort values
   // const tagPage = Config.pages.tag;
   const tagData = Config.tags;
+
   return (
     <Layout className="outerPadding">
       <Layout className="container">
@@ -36,6 +37,7 @@ const Tags = ({ data }) => {
             <div className="marginTopTitle">
               <h1 className="titleSeparate">#Tags</h1>
             </div>
+
             <Row gutter={[30, 20]}>
               {
                 edges.map((val) => (
@@ -46,6 +48,7 @@ const Tags = ({ data }) => {
                       description={tagData[val.node.name].description}
                       color={tagData[val.node.name].color}
                     />
+
                   </Col>
                 ))
               }
