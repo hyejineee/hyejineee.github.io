@@ -1,7 +1,7 @@
 ---
 title: "20210716 TIL"
 path: blog/TIL/20210716
-tags: []
+tags: [TIL]
 cover:  "./tilbanner.jpg"
 date: 2021-07-16
 excerpt: 재귀용법을 사용하는 코딩 테스트 문제를 풀었습니다.
@@ -45,15 +45,11 @@ fun fibonacci(n: Int): IntArray {
     return intArrayOf(numberOf0, numberOf1)
 }
 ```
+
 * [z문제](https://www.acmicpc.net/problem/1074) 
-    * 리팩토링이 필요합니다...
-```kotlin 
-package Problems
+    * 리팩토링이 필요한 것 같습니다.
 
-import kotlin.math.pow
-import kotlin.math.roundToInt
-import kotlin.math.sqrt
-
+``` kotlin 
 fun z(n: Long, r: Int, c: Int): Int {
     return findOrder(
         (2.0.pow(n.toDouble()) * 2.0.pow(n.toDouble())).toInt(),
@@ -112,8 +108,8 @@ fun findOrder(n: Int, r: Int, c: Int, start: Int): Int {
 ```
 
 * [0만들기](https://www.acmicpc.net/problem/7490)
+
 ```kotlin 
-package Problems
 
 fun make0(n: Int): List<String> {
     val operators = mutableListOf<List<Char>>()
@@ -183,3 +179,4 @@ fun makeOperators(operator: List<Char>, size: Int, operators: MutableList<List<C
 
 * 고급 정렬 알고리즘 문제풀이 강의를 봅니다.
 * 안드로이드 테스트에 대해서 공부합니다.
+
