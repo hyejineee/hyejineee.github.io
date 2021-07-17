@@ -50,7 +50,8 @@ export const query = graphql`
   {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "/index.md$/" } }
+  
+      filter: { fileAbsolutePath: { regex: "/index.md$/" }, fields: {draft: {eq: false}}}
     ) {
       edges {
         node {

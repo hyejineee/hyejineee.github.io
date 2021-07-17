@@ -4,7 +4,7 @@ path: blog/TIL/20210716
 tags: []
 cover:  "./tilbanner.jpg"
 date: 2021-07-16
-excerpt: 재쥐용법을 사용하는 코딩 테스트 문제를 풀었습니다.
+excerpt: 재귀용법을 사용하는 코딩 테스트 문제를 풀었습니다.
 ---
 
 ## Facts
