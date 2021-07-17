@@ -6,7 +6,7 @@ module.exports = {
   author: 'hyejineee',
   postsForArchivePage: 3,
   defaultLanguage: 'ko',
-  disqusScript: process.env.DISQUS_SCRIPT || 'https://rolwinreevan.disqus.com/embed.js',
+  disqusScript: process.env.DISQUS_SCRIPT || 'https://hyejineee-github-io.disqus.com/embed.js',
   pages: {
     home: '/',
     blog: 'blog',
