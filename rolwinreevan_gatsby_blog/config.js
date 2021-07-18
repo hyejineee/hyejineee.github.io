@@ -28,5 +28,10 @@ module.exports = {
       description: '이게 왜 안돼',
       color: '#f9c646',
     },
+    TIL: {
+      name: 'TIL',
+      description: '하루하루 공부한 내용들을 정리합니다.',
+      color: '#f9c646',
+    },
   },
 };
