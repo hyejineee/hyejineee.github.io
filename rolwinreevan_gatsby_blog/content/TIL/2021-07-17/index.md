@@ -58,9 +58,13 @@ fun main(args: Array<String>) {
 fun main(args: Array<String>) {
     with(BufferedReader(InputStreamReader(System.`in`))) {
         val (n, k) = readLine().split(" ").map { it.toInt() }
-        val array = readLine().split(" ").map { it.toInt() }.sorted().asSequence()
-        
-        println(array.elementAt(k - 1))
+        val array =
+            readLine().split(" ").asSequence()
+                .map { it.toInt() }
+                .sorted()
+                .filterIndexed { index, _ -> index == k - 1 }
+
+        println(array.first())
     }
 }
 ```
