@@ -25,12 +25,22 @@ module.exports = {
   tags: {
     Android: {
       name: 'Android',
-      description: '이게 왜 안돼',
+      description: '안드로이드에 대해 공부한 내용을 정리합니다.',
       color: '#f9c646',
     },
     TIL: {
       name: 'TIL',
       description: '하루하루 공부한 내용들을 정리합니다.',
+      color: '#f9c646',
+    },
+    Kotlin: {
+      name: 'Kotlin',
+      description: 'Kotlin에 대해 공부한 내용을 정리합니다.',
+      color: '#f9c646',
+    },
+    DSAndAlgorithm: {
+      name: 'DSAndAlgorithm',
+      description: '자료구조와 알고리즘에 대해 공부한 내용을 정리합니다.',
       color: '#f9c646',
     },
   },
