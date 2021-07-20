@@ -43,5 +43,11 @@ module.exports = {
       description: '자료구조와 알고리즘에 대해 공부한 내용을 정리합니다.',
       color: '#4E4E4E',
     },
+    Reading: {
+      name: 'Reading',
+      description: '독서한 내용을 정리합니다.',
+      color: '#4E4E4E',
+    },
+
   },
 };
