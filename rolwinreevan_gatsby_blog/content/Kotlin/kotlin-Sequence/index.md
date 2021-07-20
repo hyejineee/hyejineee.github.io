@@ -5,7 +5,7 @@ tags: [Kotlin]
 cover:  "./sequence.png"
 date: 2021-07-18
 excerpt: kotlin의 Sequences에 대해서 알아보자.
-darft : true
+darft : false
 ---
 
 ## 1. Sequences는 무엇인가?
@@ -72,6 +72,7 @@ darft : true
     val oddNumbersLessThan10 = generateSequence(1) { if (it < 8) it + 2 else null }
     println(oddNumbersLessThan10.count())
 ```
+
 ### 4. Chunk로 생성하기 : sequence()
 * 원소를 하나씩 또는 임의의 사이즈를 갖는 chunks를 통해 시퀀스를 만들 수 있다.
 *  yield()와 yieldAll() 함수를 호출하는 람다를 사용한다.
