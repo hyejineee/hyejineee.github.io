@@ -111,6 +111,44 @@ task 태스크 이름  {
     * DAG에서 결정된 순서에 따라 순차적으로 실행한다. 
     * doLast()에 넣은 내용 또는 task의 본문 내용이 실행되는 단계이다.
 
+### task 테스트 
+```
+task dependencyTask{
+    doFirst {
+        println("doFirst of dependencyTask")
+    }
+
+    doLast {
+        println("doLast of dependencyTask")
+    }
+}
+
+task firstTask(
+        dependsOn: 'dependencyTask'
+) {
+    doFirst {
+        println("doFirst of FirstTask")
+    }
+
+    doLast {
+        println("doLast of FirstTask")
+    }
+    println("firstTask")
+}
+
+출력 
+
+> Task :app:dependencyTask
+doFirst of dependencyTask
+doLast of dependencyTask
+
+> Task :app:firstTask
+doFirst of FirstTask
+doLast of FirstTask
+
+```
+
+
 
 
 ## Ref.
