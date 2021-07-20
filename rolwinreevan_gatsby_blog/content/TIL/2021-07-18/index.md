@@ -44,8 +44,22 @@ excerpt: 너무 덥다. 더워어ㅓ
         * 일반적인 테스트 작성(red-green-refactoring) - 버그 테스트 작성 (red-green-refactoring)
     * AndroidX Test 
         * AndroidX Test란 무엇인가? 
-            * 테스트용 라이브러리 모음. 테스트를 위한 application 및 activity와 같은 구성요소 버전을 제공하는 클래스와 메소드가 포함된다.
-            * androidx test api는 로컬 테스트와 계측 테스트 모두에서 작동하도록 빌드된다. 
+            * 테스트용 라이브러리 모음. 테스트를 위한 application 및 activity와 같은 구성요소 버전을 제공하는 클래스와 메서드가 포함된다.
+            * androidx test api는 로컬 테스트와 계측 테스트 모두에서 작동하도록 빌드 된다. 
+                * 로컬 테스트, 계측 테스트와 동일한 테스트 수행할 수 있음.
+                * 다른 api를 학습할 필요 없음.
+        * test에서 android application context가 필요할 경우
+            * androidx test 라이브러리 사용
+            * ApplicationProvider.getApplicationContext()
+                * 계측 테스트인 경우 실제 application context제공 
+                * 로컬 테스트인 경우 시물레이션된 안드로이드 환경 제공
+
+    * Robolectric 
+        * 시뮬레이션된 안드로이드 환경을 제공하는 라이브러리 
+    * test-runner 
+        * 테스트를 실행시키는 junit 컴포넌트. 테스트 러너가 없으면 테스트를 실행할 수 없다. 
+        * junit에서 기본적으로 default runner를 제공하지만 @RunWith()를 통해 기본 테스트 러너를 교체할 수 있다. 
+        
     
 
 ## Future Action Plans

@@ -17,10 +17,11 @@ excerpt: 한 시간 정도 독서하면 어떤 고통도 진정된다.
 
 ## Findings
 
-* 안드로이드를 위한 gradle
+* [안드로이드를 위한 gradle 1장- 4장 정리](https://hyejineee.github.io/blog/Reading/gradle-for-android)
 
 ## Future Action Plans
 
-* 고급 정렬 알고리즘 문제풀이 강의를 봅니다.
-* 안드로이드 테스트에 대해서 공부합니다.
+* 안드로이드를 위한 gradle 1장-4장을 정리합니다.
+* 안드로이드를 위한 gradle 5장-8장을 읽고 정리합니다.
+* 안드로이드 코드랩 테스트 부분을 공부를 완료합니다. 
 

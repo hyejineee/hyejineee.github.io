@@ -17,8 +17,8 @@ module.exports = [
   {
     resolve: 'gatsby-plugin-manifest',
     options: {
-      name: 'Rolwin Reevan',
-      short_name: 'Rolwin Reevan',
+      name: 'hyejineee',
+      short_name: 'hyejineee',
       start_url: '/',
       background_color: '#304CFD',
       theme_color: '#304CFD',

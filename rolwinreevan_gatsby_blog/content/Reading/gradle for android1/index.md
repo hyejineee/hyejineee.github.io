@@ -1,11 +1,11 @@
 ---
-title: "[Kotlin] Sequences"
-path: blog/Kotlin/kotlin-Sequence
-tags: [Kotlin]
-cover:  "./sequence.png"
-date: 2021-07-18
+title: "안드로이드를 위한 gradle : 1장 - 4장"
+path: blog/Reading/gradle-for-android
+tags: [Android]
+cover:  "./gradle.png"
+date: 2021-07-20
 excerpt: kotlin의 Sequences에 대해서 알아보자.
-darft : false
+darft : true
 ---
 
 ## 1. Sequences는 무엇인가?
