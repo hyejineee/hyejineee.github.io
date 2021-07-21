@@ -17,7 +17,7 @@ excerpt: 한 시간 정도 독서하면 어떤 고통도 진정된다.
 
 ## Findings
 
-* [안드로이드를 위한 gradle 1장- 4장 정리](https://hyejineee.github.io/blog/Reading/gradle-for-android)
+* [안드로이드를 위한 gradle 1장- 2장 정리](https://hyejineee.github.io/blog/Reading/gradle-for-android)
 
 ## Future Action Plans
 

@@ -21,9 +21,9 @@ draft : false
 
 ### 캡슐화와 정보 은닉
 
-[객체지향의 올바른 이해 : 정보 은닉](https://effectiveprogramming.tistory.com/entry/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%EC%A0%95%EB%B3%B4-%EC%9D%80%EB%8B%89information-hiding%EC%97%90-%EB%8C%80%ED%95%9C-%EC%98%AC%EB%B0%94%EB%A5%B8-%EC%9D%B4%ED%95%B4)
+[객체지향의 올바른 이해 : 정보 은닉 참고](https://effectiveprogramming.tistory.com/entry/%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%EC%A0%95%EB%B3%B4-%EC%9D%80%EB%8B%89information-hiding%EC%97%90-%EB%8C%80%ED%95%9C-%EC%98%AC%EB%B0%94%EB%A5%B8-%EC%9D%B4%ED%95%B4)
 
-[정보은닉](http://egloos.zum.com/aeternum/v/1232020)
+[정보은닉 참고](http://egloos.zum.com/aeternum/v/1232020)
 
 * 캡슐화 : 객체의 행위가 해당 객체의 API를 통해서만 좌우될 수 있음을 보장
   * 데이터를 공용 메서드를 통해서만 접근하도록 어용하는 방법
