@@ -49,5 +49,10 @@ module.exports = {
       color: '#4E4E4E',
     },
 
+    OO: {
+      name: 'OO',
+      description: '객체 지향 프로그래밍에 대해서 학습한 내용을 정리합니다.',
+      color: '#4E4E4E',
+    },
   },
 };
