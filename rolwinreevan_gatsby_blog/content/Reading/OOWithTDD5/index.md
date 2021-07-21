@@ -1,7 +1,7 @@
 ---
 title: "[테스트 주도 개발로 배우는 객체지향 설계와 실천] 6장 객체 지향 스타일"
 path: blog/Reading/OO-design-and-practice-learning-with-tdd5
-tags: [Reading]
+tags: [Reading,OO]
 cover:  "./cover.png"
 date: 2021-04-24
 excerpt: 테스트 주도 개발로 배우는 객체지향 설계와 실천 6장 내용 정리 

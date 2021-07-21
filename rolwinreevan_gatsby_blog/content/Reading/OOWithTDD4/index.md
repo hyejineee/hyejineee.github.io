@@ -1,7 +1,7 @@
 ---
 title: "[테스트 주도 개발로 배우는 객체지향 설계와 실천] 5장 테스트 주도 개발 주기의 유지"
 path: blog/Reading/OO-design-and-practice-learning-with-tdd4
-tags: [Reading]
+tags: [Reading,OO]
 cover:  "./cover.png"
 date: 2021-04-24
 excerpt: 테스트 주도 개발로 배우는 객체지향 설계와 실천 5장 내용 정리 

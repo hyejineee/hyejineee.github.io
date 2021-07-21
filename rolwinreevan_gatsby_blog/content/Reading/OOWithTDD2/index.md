@@ -1,7 +1,7 @@
 ---
 title: "[테스트 주도 개발로 배우는 객체지향 설계와 실천] 2장 객체를 활용한 테스트 주도 개발"
 path: blog/Reading/OO-design-and-practice-learning-with-tdd2
-tags: [Reading]
+tags: [Reading,OO]
 cover:  "./cover.png"
 date: 2021-04-21
 excerpt: 테스트 주도 개발로 배우는 객체지향 설계와 실천 2장 내용 정리 
