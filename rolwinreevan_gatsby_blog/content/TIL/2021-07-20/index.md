@@ -4,7 +4,7 @@ path: blog/TIL/20210720
 tags: [TIL]
 cover:  "./TIL.png"
 date: 2021-07-20
-excerpt: 
+excerpt: 안드로이드를 위한 gradle 1~3장 까지 정리했습니다.
 ---
 ## TODO 
 
