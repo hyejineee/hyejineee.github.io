@@ -23,27 +23,25 @@ draft : false
 ### task란 무엇인가?
 * gradle에서 작업의 기본 단위.
 * org.gradle.api.Task 클래스에 해당
-```
+```groovy
 <<interface>>
-Task
+    Task
 
-dependsOn(Object... paths)
-doFirst(Closure action)
-doLast(Closure action)
-finalizedBy(Object... paths)
-
-getDescription()
-getGroup()
-getInputs()
-getOutputs()
-
-getMustRunAfter()
-getProject()
+    dependsOn(Object... paths)
+    doFirst(Closure action)
+    doLast(Closure action)
+    finalizedBy(Object... paths)
+    getDescription()
+    getGroup()
+    getInputs()
+    getOutputs()
+    getMustRunAfter()
+    getProject()
 ```
 
 ### 사용자 정의 task만들기 
 * 기본 task 생성
-```
+```groovy
 task 태스크 이름  {
     ...to do...
 }
@@ -52,18 +50,18 @@ task 태스크 이름  {
     * 별도로 지정하지 않을 경우 other그룹에 편입된다.
     * task 생성시 그룹명 입력
     * 새로운 그룹 생성 : 생성하려는 그룹명을 groupname에 입력
-    ```
+    ```groovy
     task taskName (group : 'groupName'){
         ...
     }
     ```
 * task에 설명 지정 
     * `description` 사용.
-    ```
+    ```groovy
     task taskName (
         group : 'groupName',
         description : "this is my task"){
-    ...
+        ...
     }
     ```
 * task에 의존성 지정하기 
@@ -73,7 +71,7 @@ task 태스크 이름  {
     * 의존하는 태스크를 여러 개 지정하는 경우 지정된 각 태스크의 실행 순서는 보장되지 않는다. 
     * 현재 태스크보다 먼저 실행만 됨.
 
-     ```
+     ```groovy
      task fistTask {
          ...
      }
@@ -90,19 +88,17 @@ task 태스크 이름  {
     * settings.gradle을 분석하고 프로젝트에 포함된 각 모듈의 태스크를 조사하여 어떤 모듈을 먼저 빌드해야 하는지 결정한다.
     * 프로젝트 build.gradle에 해당하는 Project인스턴스를 생성한다.
     * Project 인스턴스 속성 
-    ```
+    ```groovy
     <<interface>>
     Project
-
     allProjects(Closure congigureClosure)
     buildscript(Closure congigureClosure)
     configurations(Closure congigureClosure)
-
     getDependencies()
-
     task(String name)
     task(String name, Closure congigureClosur)
     ```
+
 * 설정 단계
     * Project 객체의 세부 값을 설정한다.
     * 하위 프로젝트에 공통으로 적용되는 내용은 allprojects()를 통해 전달된다.
@@ -112,7 +108,7 @@ task 태스크 이름  {
     * doLast()에 넣은 내용 또는 task의 본문 내용이 실행되는 단계이다.
 
 ### task 테스트 
-```
+```groovy
 task dependencyTask{
     doFirst {
         println("doFirst of dependencyTask")
@@ -137,18 +133,14 @@ task firstTask(
 }
 
 출력 
-
 > Task :app:dependencyTask
 doFirst of dependencyTask
 doLast of dependencyTask
-
 > Task :app:firstTask
 doFirst of FirstTask
 doLast of FirstTask
 
 ```
-
-
 
 
 ## Ref.
