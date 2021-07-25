@@ -12,8 +12,8 @@ module.exports = {
     blog: 'blog',
     contact: 'contact',
     resume: 'resume',
-    project: 'projects',
     tag: 'tags',
+    project: 'projects',
   },
   social: {
     github: 'https://github.com/hyejineee',
