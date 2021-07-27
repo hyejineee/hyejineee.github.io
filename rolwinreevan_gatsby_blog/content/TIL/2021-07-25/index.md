@@ -5,7 +5,7 @@ tags: [TIL]
 cover:  "./TIL.png"
 date: 2021-07-25
 excerpt: 내가 하고 싶은 거 
-draft: true
+draft: false
 ---
 
 ## Facts
