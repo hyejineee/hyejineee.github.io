@@ -92,11 +92,49 @@ draft: false
         1. 제일 마지막에 삽입한 데이터를 루트 노드로 올린다. 
         2. 루트 노드와 자식 노드간의 데이터 크기를 비교한다.
         3. 자식 노드가 클 경우 루트 노드와 위치를 바꾼다. 
-        * 2-3번의 과정을 자식 노드가 없거나 부모 노드보다 작을 때까지 반복.
+        * 2-3번의 과정을 자식 노드가 없거나 부모 노드 보다 작을 때까지 반복.
         ![](./delete.jpeg)
 
         ```kotlin
-         
+            fun delete() {
+
+                val rootValue = heap[1]
+
+                heap[1] = heap.last()
+                heap.removeLast()
+
+                moveDown(1)
+
+            }
+
+            private fun moveDown(targetIndex: Int) {
+
+                val leftIndex = targetIndex * 2
+                val rightIndex = targetIndex * 2 + 1
+
+                if (leftIndex > heap.size - 1) {
+                    return
+                }
+
+                if (heap[leftIndex]!! < heap[targetIndex]!! && heap[rightIndex]!! < heap[targetIndex]!!) {
+                    return
+                }
+
+                return if (heap[leftIndex]!! > heap[rightIndex]!!) {
+                    with(heap[targetIndex]) {
+                        heap[targetIndex] = heap[leftIndex]
+                        heap[leftIndex] = this
+                    }
+                    moveDown(leftIndex)
+                } else {
+                    with(heap[targetIndex]) {
+                        heap[targetIndex] = heap[rightIndex]
+                        heap[rightIndex] = this
+                    }
+                    moveDown(rightIndex)
+                }
+            }
+
         ```
 
 
