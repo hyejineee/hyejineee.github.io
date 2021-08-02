@@ -21,7 +21,14 @@ const Blog = ({ data }) => (
       />
       <SidebarWrapper>
         <div className="marginTopTitle">
-          <h1 className="titleSeparate">Blog</h1>
+          <span>
+            <h1 className="titleSeparate">Blog</h1>
+          </span>
+          <span>
+            (
+            {data.allMarkdownRemark.edges.length}
+            )
+          </span>
         </div>
         <Row gutter={[20, 20]}>
           {
