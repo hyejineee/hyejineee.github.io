@@ -69,6 +69,7 @@ draft: false
 
 ## Future Action Plans
 * 나만의 기지 만들기 - 지적 생산 기술
+* 블로그 레포에 푸시하면 자동으로 배포되게 github action을 설정해야겠습니다.
 
 
 
