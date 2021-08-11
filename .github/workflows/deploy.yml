@@ -6,9 +6,9 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
+    branches: [ gh-pages ]
   pull_request:
-    branches: [ master ]
+    branches: [ gh-pages ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -30,4 +30,8 @@ jobs:
         run: yarn build
 
       - name: deploy
-        run : npm run deploy
+        uses: maxheld83/ghpages@v0.2.1
+          env:
+            GITHUB_TOKEN: ${{ secrets.GATSBY_TOKEN }}
+            GH_PAT: ${{ secrets.GATSBY_TOKEN }}
+            BUILD_DIR: 'public/'
