@@ -31,7 +31,7 @@ jobs:
 
       - name: deploy
         uses: maxheld83/ghpages@v0.2.1
-          env:
-            GITHUB_TOKEN: ${{ secrets.GATSBY_TOKEN }}
-            GH_PAT: ${{ secrets.GATSBY_TOKEN }}
-            BUILD_DIR: 'public/'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GATSBY_TOKEN }}
+          GH_PAT: ${{ secrets.GATSBY_TOKEN }}
+          BUILD_DIR: 'public/'
