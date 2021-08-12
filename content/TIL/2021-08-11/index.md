@@ -27,7 +27,7 @@ draft: false
 ## Findings
 
 * [도메인 주도 설계 1장 ~ 4장 스터디](http://hyejineee.github.io/blog/Reading/DDD1)
-
+* [github action으로 배포 자동화하기]()
 
 ## Future Action Plans
 

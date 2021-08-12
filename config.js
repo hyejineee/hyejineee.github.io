@@ -55,5 +55,24 @@ module.exports = {
       description: '객체 지향 프로그래밍에 대해서 학습한 내용을 정리합니다.',
       color: '#4E4E4E',
     },
+
+    DDD: {
+      name: 'DDD',
+      description: '도메인 주도 설계에 대해서 학습한 내용을 정리합니다.',
+      color: '#4E4E4E',
+    },
+
+    Git: {
+      name: 'Git',
+      description: 'git에 대해서 학습한 내용을 정리합니다.',
+      color: '#4E4E4E',
+    },
+
+    TDD: {
+      name: 'TDD',
+      description: 'TDD에 대해서 학습한 내용을 정리합니다.',
+      color: '#4E4E4E',
+    },
+
   },
 };
