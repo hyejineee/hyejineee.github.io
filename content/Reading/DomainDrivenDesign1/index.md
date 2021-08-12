@@ -1,7 +1,7 @@
 ---
 title: "[도메인 주도 설계] 1주차 스터디 "
 path: blog/Reading/DDD1
-tags: [Reading,OO,DDD,Git]
+tags: [Reading,OO,DDD]
 cover:  "./cover.png"
 date: 2021-08-12
 excerpt: 에릭 에반스, 도메인 주도 설계 1장 ~ 4장을 읽고 스터디한 내용을 정리합니다.
