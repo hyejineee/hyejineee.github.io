@@ -85,6 +85,14 @@ module.exports = [
       },
     },
   },
+  {
+    resolve: 'gatsby-plugin-gtag',
+    options: {
+      trackingId: 'G-8B5ZGBRV2Y', // 측정 ID
+      head: false, // head에 tracking script를 넣고 싶다면 true로 변경
+      anonymize: true,
+    },
+  },
   // {
   //   resolve: 'gatsby-plugin-google-analytics',
   //   options: {
@@ -93,7 +101,7 @@ module.exports = [
   //     // Defines where to place the tracking script - `true` in the head and `false` in the body
   //     head: false,
   //   },
-  // },
+  // },npm install gatsby-plugin-google-gtag
   {
     resolve: 'gatsby-plugin-nprogress',
     options: {
