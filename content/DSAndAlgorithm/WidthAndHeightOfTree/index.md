@@ -5,7 +5,7 @@ tags: [DSAndAlgorithm]
 cover:  "./cover.png"
 date: 2021-08-04
 excerpt: 백준 알고리즘 2250번 트리의 높이와 너비
-draft: false
+draft: true
 ---
 
 ## 트리 순회 

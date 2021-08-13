@@ -5,7 +5,7 @@ tags: [DSAndAlgorithm]
 cover:  "./cover.png"
 date: 2021-08-04
 excerpt: 백준 알고리즘 1991 트리순회
-draft: false
+draft: true
 ---
 
 ## 트리 순회 
