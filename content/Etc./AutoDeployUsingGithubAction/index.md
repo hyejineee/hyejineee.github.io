@@ -5,6 +5,6 @@ tags: [Git]
 cover:  "./cover.png"
 date: 2021-08-12
 excerpt: github action을 사용하여 귀찮은 과정을 없애보자.
-draft: false
+draft: true
 ---
 
