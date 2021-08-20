@@ -11,6 +11,7 @@ draft : true
 [안드로이드 코드랩 - 테스트 베이직](https://developer.android.com/codelabs/advanced-android-kotlin-training-testing-basics#0)
 
 * 발생한 문제 1 : No instrumentation registered! Must run under a registering instrumentation.에러 발생 - application context가 생성이 안됨.
+* 해결 : kotest에 있는 robolectric extension을 사용함.
 
 * 참고 
     * [kotest extension](https://kotest.io/docs/extensions/robolectric.html)
@@ -75,6 +76,7 @@ class TasksViewModelTest : DescribeSpec() {
     * 어디선가 kotest junit5를 바탕으로 만들었다는 걸 본 것같다. -> extendWith 어노테이션을 사용하고 구현 되어 있는 InstantTaskExecutorRule 코드를 참고, [junit5에서 extension](https://jeroenmols.com/blog/2019/01/17/livedatajunit5/)을 만드는 방법을 참고해서 적용해보았지만 실패. 아예 다른 싸이클을 갖고 있는 것 같다. 자세하게 찾아볼 것.
 
     * 그러다가 리스너를 추가해서 문제를 해결한 코드를 발견 (https://gist.github.com/OliverCulleyDeLange/84aa4d2b299b2dfff3746bfdf346cd3e)
+        - InstantTaskListener만드는거.
 
     * 적용해서 전체 테스트가 무사히 끝나도록 완료!
 
