@@ -20,7 +20,6 @@ draft: false
 1. 각각 단계를 구현하고 let을 사용하여 연결 
 
 
-
 ### 3. 실행
 ```kotlin
     fun recommendationNewId(newId: String): String = newId
