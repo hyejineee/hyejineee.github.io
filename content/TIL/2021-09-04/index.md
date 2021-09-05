@@ -1,10 +1,10 @@
 ---
-title: "20210903 TIL"
-path: blog/TIL/20210903
+title: "20210904 TIL"
+path: blog/TIL/20210904
 tags: [TIL]
 cover:  "./TIL.png"
-date: 2021-09-03
-excerpt: 자료구조 & 알고리즘 정리
+date: 2021-09-04
+excerpt: 포트폴리오 만들기
 draft: false
 ---
 
