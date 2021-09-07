@@ -1,10 +1,10 @@
 ---
-title: "github action을 사용하여 배포 자동화하기"
+title: "잘 못 커밋 된 파일 지우기"
 path: blog/git-delete-commited-file
 tags: [Git]
 cover:  "./cover.png"
 date: 2021-09-07
-excerpt: 잘못 커밋 된 파일 지우기
+excerpt: 잘 못 커밋 된 파일 지우기
 draft: false
 ---
 
