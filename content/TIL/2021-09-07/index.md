@@ -4,7 +4,7 @@ path: blog/TIL/20210907
 tags: [TIL]
 cover:  "./TIL.png"
 date: 2021-09-07
-excerpt: 포트폴리오 만들기
+excerpt: 오늘도 코딩테스트 문제 풀기
 draft: false
 ---
 
