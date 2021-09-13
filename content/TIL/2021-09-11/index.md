@@ -20,6 +20,8 @@ draft: false
  
 ## Findings
 
+* 코딩 테스트 부분에서 내 자신이 발전했다는 것을 알게되었습니다. 
+
 
 
 ## Future Action Plans
