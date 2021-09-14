@@ -1,6 +1,6 @@
 ---
 title: "[문제풀이] 상호 평가 "
-path: blog/daily-in-out
+path: blog/daily-mutual-evaluation
 tags: [DSAndAlgorithm]
 cover:  "./cover.png"
 date: 2021-09-14
