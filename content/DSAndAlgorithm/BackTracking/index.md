@@ -1,5 +1,5 @@
 ---
-title: "[자료구조] 백트래킹"
+title: "[알고리즘] 백트래킹"
 path: blog/ds-back-tracking
 tags: [DSAndAlgorithm]
 cover:  "./cover.png"
