@@ -23,3 +23,9 @@ draft: false
 * 가능한 spanning tree 중에서 간선의 가중치의 합이 최소인 spanning tree
     <br><br>
     ![](./mst.jpeg)
+
+* 최소 신장 트리 알고리즘 
+    * 그래프에서 최소 신장 트리를 찾을 수 있는 알고리즘 
+    * [크루스칼 알고리즘](https://hyejineee.github.io/blog/ds-mts-kruskal)
+    * [프림 알고리즘](https://hyejineee.github.io/blog/ds-mts-prim)
+
