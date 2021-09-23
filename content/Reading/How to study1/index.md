@@ -1,6 +1,6 @@
 ---
 title: "어떻게 공부할 건인가?"
-path: blog/Reading/how-to-study
+path: blog/Reading/how-to-study1
 tags: [Android, Reading]
 cover:  "./cover.png"
 date: 2021-09-23
