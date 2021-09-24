@@ -1,7 +1,7 @@
 ---
-title: "어떻게 공부할 건인가?"
+title: "어떻게 공부할 ㄱㅓㅅ인가?"
 path: blog/Reading/how-to-study1
-tags: [Android, Reading]
+tags: [Reading]
 cover:  "./cover.png"
 date: 2021-09-23
 excerpt: 어떻게 공부할 것인가? - 1장 우리는 잘못된 방식으로 배우고 있다.
