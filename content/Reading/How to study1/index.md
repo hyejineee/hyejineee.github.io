@@ -1,5 +1,5 @@
 ---
-title: "어떻게 공부할 ㄱㅓㅅ인가?"
+title: "어떻게 공부할 것인가?"
 path: blog/Reading/how-to-study1
 tags: [Reading]
 cover:  "./cover.png"
