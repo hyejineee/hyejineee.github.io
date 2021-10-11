@@ -90,7 +90,7 @@ Tags.propTypes = {
 
 export const query = graphql`
   {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/index.md$/" } }) {
+    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/index.md$/" } , fields: {draft: {eq: false}} }) {
       edges {
         node {
           frontmatter {
