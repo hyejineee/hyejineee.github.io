@@ -1,6 +1,6 @@
 ---
 title: "[문제풀이] 중량제한 "
-path: blog/daily-BOJ-1302
+path: blog/daily-BOJ-1939
 tags: [DSAndAlgorithm]
 cover:  "./cover.png"
 date: 2021-10-12
