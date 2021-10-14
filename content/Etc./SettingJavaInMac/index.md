@@ -5,6 +5,6 @@ tags: [Git]
 cover:  "./cover.png"
 date: 2021-09-13
 excerpt: mac에 자바 개발 환경을 만들자.
-draft: false
+draft: true
 ---
 
