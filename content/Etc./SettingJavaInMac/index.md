@@ -1,6 +1,6 @@
 ---
 title: "mac에 jdk설치 및 환경변수 설정하기"
-path: blog/git-delete-commited-file
+path: blog/mac-jdk
 tags: [Git]
 cover:  "./cover.png"
 date: 2021-09-13
