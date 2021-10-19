@@ -30,6 +30,15 @@ draft: false
 * 그밖에 바탕화면의 위젯, 알람 매니저등에 사용됩니다.
 
 
+### Pending Intent Flag
+
+* FLAG_NO_CREATE : 기존 pendingIntent가 없으면 null을 반환하고(pendingIntent를 생성하지 않는다.), 있으면 존재하는 pendingIntent를 반환한다.
+* FLAG_UPDATE_CURRENT : 기존 pendingIntent가 있으면 해당 intent의 Extra data만 변경한다.
+* FLAG_CANCEL_CURRENT : 기존에 있는 pendingIntent는 취소하고 새롭게 만든다.
+* FLAG_IMMUTABLE : 생성된 pendingIntent는 변경할 수 없다.
+
+
+
 ### Ref. 
 
 * https://developer.android.com/reference/android/app/PendingIntent
