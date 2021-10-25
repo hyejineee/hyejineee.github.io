@@ -3,7 +3,7 @@ title: "[문제풀이] LCS "
 path: blog/daily-BOJ-9251
 tags: [DSAndAlgorithm]
 cover:  "./cover.png"
-date: 2021-10-20
+date: 2021-10-25
 excerpt: 백준 - LCS 
 draft: false
 ---

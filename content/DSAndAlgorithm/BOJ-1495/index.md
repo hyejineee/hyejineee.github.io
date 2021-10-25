@@ -3,7 +3,7 @@ title: "[문제풀이] 기타리스트 "
 path: blog/daily-BOJ-1495
 tags: [DSAndAlgorithm]
 cover:  "./cover.png"
-date: 2021-10-20
+date: 2021-10-25
 excerpt: 백준 - 기타리스트 
 draft: false
 ---
