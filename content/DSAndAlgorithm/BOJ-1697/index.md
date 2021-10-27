@@ -3,7 +3,7 @@ title: "[문제풀이] 숨바꼭질 "
 path: blog/daily-BOJ-1697
 tags: [DSAndAlgorithm]
 cover:  "./cover.png"
-date: 2021-10-20
+date: 2021-10-26
 excerpt: 백준 - 숨바꼭질 
 draft: false
 ---
