@@ -60,6 +60,7 @@ androidTestImplementation "androidx.test:core:1.4.0"
 그리고 GDG Compose 단톡방을 통해 해당 이슈가 해결되어 `espresso 3.5.0-alpha02`버전에 수정 사항이 포함되었다는 것을 알았습니다.  
 
 ![](./katalk.png)
+(감사🙇🏻‍♀️)
 
 문제를 해결하기 위해 
 
