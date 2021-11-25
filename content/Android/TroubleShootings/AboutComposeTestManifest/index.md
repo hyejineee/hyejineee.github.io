@@ -68,8 +68,9 @@ androidTestImplementation "androidx.test:core:1.4.0"
 ![](./branches.png)
 3. targetSdkVersion은 31로 그대로 두고 espresso의 버전을 `espresso 3.5.0-alpha02`로 수정하여 테스트를 실행
    
-세 가지 방법 모두 실행한 결과 모두 테스트가 정상적으로 빌드되고 진행되는 것을 확인할 수 있었습니다. 
+세 가지 방법 모두 실행한 결과 모두 테스트가 정상적으로 빌드되고 진행되는 것을 확인할 수 있었습니다. 문제를 근본적으로 해결하는 방법은 `androidx.test:core`의 버전을 현재 안정화 버전인 1.4.0으로 의존성에 추가해주는 것이 아닐까 싶습니다. 
 
+부족한 내용은 댓글로 알려주시면 감사하겠습니다. 
 
 ## Ref.
 [AndroidDeveloper - 동작 변경사항 : Android12를 타겟팅하는 앱](https://developer.android.com/about/versions/12/behavior-changes-12?hl=ko#exported)
