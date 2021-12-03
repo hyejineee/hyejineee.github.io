@@ -1,6 +1,6 @@
 ---
 title: "20211201 TIL"
-path: blog/TIL/20211124
+path: blog/TIL/20211201
 tags: [TIL]
 cover:  "./TIL.png"
 date: 2021-12-01
