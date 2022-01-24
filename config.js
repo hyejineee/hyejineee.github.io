@@ -74,5 +74,10 @@ module.exports = {
       color: '#4E4E4E',
     },
 
+    Retrospect: {
+      name: 'Retrospect',
+      description: '회고!',
+      color: '#4E4E4E',
+    },
   },
 };
