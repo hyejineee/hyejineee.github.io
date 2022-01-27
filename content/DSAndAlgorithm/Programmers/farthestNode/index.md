@@ -1,79 +1,85 @@
 ---
-title: "[문제풀이] 단어 변환 "
-path: blog/daily-programmers-word-conversion
+title: "[문제풀이] 가장 먼 노드 "
+path: blog/daily-programmers-farthest-node
 tags: [DSAndAlgorithm]
 cover:  "./cover.png"
-date: 2022-01-24
-excerpt: 프로그래머스 - 단어 변환 
+date: 2022-01-27
+excerpt: 프로그래머스 - 가장 먼 노드 
 draft: false
 ---
 
 
-## 단어 변환 
-* [단어 변환 - 프로그래머스](https://programmers.co.kr/learn/courses/30/lessons/43163)
+## 가장 먼 노드
+### 구하고자 하는 것은 무엇인가?
 
-### 0. 목표 
-**구하고자 하는 것은 무엇인가?**
-- begin에서 target으로 최소 몇 단계를 거쳐 begin을 target으로 변환할 수 있는지 구해야 합니다.
+- 1번 노드에서 가장 멀리 있는 노드의 개수를 구해야 합니다.
 
-### 1. 이해 
-- 단어 변환에는 규칙이 있습니다.
-    - 한 번에 한 개의 알파벳만 바꿀 수 있습니다.
-    - words에 있는 단어로만 변환할 수 있습니다.
-- 변환할 수 없는 경우에는 0을 리턴합니다. → target 단어는 words에 포함되어 있어야 합니다.
+### 1. 이해
 
+- 가장 멀리 떨어진 노드 = 최단 경로로 이동했을 때 간선의 개수가 가장 많은 노드
+- 노드의 개수 n과 간선에 대한 정보 edge가 주어집니다.
+- 간선에 대한 정보는 2차원 배열로 이루어져 있습니다.
+- 2차원 배열의 각 행은 (a,b)형태이고 a노드와 b노드 사이에 간선이 있음을 나타냅니다.
+- 간선은 양방향입니다.
 
-### 2. 계획
+### 2.계획
 
-1. begin을 현재 단어로 설정합니다. 
-2. words를 순회하면서 현재 단어와 한 개의 알파벳만 다른 단어를 찾습니다.
-3. 찾은 단어를 방문 리스트에 넣습니다.  
-4. 찾은 단어를 현재 단어로 설정하고 2번 과정을 다시 수행합니다.
-5. 현재 단어가 target이 될 때까지 위의 과정을 반복합니다. 
-6. target단어까지 도달했으면 변환 과정을 기록한 방문  리스트를 결과에 저장합니다. 
-7. 다른 후보군을 포함하는 방문 리스트를 만들기 위해 마지막에 넣은 단어를 방문 리스트에서 다시 뺍니다.
-
+- 다익스트라 알고리즘을 사용하여 최단 경로를 구합니다.
+1. 주어진 간선 정보를 사용하여 그래프를 초기화합니다. 
+2. 1번 노드부터 각 노드까지의 거리를 기록하는 distances 배열을 초기화합니다.
+3. 그래프에 대해서 다익스트라 알고리즘을 수행합니다. 
+4. 다익스트라 알고리즘을 통해 구해진 거리중 max값을 구합니다.
+5. distances배열의 원소 중에서 max값과 같은 원소의 개수를 구하고 리턴합니다.
 
 ### 3. 실행
+
 ```kotlin
-    fun wordConversion(begin: String, target: String, words: Array<String>): Int {
-            if(target !in words) return 0
-
-        val result = mutableListOf<List<String>>()
-        dfs(begin, mutableListOf(), words, target, result)
-
-        return result.minBy { it.size }?.size ?: 0
+fun farthestNode(n: Int, edge: Array<IntArray>): Int {
+    val distances = Array(n) {
+        if (it == 0) 0 else Int.MAX_VALUE
     }
 
-    private fun dfs(
-        start: String,
-        visited: MutableList<String>,
-        words: Array<String>,
-        target: String,
-        result: MutableList<List<String>>
-    ) {
+    val graph = mutableMapOf<Int, MutableList<Int>>()
 
-        if (start == target) {
-            result.add(visited.toList())
-            return
-        }
+    edge.forEach {
+        val (a, b) = it
+        graph[a]?.add(b) ?: run { graph[a] = mutableListOf(b) }
+        graph[b]?.add(a) ?: run { graph[b] = mutableListOf(a) }
+    }
 
-        for (i in words.indices) {
-            if (checkAvailable(start, words[i]) && words[i] !in visited) {
-                visited.add(words[i])
-                dfs(words[i], visited, words, target, result)
-                visited.removeAt(visited.size - 1)
-            }
+    calculateDistance(LinkedList<Pair<Int, Int>>().apply { add(Pair(1, 0)) }, distances, graph.toMap())
+
+    val max = distances.max() ?: -1
+
+    return distances.count { it == max }
+}
+
+private fun calculateDistance(
+    needVisit: LinkedList<Pair<Int, Int>>,
+    distances: Array<Int>,
+    graph: Map<Int, MutableList<Int>>
+) {
+
+    if (needVisit.isEmpty()) {
+        return
+    }
+
+    val (node, currentDistance) = needVisit.poll()
+
+    graph[node]?.forEach {
+        val newDistance = currentDistance + 1
+
+        if (distances[it - 1] > newDistance) {
+            distances[it - 1] = newDistance
+            needVisit.add(Pair(it, newDistance))
         }
     }
 
-    private fun checkAvailable(start: String, next: String): Boolean
-     = BooleanArray(start.length) { start[it] == next[it] }.count { it } == start.length - 1
+    return calculateDistance(needVisit, distances, graph)
+}
 ```
 
-### 4. 회고 
-- dfs를 사용하여 쉽게 풀 수 있었습니다.
-- 처음에 문제가 이해되지 않아 여러번 읽었습니다. 차분하게 문제를 읽는 자세를 길러야 겠습니다.
-- dfs, bfs 형태를 복습했습니다.
-- 백트래킹 형태를 복습했습니다.
+### 4. 회고
 
+- 다익스트라 알고리즘을 복습할 수 있었습니다.
+- 많이 변형되지 않은 문제라 쉽게 풀 수 있었습니다.
