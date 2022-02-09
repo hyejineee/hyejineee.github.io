@@ -1,6 +1,6 @@
 ---
 title: "[문제풀이] 체육복 "
-path: blog/daily-programmers-immigration
+path: blog/daily-programmers-sports-uniform
 tags: [DSAndAlgorithm]
 cover:  "./cover.png"
 date: 2022-02-08
