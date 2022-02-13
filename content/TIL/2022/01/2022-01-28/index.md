@@ -1,6 +1,6 @@
 ---
 title: "20210531 TIL"
-path: blog/TIL/20210531
+path: blog/TIL/20220128
 tags: [TIL]
 cover:  "./tilbanner.jpg"
 date: 2022-01-28
