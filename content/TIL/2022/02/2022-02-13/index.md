@@ -2,7 +2,7 @@
 title: "20210531 TIL"
 path: blog/TIL/2022-02-13
 tags: [TIL]
-cover:  "./TIL.jpg"
+cover:  "./TIL.png"
 date: 2022-02-13
 excerpt: 2022년 2월 13일 TIL
 ---

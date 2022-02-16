@@ -2,7 +2,7 @@
 title: "20210531 TIL"
 path: blog/TIL/2022-2nd-week
 tags: [TIL]
-cover:  "./cover.jpg"
+cover:  "./cover.png"
 date: 2022-02-13
 excerpt: 2022년 2월 2째주 위클리 회고
 ---
