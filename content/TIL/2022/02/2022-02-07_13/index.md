@@ -1,5 +1,5 @@
 ---
-title: "20210531 TIL"
+title: "위클리 회고"
 path: blog/TIL/2022-2nd-week
 tags: [TIL]
 cover:  "./cover.png"
