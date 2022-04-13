@@ -1,7 +1,7 @@
 ---
 title: "이것이 코딩테스트다 - 정렬"
 path: blog/Reading/this-is_coding-test_06
-tags: [OO, Reading]
+tags: [DSAndAlgorithm, Reading]
 cover:  "./cover.png"
 date: 2022-03-30
 excerpt: 코테 스터디 - 정렬
