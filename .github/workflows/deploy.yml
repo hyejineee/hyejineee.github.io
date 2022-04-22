@@ -30,7 +30,7 @@ jobs:
         run: yarn build
 
       - name: deploy
-        uses: maxheld83/ghpages@v0.2.1
+        uses: maxheld83/ghpages@v0.3.0
         env:
           GITHUB_TOKEN: ${{ secrets.GATSBY_TOKEN }}
           GH_PAT: ${{ secrets.GATSBY_TOKEN }}
