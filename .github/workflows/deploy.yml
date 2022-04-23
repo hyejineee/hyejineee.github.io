@@ -29,15 +29,15 @@ jobs:
           GH_API_KEY: ${{ secrets.GATSBY_TOKEN }}
         run: yarn build
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.3.0
-        with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: build # The folder the action should deploy.
+      # - name: Deploy 🚀
+      #   uses: JamesIves/github-pages-deploy-action@v4.3.0
+      #   with:
+      #     branch: gh-pages # The branch the action should deploy to.
+      #     folder: build # The folder the action should deploy.
 
-      # - name: deploy
-      #   uses: maxheld83/ghpages@v0.3.0
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GATSBY_TOKEN }}
-      #     GH_PAT: ${{ secrets.GATSBY_TOKEN }}
-      #     BUILD_DIR: 'public/'
+      - name: deploy
+        uses: maxheld83/ghpages@v0.3.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GATSBY_TOKEN }}
+          GH_PAT: ${{ secrets.GATSBY_TOKEN }}
+          BUILD_DIR: 'public/'
