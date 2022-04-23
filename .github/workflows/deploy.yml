@@ -19,7 +19,7 @@ jobs:
     name: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
 
       - name: yarn install
         run: yarn install
@@ -28,7 +28,7 @@ jobs:
         env:
           GH_API_KEY: ${{ secrets.GATSBY_TOKEN }}
         run: yarn build
-        
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.0
         with:
