@@ -33,7 +33,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.3.0
         with:
           branch: master # The branch the action should deploy to.
-          folder: . # The folder the action should deploy.
+          folder: public # The folder the action should deploy.
 
       # - name: deploy
       #   uses: maxheld83/ghpages@v0.3.0
