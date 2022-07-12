@@ -30,17 +30,17 @@
 <li>버튼 active 실습에서 변경된 state의 값이 바로 반영되지 않아 active 타이밍이 늦는 문제가 발생했습니다. 문제의 발생 원인은 다음과 같습니다.</li>
 <li>state의 값이 새로운 값이 되려면 리렌더링 되어야 하는데, js는 싱글 스레드로 돌아가기 때문에 현재 실행 중인 함수가 마무리 된 이후에 리렌터링이 진행하기 때문에 state 변경사항이 즉시 반영되지 않습니다.</li>
 <li>리액트 hook에서 클로저가 사용된다고 합니다.</li>
-<li>클로저</li>
-<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures" target="_blank" rel="nofollow">https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures</a></li>
 <li>
-<p>함수와 함수가 선언된 어휘적 환경(렉시컬 스코프)의 조합입니다. (롸..?)</p>
+<p>클로저</p>
 <ul>
+<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures" target="_blank" rel="nofollow">https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures</a></li>
+<li>함수와 함수가 선언된 어휘적 환경(렉시컬 스코프)의 조합입니다. (롸..?)</li>
 <li>실행 컨텍스트에 대해서 빠른 시일내에 정리 해야겠습니다…</li>
-</ul>
-</li>
 <li>자신이 사용하는 변수를 기억하고 어딘가에 저장해두는 특성입니다.</li>
 <li>참고 : <a href="https://poiemaweb.com/js-closure" target="_blank" rel="nofollow">https://poiemaweb.com/js-closure</a></li>
 <li>클로저가 가장 유용하게 사용되는 상황은 현재 상태를 기억하고 변경된 최신 상태를 유지할 때라고 합니다.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
