@@ -27,12 +27,12 @@ excerpt: 2022년 7월 12일 TIL
     - state의 값이 새로운 값이 되려면 리렌더링 되어야 하는데, js는 싱글 스레드로 돌아가기 때문에 현재 실행 중인 함수가 마무리 된 이후에 리렌터링이 진행하기 때문에 state 변경사항이 즉시 반영되지 않습니다.
   - 리액트 hook에서 클로저가 사용된다고 합니다.
   - 클로저
-    - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures](https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures)
-    - 함수와 함수가 선언된 어휘적 환경(렉시컬 스코프)의 조합입니다. (롸..?)
-      - 실행 컨텍스트에 대해서 빠른 시일내에 정리 해야겠습니다…
-    - 자신이 사용하는 변수를 기억하고 어딘가에 저장해두는 특성입니다.
-    - 참고 : [https://poiemaweb.com/js-closure](https://poiemaweb.com/js-closure)
-    - 클로저가 가장 유용하게 사용되는 상황은 현재 상태를 기억하고 변경된 최신 상태를 유지할 때라고 합니다.
+      - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures](https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures)
+      - 함수와 함수가 선언된 어휘적 환경(렉시컬 스코프)의 조합입니다. (롸..?)
+        - 실행 컨텍스트에 대해서 빠른 시일내에 정리 해야겠습니다…
+      - 자신이 사용하는 변수를 기억하고 어딘가에 저장해두는 특성입니다.
+      - 참고 : [https://poiemaweb.com/js-closure](https://poiemaweb.com/js-closure)
+      - 클로저가 가장 유용하게 사용되는 상황은 현재 상태를 기억하고 변경된 최신 상태를 유지할 때라고 합니다.
 - graphql refetch
 
   - graphql에서 refetch를 하는 방법은 두 가지가 있습니다.
