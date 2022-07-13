@@ -25,14 +25,15 @@ excerpt: 2022년 7월 12일 TIL
   - 리액트에서 컴포넌트는 state의 값이 바뀌게 되면 render함수를 동작시킵니다.
   - 버튼 active 실습에서 변경된 state의 값이 바로 반영되지 않아 active 타이밍이 늦는 문제가 발생했습니다. 문제의 발생 원인은 다음과 같습니다.
     - state의 값이 새로운 값이 되려면 리렌더링 되어야 하는데, js는 싱글 스레드로 돌아가기 때문에 현재 실행 중인 함수가 마무리 된 이후에 리렌터링이 진행하기 때문에 state 변경사항이 즉시 반영되지 않습니다.
+    - state의 변경 내역을 임시 저장소에 저장했다가 마지막에 값을 반영합니다.
   - 리액트 hook에서 클로저가 사용된다고 합니다.
   - 클로저
-      - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures](https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures)
-      - 함수와 함수가 선언된 어휘적 환경(렉시컬 스코프)의 조합입니다. (롸..?)
-        - 실행 컨텍스트에 대해서 빠른 시일내에 정리 해야겠습니다…
-      - 자신이 사용하는 변수를 기억하고 어딘가에 저장해두는 특성입니다.
-      - 참고 : [https://poiemaweb.com/js-closure](https://poiemaweb.com/js-closure)
-      - 클로저가 가장 유용하게 사용되는 상황은 현재 상태를 기억하고 변경된 최신 상태를 유지할 때라고 합니다.
+    - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures](https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures)
+    - 함수와 함수가 선언된 어휘적 환경(렉시컬 스코프)의 조합입니다. (롸..?)
+      - 실행 컨텍스트에 대해서 빠른 시일내에 정리 해야겠습니다…
+    - 자신이 사용하는 변수를 기억하고 어딘가에 저장해두는 특성입니다.
+    - 참고 : [https://poiemaweb.com/js-closure](https://poiemaweb.com/js-closure)
+    - 클로저가 가장 유용하게 사용되는 상황은 현재 상태를 기억하고 변경된 최신 상태를 유지할 때라고 합니다.
 - graphql refetch
 
   - graphql에서 refetch를 하는 방법은 두 가지가 있습니다.
@@ -58,6 +59,10 @@ excerpt: 2022년 7월 12일 TIL
          ],
        })
        ```
+
+- 리액트 컴포넌트 map과 Key
+  - map을 사용하여 반복적인 컴포넌트를 그릴 때 key를 사용하는 것은 효율적으로 변경 사항을 DOM에 반영하기 위해서 입니다.
+  - key가 없는 경우에는 가상 DOM을 비교하는 과정에서 순차적으로 컴포넌트를 비교하여 변화를 감지합니다. key가 있다면 이 값을 사용하여 어떤 것이 수정 되었는지 빠르게 감지할 수 있다고 합니다.
 
 ## Future Action Plans.
 
