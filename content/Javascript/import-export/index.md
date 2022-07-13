@@ -2,7 +2,7 @@
 title: "[자바스크립트] Import & Export"
 path: blog/frontend/javascript/import-export
 tags: [Frontend]
-cover: "./thunm.png"
+cover: "./thumb.png"
 date: 2022-07-11
 excerpt: 자바스크립트에서 사용사는 import& export와 모듈 시스템에 대해서 살짝 공부한 내용을 정리합니다.
 ---

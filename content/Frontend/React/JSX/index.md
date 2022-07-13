@@ -2,7 +2,7 @@
 title: "[React] JSX란 무엇인가요?"
 path: blog/frontend/jsx
 tags: [Frontend]
-cover: "./thum.png"
+cover: "./thumb.png"
 date: 2022-07-07
 excerpt: 리액트에서 사용하는 jsx에 대해서 공부합니다. jsx는 무엇이고? 왜 사용해야할까요?
 ---
