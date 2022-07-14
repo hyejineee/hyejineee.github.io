@@ -82,3 +82,8 @@ catch와 finally는 생략 가능하지만 한 번에 두 가지 모두를 생�
 ## 어떤 경우에 예외 처리가 필요한가요?
 
 예외적인 상황이 발생할 것 같으면 던집니다…. 예…..예외적인 상황이란 무엇인지에 대한 정답은 없다고 합니다.
+
+## Ref.
+
+- [코딩을 지탱하는 기술]("http://www.yes24.com/Product/Goods/11101558")
+- https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/try...catch
