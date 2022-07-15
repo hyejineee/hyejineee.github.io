@@ -31,6 +31,7 @@ excerpt: 2022년 7월 14일 TIL
       yarn add --dev @types/react@17.0.2 @types/node@17.0.2
       ```
     - tsconfig.json 파일을 생성만 해주고 빌드해서 돌리면 next가 tsconfig.json을 감지하고 자동으로 내용을 채워줍니다.
+    - tsconfig.json에서 strict 모드를 true로 변경합니다.
 
   - 타입스크립트는 자바스크립트에 타입을 강제 시키는 언어입니다.
   - const 변수명 : 타입 = 값 형태로 사용합니다.
