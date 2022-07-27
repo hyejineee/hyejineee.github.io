@@ -29,7 +29,7 @@ excerpt: 2022년 7월 25일 TIL
     - 오늘 배운 componentDidMount, componentDidUpdate, componentWillUnmount이외에 다른 생명주기 메소드들이 존재합니다.
     - 생명주기 메서드는 크게 마운트, 업데이트, 언마운트 세개의 카테고리로 나눌 수 있습니다.
         
-        ![스크린샷 2022-07-27 오후 7.52.27.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/833990c8-6e38-4c77-9061-41f6b0299f90/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-07-27_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_7.52.27.png)
+        ![](./lifecycle.png)
         
         - 마운트
             - 컴포넌트가 DOM에 붙게 될 때 호출되는 메서드입니다.
