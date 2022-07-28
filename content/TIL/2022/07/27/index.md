@@ -1,119 +1,74 @@
 ---
-title: "20220727 TIL"
-path: blog/TIL/2022-07-27
+title: "20220728 TIL"
+path: blog/TIL/2022-07-28
 tags: [TIL]
 cover: "./TIL.png"
-date: 2022-07-27
-excerpt: 2022년 7월 27일 TIL
+date: 2022-07-28
+excerpt: 2022년 7월 28일 TIL
 ---
 
 ## Facts.
 
-- 프로그래머스 거리두기 확인하기 문제 풀이 완료
-- CORS에 대해서 배웠습니다.
-- apollo-server를 사용하여 API를 만드는 실습과 firebase 실습을 했습니다.
-- 밀린 TIL을 다 썼습니다.
-- 은행 및 약국에 볼일이 있었는데 점심시간에 다 해결했습니다.
+- 프로그래머스 메뉴 리뉴얼 문제풀이 포스팅을 업로드했습니다.
+- 리액트에서 apollo-upload-client를 사용하여 서버로 이미지를 업로드하는 방법을 배웠습니다.
 
 ## Feelings.
 
-- 할 일이 왜 이렇게 밀리는 건지… 이번주에는 토욜에도 나와서 부지런히 일을 쳐내야겠습니다.
-- 점심시간에 약국에 가서 알보칠 샀습니다… 어제보다 더 커져서 엄청 아픕니다ㅠㅠ 집에 가면 면봉으로 제대로 지져서 없애버릴 겁니다.
-- 수업시간에 정신이 혼미해서 잘 못 듣는 바람에 과제하는데 시간이 좀 걸렸습니다. 진짜 12시간동안 잠만 잤으면 좋겠습니다.
-- 아침에 프로그래머스 거리두기 확인하기 문제 6,9,31테케까지 통과했습니다!!!! pop()을 사용해서 탐색하고 있었는데 pop()을 shift()로 바꾸니 통과되었습니다. bfs, dfs의 차이를 제대로 모르고 있었던 것 같습니다. 문제 풀이 포스팅하면서 그 차이를 제대로 정리해야겠습니다.
-- 오랜만에 백엔드 작업하니 재미있네요ㅎ 항상 깔짝 거렸는데 이번에도 깔짝ㅎ
+- 구내염이 점점 확장하고 있는 느낌입니다.. 왜 커지는 거야…ㅠ
+- 점점 수업시간에 배운 내용을 기억하는 양이 적어지고 있는 느낌입니다. 이번주에 수업시간에 많이 졸아서 그러는 것 같습니다. 많이 잠 자고 싶습니다. 이번주 토욜에 학원에 나와서 작업하려고 했는데 그냥 집에서 편하게 해야겠습니다.
+- 배운 내용들을 적용하는 것이 점점 복잡해지고 있는 것 같습니다. 오늘은 내일 시험을 대비해서 그동안 했던 내용들을 한 번 훑어보고 정리하는 시간을 가져야겠습니다.
 
 ## Findings.
 
-- CORS (Cross-Origin Resource Sharing, 교차 출처 리소스 공유)
-    - [https://developer.mozilla.org/ko/docs/Web/HTTP/CORS](https://developer.mozilla.org/ko/docs/Web/HTTP/CORS)
+- input 속성
+    - input 태그의 type이 file 일 때 multiple 속성을 사용할 수 있습니다. multiple 속성은 다중 파일 업로드를 가능하게 합니다.
+    - accept 속성을 통해서 받을 파일의 포맷을 제한할 수 있습니다.
+- apollo-upload-client
+    - apollo-client는 기본적으로 텍스트에 대해서만 동작한다고 합니다. 파일을 업로드 하기 위해서는 파일 업로드를 위한 모듈을 추가해 주어야 합니다.
+    - 또한 upload 모듈을 사용하기 위해서 기존에 있던 apollo-client설정을 변경해야 합니다.
         
-        ![](./whoRead.png)
+        ```jsx
+        yarn add apollo-upload-client 
+        yarn add -D @types/apollo-upload-client
         
-    - HTTP 헤더를 사용하여, 한 출처(도메인?)에서 실행 중인 웹 애플리케이션이 다른 출처의 자원에 접근할 수 있는 권한을 부여하도록 브라우저에 알려주는 체제입니다.
-    - 웹 애플리케이션은 자신의 도메인과 동일한 리소스만 불러올 수 있으며, 다른 도메인의 리소스를 불러오려면 그 도메인에서 올바른 CORS 헤더를 포함한 응답을 반환해야 합니다.
-    - 출처를 도메인으로 이해했는데 이렇게 이해해도 되는지 모르겠습니다.
+        import { createUploadLink } from "apollo-upload-client";
         
-        ![](./cors.png)
+        const uploadLink = createUploadLink({
+            uri: "http://backend08.codebootcamp.co.kr/graphql",
+          });
         
-    - 보안상의 이유로 브라우저는 스크립트에서 시작한 교차 출처 HTTP요청을 제한합니다. 기본 값은 허용안함으로 되어있습니다.
-    - CORS는 브라우저 한정 옵션입니다. 앱, 백엔드에서 리소스 요청 시 CORS 옵션이 강제되지 않습니다.
-    - CORS를 우회하기 위해서는 백엔드로 요청하여 크로스 도메인의 리소스 접근해야 합니다.
-- graphql apollo-server
-    - typeDef : playground의 docs 같은 것. api의 인자 타입과 리턴 타입을 지정
-        - type 키워드 : 리턴타입을 만들때 사용하는 키워드
-        - input 키워드 : 매개변수의 타입을 만들때 사용하는 키워드 → 여러가지 매개변수를 묶어서 받을 때 사용!
-        - type Query : query api에 대한 매개변수 타입, 반환타입 지정
-        - type Mutation : mutation api에 대한 매개변수 타입, 반환타입 지정
-    - resolvers : 실제 api가 처리해야 하는 작업을 수행하는 곳. Query와 Mutation이 있습니다.
-    
-    ```jsx
-    // DOCS
-    const typeDefs = gql`
-      # 리턴 타입을 만들 때 type 사용. 매개변수의 타입을 만들 때 input사용
-      # input CreateBoardInput - input할 때 데이터 타입
-      # type CreateBoardInput {}
-      # input CreateBoardInput {}
-    
-      input CreateBoardInput {
-        writer: String
-        title: String
-        contents: String
-      }
-    
-      type Board {
-        number: Int
-        writer: String
-        title: String
-        contents: String
-      }
-    
-      type Query {
-        fetchBoards: [Board]
-      }
-    
-      type Mutation {
-        createBoard(createBoardInput: CreateBoardInput): String
-      }
-    `;
-    
-    // API
-    const resolvers = {
-      Query: {
-        fetchBoards: async () => {
-          const result = await Board.find();
-          return result;
-        },
-      },
-      Mutation: {
-        // 기본적으로 4개의 인자를 받음
-        // parent - 상위 요청 가능?? 백엔드 api에서 백엔드를 호출할 때 받는 인자.
-        // args - 요청인자. 브라우저에서 백엔드api를 호출할 때 받는 인자.
-        // context - 헤더 정보
-        // info - api 간략한 정보
-    
-        createBoard: async (parent: any, args: any, context: any, info: any) => {
-          await Board.insert({...args.createBoardInput,});
-    
-          // insert, create, update, delete
-          // 첫번째 인자 - 조건, 두번째 인자 - 변경내용
-          Board.update({ number: 3 }, { writer: "영희" });
-    
-          return "게시물 등록에 성공했습니다!";
-        },
-    
-      },
-    };
-    
-    const server = new ApolloServer({
-      typeDefs,
-      resolvers,
-      // cors : ['naver.com'] -> 배열에 허용할 도메인을 설정
-      cors: true, //CORS 허용
-    });
-    ```
-    
+        const client = new ApolloClient({
+          link: ApolloLink.from([uploadLink]),
+          cache: new InMemoryCache(),
+        });
+        ```
+        
+- useRef
+    - [https://ko.reactjs.org/docs/hooks-reference.html#useref](https://ko.reactjs.org/docs/hooks-reference.html#useref)
+    - [https://ko.reactjs.org/docs/hooks-faq.html#is-there-something-like-instance-variables](https://ko.reactjs.org/docs/hooks-faq.html#is-there-something-like-instance-variables)
+    - [https://react.vlpt.us/basic/10-useRef.html](https://react.vlpt.us/basic/10-useRef.html)
+    - 컴포넌트에서 특정 HTML요소를 선택하는 상황에서 주로 사용되는 훅입니다.
+        - 특정 HTML요소를 선택해서 하는 일은 다음과 같습니다.
+        - 특정 엘리먼트의 크기를 가져오기, 스크롤바 위치를 가져오기, 포커스를 설정하기 등등
+    - useRef를 사용하여 Ref객체를 만들고, 컨트롤하고자 하는 요소의 ref속성에 useRef를 사용해 만든 값을 설정해줍니다.
+        
+        ```jsx
+        const fileRef = useRef<HTMLInputElement>(null)
+        
+        return (
+        	<>
+        			<input ref={fileRef} type='file' />
+        	</>
+        )
+        
+        fileRef.current -> input 요소를 가져옴
+        ```
+        
+    - 만드 Ref객체의 current를 사용해서 우리가 원하는 요소를 가져와 사용할 수 있습니다.
+    - useRef는 매번 렌더링을 할 때 동일한 ref객체를 제공합니다. → 리렌더링 되어도 변하지 않는 값을 useRef를 사용해서 관리할 수 있을 것 같습니다.
+    - 리액트 공식 문서를 보니 useRef()를 사용하여 클래스에서 프로퍼티를 사용하는 것 처럼 사용할 수 있다고 합니다.
 
 ## Future Action Plans.
 
-- 프로그래머스 문제풀이 포스팅
+- 집에가서 운동!
+- 내일 시험 준비
