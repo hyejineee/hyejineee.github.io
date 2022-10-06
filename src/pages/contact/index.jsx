@@ -8,7 +8,7 @@ import SEO from '../../components/Seo';
 const Contact = () => (
   <Layout className="outerPadding">
     <Layout className="container">
-      <SEO
+      {/* <SEO
         title="Contact"
         description="Hello folks Rolwin here. You can contact me through the contact form on this page.
                     Please feel free to contact me, don't be shy guys, just remember Rolwin is always open to talk about web
@@ -16,7 +16,7 @@ const Contact = () => (
                     Find me on github - rolwin100."
         path="/contact"
         keywords={['Rolwin', 'Reevan', 'Monteiro', 'FullStack developer', 'Javascript', 'ReactJS', 'NodeJS', 'Gatsby', 'technology']}
-      />
+      /> */}
       <Header />
       <SidebarWrapper>
         <div className="marginTopTitle">
@@ -35,6 +35,6 @@ const Contact = () => (
       </SidebarWrapper>
     </Layout>
   </Layout>
-);
+)
 
 export default Contact;
