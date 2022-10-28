@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://hyejineee.github.io/blog/daily-algorithm-221028-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/TIL/2022-08-03</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/frontend/javascript/template-literals</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/TIL/2022-07-28</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -174,9 +175,9 @@
 <url> <loc>https://hyejineee.github.io/blog/daily-string-compression</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/TIL/20210902</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/daily-weekly-5</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://hyejineee.github.io/blog/ds-spanning-tree</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/ds-mts-kruskal</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/ds-mts-frim</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://hyejineee.github.io/blog/ds-spanning-tree</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/TIL/20210901</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/daily-recommendation-new-id</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/TIL/20210831</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -231,9 +232,9 @@
 <url> <loc>https://hyejineee.github.io/blog/Reading/OO-design-and-practice-learning-with-tdd3</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/Reading/OO-design-and-practice-learning-with-tdd2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/Reading/OO-design-and-practice-learning-with-tdd</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://hyejineee.github.io/tags/DSAndAlgorithm</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/tags/TIL</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/tags/Frontend</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://hyejineee.github.io/tags/DSAndAlgorithm</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/tags/Reading</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/tags/Retrospect</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/tags/Android</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
