@@ -4,7 +4,7 @@ path: blog/daily-algorithm-221106-1
 tags: [DSAndAlgorithm]
 cover:  "./cover.png"
 date: 2022-11-06
-excerpt: 프로그래머스 -전력망 둘로 나누기
+excerpt: 프로그래머스 - 전력망 둘로 나누기
 ---
 
 [프로그래머스 - 전력망 둘로 나누기](https://school.programmers.co.kr/learn/courses/30/lessons/86971)
