@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://hyejineee.github.io/sitemap/sitemap-index.xml
+Sitemap: https://hyejineee.github.io/sitemap-index.xml
 Host: https://hyejineee.github.io
