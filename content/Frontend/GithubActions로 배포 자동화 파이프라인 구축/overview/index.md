@@ -37,9 +37,11 @@ github actions를 사용해 자동으로 배포하는 과정은 다음과 같습
 
 ![](./pipeline.png)
 
-먼저 main 브랜치에 push가 되면 각각 Deploy to EC2, Deploy to S3 workflow가 실행됩니다.
+먼저 main 브랜치에 push가 되면 각각 Deploy to EC2, Deploy to S3 workflow가 실행됩니다.  
 * Deploy to EC2 : EC2에 동적 배포를 하기 위해 만든 워크 플로우
-* Deploy to S3 : S3에 정적 배포를 하기 위해 만든 워크 플로우
+* Deploy to S3 : S3에 정적 배포를 하기 위해 만든 워크 플로우  
+
+
 
 동적 배포와 정적 배포를 나눈 가장 큰 이유는 이전 프로젝트에서는 나누지 않고 모두 ec2에 올려서 동작하도록 배포했었는데 ec2 인스턴스의 사양이 낮다 보니 힘겨워 하는 게 느껴졌습니다. 그래서 정적 페이지는 빠르게 접근이 가능할 수 있도록 나누었습니다. 동적 배포된 자원과 정적 배포된 자원에 각각 접근할 수 있도록 하려면 cloudFront와 로드밸런서 등등을 설정 하지만 일단은 코드를 배포하는 과정만 기록하려고 합니다.
 
