@@ -10,13 +10,13 @@ draft: false
 
 이전에 리액트, 프론트엔드 개발을 처음 배울 때 했던 프로젝트를 정리했습니다. 이력서에 첨부할 프로젝트가 없어서 대강 정리하고, 이력서에 첨부했는데 다음과 같은 피드백을 받았습니다. 
 
-![](./%ED%94%BC%EB%93%9C%EB%B0%B1.png)
+![](./1.png)
 
 ㅇㅈ 합니다...
 
 먼저, 깨지는 테스트들을 수정하고 aws s3에 새롭게 배포하는 것으로 계획을 잡고 프로젝트를 수정했습니다. 깨지는 테스트는 하단에 QuestionSlider 컴포넌트 관한 테스트였는데 쿼리 시 getByAltText를 사용해야 하는데 getByLabelText를 사용해서 컴포넌트를 못 찾아서 발생하는 문제였습니다. 간단한 문제라 금방 해결할 수 있었습니다. 또 마지막 질문이 나오는 화면에서는 버튼이 등산 코스 보러 가기! 버튼으로 변경되는데 이 부분에 대한 테스트 코드가 없어서 추가하고, QuestionSlider의 테스트 커버리지가 100%를 채울 수 있도록 했습니다.
 
-![](./%08questionSliderTest.png)
+![](./questionSliderTest.png)
 
 다음으로 aws에 배포하기 위해 aws s3 버킷 설정과 github actions의 워크 플로우에서 해당 버킷에 접근할 수 있도록 iam에서 access key를 받아 github actions 환경 변수로 설정을 해주었습니다. 이전에 현재 진행하고 있는 프로젝트에서 동적 배포 자동화를 위해 한 번 경험했던 과정이라 워크 플로우를 생성하고, 버킷에 업로드하는 과정은 쉽게 할 수 있을 거라 생각했습니다.
 
@@ -24,7 +24,7 @@ draft: false
 
 ![](./installError.png)
 <p align="center">
-<img src="./에에.jpeg" margin="0 auto">
+<img src="./3.jpeg" margin="0 auto">
 </p>
 
 롸? npm install 부터 에러가 났습니다. 하핳
@@ -35,13 +35,13 @@ react-naver-map@"0.0.13"을 사용했었는데 해당 패키지가 의존하는 
 
 일단은 npm이 친절하게 문제를 해결할 방법을 알려주기 때문에 아래 두 가지 방법중에 하나를 선택해서 워크 플로우에 넣어 줬습니다. 
 
-![](./%EC%B9%9C%EC%A0%88%ED%95%9C%20npm.png)
+![](./npm--force.png)
 
 첫 번째 `--force`는 다른 의존 패키지들을 설치해서 충돌을 우회하는 옵션이고, 두 번째 `--legacy-peer-deps` 의존 관계를 완전히 무시해서 충돌을 무시하는 옵션이라고 합니다. 
 
 저는 이전에도 현재 버전들로 이상 없이 잘 돌아갔기 때문에 두 번째 옵션을 택했습니다. 
 
-![](./installError%ED%95%B4%EA%B2%B0.png)
+![](./installError2.png)
 
 이후에는 저번에 했던 것처럼 build하고 빌드 결과물을 s3에 업로드 step을 무난하게 진행할 수 있었습니다.
 
@@ -56,7 +56,7 @@ run : MAP_CLIENT_ID=${{secrets.MAP_KEY}} npx webpack --config webpack.config.js
 
 이렇게 변경한 후에 지도가 잘 나오긴 했으나, 다른 문제가 발행했습니다.  
 
-![](./%EC%9D%B4%EB%A7%88%EC%A7%9A.jpeg)
+![](./2.jpeg)
 
 이거 정말 산 넘어 산...
 
@@ -76,7 +76,7 @@ run : MAP_CLIENT_ID=${{secrets.MAP_KEY}} npx webpack --config webpack.config.js
 
 아으 어쩔 수 없이 gpx 파일 이름을 영어로 다 변경해줍니다...
 
-![](./%EC%A0%95%EC%83%81.png)
+![](./success.png)
 
 넘고 넘어서 드디어 배포 성공...!
 
@@ -115,7 +115,7 @@ npm install --save-dev html-webpack-plugin
 ```
 
 <p align="center">
-<img src="./build결과물.png" margin="0 auto">
+<img src="./build-result.png" margin="0 auto">
 </p>
 
 다음은 css 파일 차례입니다. css도 마찬가지로 웹팩이 알아먹을 수 있도록 로더를 설치하고, 웹팩 설정 파일에 설정해 줍니다. 추가로 css 파일은 웹팩에서 사용할 수 있는 모듈로 변경한 후에 모듈에서 읽은 CSS를 DOM에 주입해 주기 위해 style-loader도 같이 설정해 주어야 합니다.
