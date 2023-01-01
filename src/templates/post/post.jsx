@@ -32,7 +32,6 @@ const Post = ({ data }) => {
           description={excerpt}
           path={path}
           keywords={['hyejineee', 'Backpacking', 'android developer', 'Javascript', 'ReactJS', 'Android', 'Gatsby', 'Kotlin', 'technology']}
-
         />
         <Header />
         <SidebarWrapper>
