@@ -1,6 +1,6 @@
 ---
 title: "[Deploy] Nextjs 프로젝트 배포 자동화 파이프라인 만들기 - 1"
-path: blog/frontend/deploy-1
+path: blog/frontend/nextjs-project-deploy-1
 tags: [Frontend]
 cover: "./cover.png"
 date: 2022-12-24
