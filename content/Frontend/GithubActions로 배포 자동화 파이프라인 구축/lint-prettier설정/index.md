@@ -5,6 +5,8 @@ tags: [Frontend]
 cover: "./cover.png"
 date: 2022-12-24
 excerpt: GithubActions + AWS + Docker로 정적 배포, 동적 배포를 자동화해보자!
+draft : true
+
 ---
 
 참고 
