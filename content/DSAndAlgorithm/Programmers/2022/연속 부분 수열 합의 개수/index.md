@@ -1,8 +1,8 @@
 ---
-title: "[문제풀이] 연속 부분 수열 합의 개수 "
+title: '[문제풀이] 연속 부분 수열 합의 개수 '
 path: blog/daily-algorithm-221103-3
 tags: [DSAndAlgorithm]
-cover:  "./cover.png"
+cover: './cover.png'
 date: 2022-11-03
 excerpt: 프로그래머스 -연속 부분 수열 합의 개수
 ---
@@ -21,30 +21,30 @@ excerpt: 프로그래머스 -연속 부분 수열 합의 개수
 ### 2.계획
 
 - 1부터 배열의 길이 만큼 순회하면서 부분 수열을 구합니다.
-    - 길이가 i인 부분 수열의 합을 구하고 앞에 있는 요소를 다시 배열의 뒤로 보냅니다.
-    - 다시 head 부분이 앞으로 오면 부분 수열의 합을 구하는 과정을 멈추고 i를 1 증가시켜 다음 부분 수열을 구합니다.
+  - 길이가 i인 부분 수열의 합을 구하고 앞에 있는 요소를 다시 배열의 뒤로 보냅니다.
+  - 다시 head 부분이 앞으로 오면 부분 수열의 합을 구하는 과정을 멈추고 i를 1 증가시켜 다음 부분 수열을 구합니다.
 
 ### 3. 실행
 
 ```jsx
-const solution = (elements) => {
-  const arr = elements.map((e, i) => ({ head: i === 0, e: e }));
-  const result = new Set();
+const solution = elements => {
+  const arr = elements.map((e, i) => ({ head: i === 0, e: e }))
+  const result = new Set()
 
   for (let i = 1; i <= elements.length; i++) {
     while (true) {
-      let sum = 0;
+      let sum = 0
       for (let j = 0; j < i; j++) {
-        sum += arr[j].e;
+        sum += arr[j].e
       }
-      result.add(sum);
-      arr.push(arr.shift());
-      if (arr[0].head) break;
+      result.add(sum)
+      arr.push(arr.shift())
+      if (arr[0].head) break
     }
   }
 
-  return result.size;
-};
+  return result.size
+}
 ```
 
 ### 4. 회고

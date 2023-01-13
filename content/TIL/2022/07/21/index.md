@@ -1,8 +1,8 @@
 ---
-title: "20220721 TIL"
+title: '20220721 TIL'
 path: blog/TIL/2022-07-21
 tags: [TIL]
-cover: "./TIL.png"
+cover: './TIL.png'
 date: 2022-07-21
 excerpt: 2022년 7월 21일 TIL
 ---
@@ -26,26 +26,26 @@ excerpt: 2022년 7월 21일 TIL
 ## Findings.
 
 - state lifting
-    - [https://ko.reactjs.org/docs/lifting-state-up.html#lessons-learned](https://ko.reactjs.org/docs/lifting-state-up.html#lessons-learned)
-    - 리액트는 단방향으로 데이터가 흐르기 때문에 형제 컴포넌트 간의 데이터 공유를 하려면 부모 컴포넌트(가까운 공통 조상)로 state를 끌어 올린 다음에 사용해야 합니다.
-        - 리액트 애플리케이션 안에서 변경이 일어나는 데이터에 대해서 “진리의 원천(source of truth)“을 하나만 두어야 한다고 합니다.
-        - 단일한 진리의 원천
-            - 모든 데이터 요소를 하나의 장소에서 관리되거나 수정되는 데이터 연관 모델
-            - 단일 출처를 통해 데이터를 생성하고 편집하고 접근하므로 데이터의 정합성을 지키고 잘못된 데이터의 유통을 방지하고 모두가 동일한 데이터를 참고하도록 합니다.
-            - [https://www.lesstif.com/software-engineering/ssot-single-source-of-truth-128122887.html](https://www.lesstif.com/software-engineering/ssot-single-source-of-truth-128122887.html)
-            - [https://jordy-torvalds.tistory.com/69](https://jordy-torvalds.tistory.com/69)
-        - 데이터를 부모 컴포넌트 한 곳에서 관리하여 버그가 존재할 수 있는 범위를 줄입니다.
-    - 자식 컴포넌트에서 의존하는 구체적인 것을 부모 컴포넌트로 끌어올려 자식 컴포넌트가 재사용하기 쉽도록 만듭니다.
-    - 근데 이렇게 다 부모 컴포넌트로 올리면 부모 컴포넌트가 너무 복잡해질 것 같은데 이런 문제는 어떻게 해결하는지 궁금합니다. 이것도 리덕스로 해결하나???
-    - 리덕스 다시 공부해야겠습니다.
+  - [https://ko.reactjs.org/docs/lifting-state-up.html#lessons-learned](https://ko.reactjs.org/docs/lifting-state-up.html#lessons-learned)
+  - 리액트는 단방향으로 데이터가 흐르기 때문에 형제 컴포넌트 간의 데이터 공유를 하려면 부모 컴포넌트(가까운 공통 조상)로 state를 끌어 올린 다음에 사용해야 합니다.
+    - 리액트 애플리케이션 안에서 변경이 일어나는 데이터에 대해서 “진리의 원천(source of truth)“을 하나만 두어야 한다고 합니다.
+    - 단일한 진리의 원천
+      - 모든 데이터 요소를 하나의 장소에서 관리되거나 수정되는 데이터 연관 모델
+      - 단일 출처를 통해 데이터를 생성하고 편집하고 접근하므로 데이터의 정합성을 지키고 잘못된 데이터의 유통을 방지하고 모두가 동일한 데이터를 참고하도록 합니다.
+      - [https://www.lesstif.com/software-engineering/ssot-single-source-of-truth-128122887.html](https://www.lesstif.com/software-engineering/ssot-single-source-of-truth-128122887.html)
+      - [https://jordy-torvalds.tistory.com/69](https://jordy-torvalds.tistory.com/69)
+    - 데이터를 부모 컴포넌트 한 곳에서 관리하여 버그가 존재할 수 있는 범위를 줄입니다.
+  - 자식 컴포넌트에서 의존하는 구체적인 것을 부모 컴포넌트로 끌어올려 자식 컴포넌트가 재사용하기 쉽도록 만듭니다.
+  - 근데 이렇게 다 부모 컴포넌트로 올리면 부모 컴포넌트가 너무 복잡해질 것 같은데 이런 문제는 어떻게 해결하는지 궁금합니다. 이것도 리덕스로 해결하나???
+  - 리덕스 다시 공부해야겠습니다.
 - 자바스크립트 깊은 복사, 얕은 복사, 스프레드 연산자
-    - 스프레드 연산자는 주소값을 다르게 해서 객체를 복사한 값을 만듭니다.
-    - 스프레드 연산자를 사용해서 state를 효율적으로 관리할 수 있습니다.
-        - 예전에 이렇게 state를 구성했던 것 같기도 합니다…
-    - 깊은 복사, 얕은 복사
-        - 깊은 복사 : 메모리에 새로운 데이터 할당
-        - 얕은 복사 : 메모리 주소만 참조합니다. 중첩된 자료구조를 복사할 경우 복사한 객체 내부에 있는 중첩 객체의 데이터를 변경할 경우 원본 객체도 같이 변경되는 문제가 발생합니다.
-    - 자바스크립트 데이터 메모리 관리 하는 것 좀 제대로 이해하고 싶습니다. 설명 들으면 끄덕끄덕 하는데 막상 설명하려고 하면 말문이 턱턱 막힙니다.
+  - 스프레드 연산자는 주소값을 다르게 해서 객체를 복사한 값을 만듭니다.
+  - 스프레드 연산자를 사용해서 state를 효율적으로 관리할 수 있습니다.
+    - 예전에 이렇게 state를 구성했던 것 같기도 합니다…
+  - 깊은 복사, 얕은 복사
+    - 깊은 복사 : 메모리에 새로운 데이터 할당
+    - 얕은 복사 : 메모리 주소만 참조합니다. 중첩된 자료구조를 복사할 경우 복사한 객체 내부에 있는 중첩 객체의 데이터를 변경할 경우 원본 객체도 같이 변경되는 문제가 발생합니다.
+  - 자바스크립트 데이터 메모리 관리 하는 것 좀 제대로 이해하고 싶습니다. 설명 들으면 끄덕끄덕 하는데 막상 설명하려고 하면 말문이 턱턱 막힙니다.
 
 ## Future Action Plans.
 

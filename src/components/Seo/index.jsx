@@ -1,11 +1,11 @@
 /* Vendor imports */
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { Helmet } from 'react-helmet'
+import { StaticQuery, graphql } from 'gatsby'
 /* App imports */
-import Config from '../../../config';
-import Utils from '../../utils/pageUtils';
+import Config from '../../../config'
+import Utils from '../../utils/pageUtils'
 
 const detailsQuery = graphql`
   query DefaultSEOQuery {
@@ -17,7 +17,7 @@ const detailsQuery = graphql`
       }
     }
   }
-`;
+`
 
 function SEO({
   title,
@@ -33,19 +33,20 @@ function SEO({
   return (
     <StaticQuery
       query={detailsQuery}
-      render={(data) => {
-        const metaKeywords = keywords && keywords.length > 0
-          ? { name: 'keywords', content: keywords.join(', ') }
-          : [];
+      render={data => {
+        const metaKeywords =
+          keywords && keywords.length > 0
+            ? { name: 'keywords', content: keywords.join(', ') }
+            : []
         const pageUrl = Utils.resolvePageUrl(
           Config.siteUrl,
           Config.pathPrefix,
-          path,
-        );
+          path
+        )
         const metaImageUrl = Utils.resolveUrl(
           Config.siteUrl,
-          imageUrl || data.file.childImageSharp.fixed.src,
-        );
+          imageUrl || data.file.childImageSharp.fixed.src
+        )
 
         return (
           <Helmet
@@ -81,22 +82,22 @@ function SEO({
               // Translated versions of page
               .concat(
                 translations
-                  ? translations.map((obj) => ({
-                    rel: 'alternate',
-                    hreflang: obj.hreflang,
-                    href: Utils.resolvePageUrl(
-                      Config.siteUrl,
-                      Config.pathPrefix,
-                      obj.path,
-                    ),
-                  }))
-                  : [],
+                  ? translations.map(obj => ({
+                      rel: 'alternate',
+                      hreflang: obj.hreflang,
+                      href: Utils.resolvePageUrl(
+                        Config.siteUrl,
+                        Config.pathPrefix,
+                        obj.path
+                      ),
+                    }))
+                  : []
               )}
           />
-        );
+        )
       }}
     />
-  );
+  )
 }
 
 SEO.propTypes = {
@@ -111,15 +112,15 @@ SEO.propTypes = {
     PropTypes.shape({
       hreflang: PropTypes.string.isRequired,
       path: PropTypes.string.isRequired,
-    }),
+    })
   ),
   meta: PropTypes.arrayOf(
     PropTypes.shape({
       property: PropTypes.string.isRequired,
       content: PropTypes.string.isRequired,
-    }),
+    })
   ),
-};
+}
 
 SEO.defaultProps = {
   lang: 'en_US',
@@ -128,6 +129,6 @@ SEO.defaultProps = {
   keywords: [],
   translations: [],
   meta: [],
-};
+}
 
-export default SEO;
+export default SEO

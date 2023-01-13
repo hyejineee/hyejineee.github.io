@@ -1,16 +1,16 @@
 ---
-title: "[문제풀이] 순위 "
+title: '[문제풀이] 순위 '
 path: blog/daily-programmers-ranking
 tags: [DSAndAlgorithm]
-cover:  "./cover.png"
+cover: './cover.png'
 date: 2022-01-28
-excerpt: 프로그래머스 - 순위 
+excerpt: 프로그래머스 - 순위
 draft: false
 ---
 
+## 순위
 
-## 순위 
-* [순위 - 프로그래머스](https://programmers.co.kr/learn/courses/30/lessons/49191#qna)
+- [순위 - 프로그래머스](https://programmers.co.kr/learn/courses/30/lessons/49191#qna)
 
 ### 구하고자 하는 것은 무엇인가?
 
@@ -25,8 +25,9 @@ draft: false
 ### 2.계획
 
 - 플로이드-워셜 알고리즘을 사용합니다.
+
 1. results를 바탕으로 선수의 승패를 기록하는 board를 만듭니다.
-2. 플로이드 - 워셜 알고리즘을 수행하여 선수의 승패를 구합니다. 
+2. 플로이드 - 워셜 알고리즘을 수행하여 선수의 승패를 구합니다.
 3. 자기 자신을 제외하고 승패가 모두 결정난 행의 개수를 구하여 리턴합니다.
 
 ### 3. 실행

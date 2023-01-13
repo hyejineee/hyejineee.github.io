@@ -1,8 +1,8 @@
 ---
-title: "20220720 TIL"
+title: '20220720 TIL'
 path: blog/TIL/2022-07-20
 tags: [TIL]
-cover: "./TIL.png"
+cover: './TIL.png'
 date: 2022-07-20
 excerpt: 2022년 7월 20일 TIL
 ---

@@ -1,16 +1,16 @@
 ---
-title: "[문제풀이] 큰 수 만들기 "
+title: '[문제풀이] 큰 수 만들기 '
 path: blog/daily-programmers-make-big-number
 tags: [DSAndAlgorithm]
-cover:  "./cover.png"
+cover: './cover.png'
 date: 2022-02-09
-excerpt: 프로그래머스 - 큰 수 만들기 
+excerpt: 프로그래머스 - 큰 수 만들기
 draft: false
 ---
 
+## 큰 수 만들기
 
-## 큰 수 만들기 
-* [큰 수 만들기 - 프로그래머스](https://programmers.co.kr/learn/courses/30/lessons/42883)
+- [큰 수 만들기 - 프로그래머스](https://programmers.co.kr/learn/courses/30/lessons/42883)
 
 ### 구하고자 하는 것은 무엇인가?
 
@@ -24,12 +24,13 @@ draft: false
 ### 2.계획
 
 - 숫자를 만들 수 있는 후보 수들 중에서 가장 큰 값을 찾으면서 수를 만듭니다.
+
 1.  number.size - k의 숫자를 만들 수 있는 후보의 수를 찾습니다.
     - 숫자의 순서를 변경할 수 없기 때문에 number.size - k길이 만큼 배열을 갖을 수 있는 인덱스의 요소까지 후보 수 입니다.
-2. 후보 수 중 가장 큰 값을 찾아 결과값에 저장합니다.
-3. 가장 큰 값의 인덱스의 다음 인덱스 부터 다시 남은 자리수를 만들 수 있는 후보 수를 찾습니다. 
-4. 2번의 과정을 반복합니다.
-5. 3번과 4번을 반복하면서 제일 큰 수를 만듭니다.
+2.  후보 수 중 가장 큰 값을 찾아 결과값에 저장합니다.
+3.  가장 큰 값의 인덱스의 다음 인덱스 부터 다시 남은 자리수를 만들 수 있는 후보 수를 찾습니다.
+4.  2번의 과정을 반복합니다.
+5.  3번과 4번을 반복하면서 제일 큰 수를 만듭니다.
 
 ### 3. 실행
 
@@ -39,7 +40,7 @@ fun makeBigNumber(number: String, k: Int): String {
     val toNumber = number.map { Character.getNumericValue(it) }
     val result = mutableListOf<Int>()
     var startIndex = 0
-    
+
     for (i in number.length - k downTo 1) {
         val available = toNumber.subList(startIndex, number.length - i + 1)
 

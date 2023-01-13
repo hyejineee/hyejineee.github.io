@@ -1,8 +1,8 @@
 ---
-title: "20210531 TIL"
+title: '20210531 TIL'
 path: blog/TIL/20220128
 tags: [TIL]
-cover:  "./tilbanner.jpg"
+cover: './tilbanner.jpg'
 date: 2022-01-28
 excerpt: 다시 fire
 ---

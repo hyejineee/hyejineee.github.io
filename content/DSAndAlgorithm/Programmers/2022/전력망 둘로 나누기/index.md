@@ -1,8 +1,8 @@
 ---
-title: "[문제풀이] 전력망 둘로 나누기 "
+title: '[문제풀이] 전력망 둘로 나누기 '
 path: blog/daily-algorithm-221106-1
 tags: [DSAndAlgorithm]
-cover:  "./cover.png"
+cover: './cover.png'
 date: 2022-11-06
 excerpt: 프로그래머스 - 전력망 둘로 나누기
 ---

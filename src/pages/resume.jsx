@@ -1,33 +1,33 @@
-import React, { Component } from 'react';
-import { Document, Page } from 'react-pdf';
-import { Button, Row, Col } from 'antd';
-import SEO from '../components/Seo';
+import React, { Component } from 'react'
+import { Document, Page } from 'react-pdf'
+import { Button, Row, Col } from 'antd'
+import SEO from '../components/Seo'
 
 export default class Resume extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       numPages: null,
       pageNumber: 1,
-    };
-    this.onDocumentLoadSuccess = this.onDocumentLoadSuccess.bind(this);
+    }
+    this.onDocumentLoadSuccess = this.onDocumentLoadSuccess.bind(this)
   }
 
   onDocumentLoadSuccess({ numPages }) {
-    this.setState({ numPages });
+    this.setState({ numPages })
   }
 
   render() {
-    const { pageNumber, numPages } = this.state;
+    const { pageNumber, numPages } = this.state
     const pageToggle = (pageNum, direction) => {
       if (direction === 'next' && pageNum < 3) {
-        this.setState({ pageNumber: pageNum + 1 });
+        this.setState({ pageNumber: pageNum + 1 })
       } else if (direction === 'prev' && pageNum > 1) {
-        this.setState({ pageNumber: pageNum - 1 });
+        this.setState({ pageNumber: pageNum - 1 })
       }
 
-      return 1;
-    };
+      return 1
+    }
 
     return (
       <div>
@@ -45,9 +45,11 @@ export default class Resume extends Component {
           <Page pageNumber={pageNumber} />
         </Document>
         <Row justify="center" style={{ background: 'lightslategray' }}>
-
           <Col span={2}>
-            <Button type="primary" onClick={() => pageToggle(pageNumber, 'prev')}>
+            <Button
+              type="primary"
+              onClick={() => pageToggle(pageNumber, 'prev')}
+            >
               Previous Page
             </Button>
           </Col>
@@ -56,12 +58,15 @@ export default class Resume extends Component {
             <p>{`Page ${pageNumber} of ${numPages}`}</p>
           </Col>
           <Col span={2}>
-            <Button type="primary" onClick={() => pageToggle(pageNumber, 'next')}>
+            <Button
+              type="primary"
+              onClick={() => pageToggle(pageNumber, 'next')}
+            >
               Next Page
             </Button>
           </Col>
         </Row>
       </div>
-    );
+    )
   }
 }

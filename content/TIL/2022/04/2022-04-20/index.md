@@ -1,11 +1,12 @@
 ---
-title: "20220420 TIL"
+title: '20220420 TIL'
 path: blog/TIL/2022-04-20
 tags: [TIL]
-cover:  "./TIL.png"
+cover: './TIL.png'
 date: 2022-04-20
 excerpt: 2022년 4월 20일 TIL
 ---
+
 ## Facts.
 
 - 자소서, 경신스 스터디
@@ -24,8 +25,8 @@ excerpt: 2022년 4월 20일 TIL
 
 - 코루틴의 시작은 스코프 빌더이다.
 - `suspend` 는 코루틴이 아니다.
-    - `launch{}` 코루틴 안에서만 사용할 수 있다.
-    - suspend 함수 안에서 launch{}를 그냥 사용할 수 없다.
+  - `launch{}` 코루틴 안에서만 사용할 수 있다.
+  - suspend 함수 안에서 launch{}를 그냥 사용할 수 없다.
 - 코루틴의 delay와 Thread.sleep의 차이 → 양보여부
 - 코루틴 내부에서 isActive를 사용하여 완전하게 cancel되는 코루틴을 만들 수 있다.
 

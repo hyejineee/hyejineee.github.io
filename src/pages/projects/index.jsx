@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
-import { Layout, Row, Col } from 'antd';
-import Header from '../../components/PageLayout/Header';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
+import { Layout, Row, Col } from 'antd'
+import Header from '../../components/PageLayout/Header'
 
-import SidebarWrapper from '../../components/PageLayout/Sidebar';
-import PostCard from '../../components/PostCard';
-import SEO from '../../components/Seo';
+import SidebarWrapper from '../../components/PageLayout/Sidebar'
+import PostCard from '../../components/PostCard'
+import SEO from '../../components/Seo'
 
 const Project = ({ data }) => (
   <Layout className="outerPadding">
@@ -22,19 +22,18 @@ const Project = ({ data }) => (
           <h1 className="titleSeparate">Projects</h1>
         </div>
         <Row gutter={[20, 20]}>
-          {
-            data.allMarkdownRemark && data.allMarkdownRemark.edges.map((val, key) => (
+          {data.allMarkdownRemark &&
+            data.allMarkdownRemark.edges.map((val, key) => (
               // eslint-disable-next-line react/no-array-index-key
               <Col key={key} xs={24} sm={24} md={12} lg={8}>
                 <PostCard data={val} />
               </Col>
-            ))
-          }
+            ))}
         </Row>
       </SidebarWrapper>
     </Layout>
   </Layout>
-);
+)
 
 Project.propTypes = {
   data: PropTypes.shape({
@@ -42,13 +41,17 @@ Project.propTypes = {
       edges: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
     }).isRequired,
   }).isRequired,
-};
+}
 
 export const query = graphql`
   {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "/index.md$/" }, fields: {draft: {eq: false}}, frontmatter: {category: {eq: "project"}}}
+      filter: {
+        fileAbsolutePath: { regex: "/index.md$/" }
+        fields: { draft: { eq: false } }
+        frontmatter: { category: { eq: "project" } }
+      }
     ) {
       edges {
         node {
@@ -70,6 +73,6 @@ export const query = graphql`
       }
     }
   }
-`;
+`
 
-export default Project;
+export default Project

@@ -1,31 +1,33 @@
 ---
-title: "[문제풀이] 트리 순회"
+title: '[문제풀이] 트리 순회'
 path: blog/ds-circuit-tree
 tags: [DSAndAlgorithm]
-cover:  "./cover.png"
+cover: './cover.png'
 date: 2021-08-04
 excerpt: 백준 알고리즘 1991 트리순회
 draft: false
 ---
 
-## 트리 순회 
-* [1991번 트리 순회](https://www.acmicpc.net/problem/1991)
+## 트리 순회
 
-### 1. 이해 
-* 전위 순회(pre order) : 루트-> 왼쪽 -> 오른쪽 방향으로 트리를 순회 
-![](./pre-order.jpeg)
-* 중위 순회(in order) : 왼쪽 -> 루트 -> 오른쪽 방향으로 트리를 순회 
-![](./in-order.jpeg)
-* 후위 순회(post order) : 왼쪽 -> 오른쪽 -> 루트 방향으로 트리를 순회
-![](./post-order.jpeg)
+- [1991번 트리 순회](https://www.acmicpc.net/problem/1991)
+
+### 1. 이해
+
+- 전위 순회(pre order) : 루트-> 왼쪽 -> 오른쪽 방향으로 트리를 순회
+  ![](./pre-order.jpeg)
+- 중위 순회(in order) : 왼쪽 -> 루트 -> 오른쪽 방향으로 트리를 순회
+  ![](./in-order.jpeg)
+- 후위 순회(post order) : 왼쪽 -> 오른쪽 -> 루트 방향으로 트리를 순회
+  ![](./post-order.jpeg)
 
 ### 2. 계획
 
-- 트리를 map 형태로 구현한다. 
+- 트리를 map 형태로 구현한다.
 - 구현한 트리에 맞춰서 탐색
 
-
 ### 3. 실행
+
 ```kotlin
     fun main() {
 

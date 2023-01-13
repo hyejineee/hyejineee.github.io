@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
-import { Link } from 'gatsby';
-import { Layout } from 'antd';
-import 'font-awesome/less/font-awesome.less';
-import style from './header.module.less';
-import '../../../styles/global.less';
-import { useWindowSize } from '../../../utils/hooks';
+import React, { useState } from 'react'
+import { Link } from 'gatsby'
+import { Layout } from 'antd'
+import 'font-awesome/less/font-awesome.less'
+import style from './header.module.less'
+import '../../../styles/global.less'
+import { useWindowSize } from '../../../utils/hooks'
 
 export default () => {
-  const [menu, setMenu] = useState(false);
+  const [menu, setMenu] = useState(false)
 
-  const [width] = useWindowSize();
+  const [width] = useWindowSize()
   const toggleMenu = () => {
     if (width !== 0 && width <= 768) {
       if (menu) {
-        setMenu(false);
+        setMenu(false)
       } else {
-        setMenu(true);
+        setMenu(true)
       }
     }
-  };
+  }
   return (
     <>
       <div
@@ -92,4 +92,4 @@ export default () => {
       </Layout>
     </>
   )
-};
+}

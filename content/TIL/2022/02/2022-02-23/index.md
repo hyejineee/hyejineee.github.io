@@ -1,8 +1,8 @@
 ---
-title: "20220223 TIL"
+title: '20220223 TIL'
 path: blog/TIL/2022-02-23
 tags: [TIL]
-cover:  "./TIL.png"
+cover: './TIL.png'
 date: 2022-02-23
 excerpt: 2022년 2월 23일 TIL
 ---
@@ -10,12 +10,12 @@ excerpt: 2022년 2월 23일 TIL
 ## Facts.
 
 - 코딩테스트 연습을 했습니다.
-    - 프로그래머스 베스트 앨범 문제를 풀었습니다.
-    - 이것이 코딩테스트다 구현 문제, bfs/dfs 문제를 풀었습니다.
+  - 프로그래머스 베스트 앨범 문제를 풀었습니다.
+  - 이것이 코딩테스트다 구현 문제, bfs/dfs 문제를 풀었습니다.
 - 안드로이드에서 rx를 사용할 때 behavior과 publish가 어떻게 다른지 상황을 설정하고 비교했습니다.
 - rx compose연산자에 대해서 공부했습니다.
 - 안드로이드 면접 질문 5개를 정리했습니다.
-    - 5개를 정리하면서 OOM killer, LMK, Handler, Looper, ANR에 대해서 공부했습니다.
+  - 5개를 정리하면서 OOM killer, LMK, Handler, Looper, ANR에 대해서 공부했습니다.
 - 경험 정리에 필요한 작업을 했습니다.
 
 ## Feelings.

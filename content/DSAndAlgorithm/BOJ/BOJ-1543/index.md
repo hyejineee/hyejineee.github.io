@@ -1,26 +1,27 @@
 ---
-title: "[문제풀이] 문서 검색 "
+title: '[문제풀이] 문서 검색 '
 path: blog/daily-BOJ-1543
 tags: [DSAndAlgorithm]
-cover:  "./cover.png"
+cover: './cover.png'
 date: 2021-10-12
-excerpt: 백준 - 문서 검색 
+excerpt: 백준 - 문서 검색
 draft: false
 ---
 
+## 문서 검색
 
-## 문서 검색 
-* [문서 검색   - 백준](https://www.acmicpc.net/problem/1543)
+- [문서 검색 - 백준](https://www.acmicpc.net/problem/1543)
 
-### 0. 목표 
+### 0. 목표
+
 **구하고자 하는 것은 무엇인가?**
+
 - 어떤 단어가 문서에 총 몇번 등장하는 지 개수를 구합니다.
 
-### 1. 이해 
+### 1. 이해
 
 - 겹쳐진 단어는 카운트하지 않습니다.
 - 문서와 단어는 알패벳 소문자와 공백으로 이루어져 있습니다.
-
 
 ### 2. 계획
 
@@ -30,6 +31,7 @@ draft: false
 - 문서의 길이가 단어의 길이보다 크커나 같을 때까지 반복합니다.
 
 ### 3. 실행
+
 ```kotlin
     fun main() {
         with(BufferedReader(InputStreamReader(System.`in`))) {
@@ -56,7 +58,6 @@ draft: false
     }
 ```
 
-### 4. 회고 
+### 4. 회고
 
 - 쉽게 풀 수 있었습니다.
-

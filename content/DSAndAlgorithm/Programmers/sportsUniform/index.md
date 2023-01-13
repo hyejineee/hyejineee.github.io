@@ -1,16 +1,16 @@
 ---
-title: "[문제풀이] 체육복 "
+title: '[문제풀이] 체육복 '
 path: blog/daily-programmers-sports-uniform
 tags: [DSAndAlgorithm]
-cover:  "./cover.png"
+cover: './cover.png'
 date: 2022-02-08
-excerpt: 프로그래머스 - 체육복 
+excerpt: 프로그래머스 - 체육복
 draft: false
 ---
 
+## 체육복
 
-## 체육복 
-* [체육복 - 프로그래머스](https://programmers.co.kr/learn/courses/30/lessons/42862)
+- [체육복 - 프로그래머스](https://programmers.co.kr/learn/courses/30/lessons/42862)
 
 ### 구하고자 하는 것은 무엇인가?
 
@@ -26,20 +26,20 @@ draft: false
 
 1. 각각 lost배열과 reserve배열에서 두 배열의 교집합이 되는 요소를 제거하고 정렬합니다.
 2. 체육복을 잃어버린 학생의 배열의 순회하면서 체육복을 빌릴 수 있는지 확인합니다.
-    1. 앞번호 친구에게 빌릴 수 있는 경우 여벌의 체육복이 있는 학생 배열에서 해당 번호를 삭제합니다.
-    2. 뒷번호 친구에게 빌릴 수 있는 경우 여벌의 체육복이 있는 학생 배열에서 해당 번호를 삭제합니다.
-    3. 수업을 들을 수 있는 친구의 수(count)를 1증가합니다.
+   1. 앞번호 친구에게 빌릴 수 있는 경우 여벌의 체육복이 있는 학생 배열에서 해당 번호를 삭제합니다.
+   2. 뒷번호 친구에게 빌릴 수 있는 경우 여벌의 체육복이 있는 학생 배열에서 해당 번호를 삭제합니다.
+   3. 수업을 들을 수 있는 친구의 수(count)를 1증가합니다.
 
 ### 3. 실행
 
 ```kotlin
 fun solution(n: Int, lost: IntArray, reserve: IntArray): Int {
-    
+
         val leftover = reserve.filter{ it !in lost}.sorted().toMutableList()
         val leftLost = lost.filter{it !in reserve}.sorted()
-        
+
         var count = n - leftLost.size
-        
+
         leftLost.forEach{
             if(it -1 in leftover){
                 leftover.remove(it-1)
@@ -49,7 +49,7 @@ fun solution(n: Int, lost: IntArray, reserve: IntArray): Int {
                 count++
             }
         }
-      
+
         return count
     }
 ```

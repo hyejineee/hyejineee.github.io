@@ -1,15 +1,17 @@
 ---
-title: "[문제풀이] 여행경로 "
+title: '[문제풀이] 여행경로 '
 path: blog/daily-programmers-travel-route
 tags: [DSAndAlgorithm]
-cover:  "./cover.png"
+cover: './cover.png'
 date: 2022-01-26
-excerpt: 프로그래머스 - 여행경로 
+excerpt: 프로그래머스 - 여행경로
 draft: false
 ---
 
-## 여행경로 
-* [여행경로 - 프로그래머스](https://programmers.co.kr/learn/courses/30/lessons/43164)
+## 여행경로
+
+- [여행경로 - 프로그래머스](https://programmers.co.kr/learn/courses/30/lessons/43164)
+
 ### 0. 목표
 
 ### 구하고자 하는 것은 무엇인가?
@@ -28,7 +30,7 @@ draft: false
 
 1. tickets정보를 통해서 연결할 수 있는 공항 정보를 나타내는 그래프를 만듭니다.
 2. dfs를 통해 그래프를 탐색합니다.
-3. 탐색시 departure-destination 항공권이 아직 방문하지 않은 항공권이라면 check를 하고 destination에 대해서 dfs를 수행합니다. 
+3. 탐색시 departure-destination 항공권이 아직 방문하지 않은 항공권이라면 check를 하고 destination에 대해서 dfs를 수행합니다.
 
 ### 3. 실행
 

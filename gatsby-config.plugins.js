@@ -1,4 +1,4 @@
-const config = require('./config');
+const config = require('./config')
 
 module.exports = [
   'gatsby-plugin-react-helmet',
@@ -111,4 +111,4 @@ module.exports = [
       showSpinner: true,
     },
   },
-];
+]

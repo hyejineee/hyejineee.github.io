@@ -1,8 +1,8 @@
 ---
-title: "20220715 TIL"
+title: '20220715 TIL'
 path: blog/TIL/2022-07-15
 tags: [TIL]
-cover: "./TIL.png"
+cover: './TIL.png'
 date: 2022-07-15
 excerpt: 2022년 7월 15일 TIL
 ---
@@ -39,7 +39,7 @@ excerpt: 2022년 7월 15일 TIL
       handleClick: () => void;
       isActive: boolean;
       isEdit: boolean;
-      defaultValue?: Pick<IQuery, "fetchBoard">;
+      defaultValue?: Pick<IQuery, 'fetchBoard'>;
     }
     ```
   - 프로퍼티에 ?을 붙여서 nullable하게 만들 수 있습니다.
@@ -69,6 +69,7 @@ excerpt: 2022년 7월 15일 TIL
         - [https://nuhends.tistory.com/115](https://nuhends.tistory.com/115)
         - 이 문제는 event의 target이 HTMLInputElement를 확장하지 않아서 발생한 문제라고 합니다.
 - 타입스크립트와 graphql
+
   - graphql-codegen을 사용하여 API통신시 사용하는 데이터의 타입을 자동으로 생성했습니다.
   - graphql-codegen을 사용하기 위해 cli와 우리는 타입스크립트에서 사용하기 때문에 @graphql-codegen/typescript를 설치해줍니다.
   - 모듈을 설치하고 codegen.yml 파일에 설정값을 입력합니다. 설정값은 다음과 같습니다.
@@ -89,7 +90,9 @@ excerpt: 2022년 7월 15일 TIL
       - config
         - generate 할 때 옵션 → 예 :) prefix지정
   - 타입스크립트 유틸리티 타입
+
     - 기존에 정의된 타입에서 특정 프로퍼티만 뽑아서 또는 제외하고 새로운 타입을 만들 수 있다고 합니다.
+
       ```jsx
       interface IProfile {
         name: string;
@@ -99,10 +102,10 @@ excerpt: 2022년 7월 15일 TIL
       }
 
       // Pick 타입 -> 프로퍼티 선택
-      type IProfile2 = Pick<IProfile, "name" | "age">
+      type IProfile2 = Pick<IProfile, 'name' | 'age'>
 
       // Omit 타입 -> 프로퍼티 제외
-      type IProfile3 = Omit<IProfile, "school">
+      type IProfile3 = Omit<IProfile, 'school'>
 
       // Partial 타입 -> 모든 프로퍼티를 Nullable
       type IProfile4 = Partial<IProfile>
@@ -111,15 +114,18 @@ excerpt: 2022년 7월 15일 TIL
       type IProfile5 = Required<IProfile>
 
       // Record타입 ??
-      type zzz = "aaa" | "bbb" | "ccc" //union 타입
+      type zzz = 'aaa' | 'bbb' | 'ccc' //union 타입
       let apple: zzz
-      apple = "aaa"
+      apple = 'aaa'
 
       type IProfile6 = Record<zzz, IProfile> //키-벨류 쌍을 만들어 줄 때 사용.
       ```
+
     - type 과 interface의 차이
+
       - 선언병합 여부에 차이가 있다고 합니다.
       - interface는 선언병합이 가능하고, type은 선언 병합이 안된다고 합니다.
+
       ```jsx
       // 선언병합 예
       interface IProfile {
@@ -137,7 +143,9 @@ excerpt: 2022년 7월 15일 TIL
 
       profile.[candy, age, number 다 가능]
       ```
+
     - useQuery와 useMutation에 제네릭을 사용해서 타입을 선언해 줄 수 있습니다.
+
       ```jsx
       useQuery<Pick<IQuery, "fetchBoard">, IQueryFetchBoardArgs>
 

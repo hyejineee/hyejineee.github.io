@@ -1,8 +1,8 @@
 ---
-title: "20220712 TIL"
+title: '20220712 TIL'
 path: blog/TIL/2022-07-12
 tags: [TIL]
-cover: "./TIL.png"
+cover: './TIL.png'
 date: 2022-07-12
 excerpt: 2022년 7월 12일 TIL
 ---
@@ -55,7 +55,7 @@ excerpt: 2022년 7월 12일 TIL
        const [addTodo, { data, loading, error }] = useMutation(ADD_TODO, {
          refetchQueries: [
            { query: GET_POST }, // DocumentNode object parsed with gql
-           "GetComments", // Query name
+           'GetComments', // Query name
          ],
        })
        ```

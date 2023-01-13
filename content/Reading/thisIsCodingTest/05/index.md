@@ -1,27 +1,31 @@
 ---
-title: "이것이 코딩테스트다."
+title: '이것이 코딩테스트다.'
 path: blog/Reading/this-is_coding-test_05
 tags: [DSAndAlgorithm, Reading]
-cover:  "./cover.png"
+cover: './cover.png'
 date: 2022-03-23
 excerpt: 코테 스터디 - chapter05.DFS/BFS
-draft : false
+draft: false
 ---
 
 ## Chapter04. DFS/BFS
+
 [👉🏻 더 자세한 포스팅 보러가기](https://hyejineee.github.io/blog/graph-search-algorithm1)
+
 ### 탐색 알고리즘 DFS/BFS
 
 - **탐색**
+
   - 많은 양의 데이터 중에서 원하는 데이터를 찾는 과정
   - 그래프, 트리 등의 자료구조 안에서 탐색을 하는 문제를 자주 다룸.
 
-  
-> TIP 프로그래밍에서 그래프를 표현하는 방법 
-> 1. 인접 행렬 : 2차원 배열로 그래프의 연결 관계를 표현하는 방식 
-> 2. 인접 리스트 : 리스트로 그래프의 연결관계를 표현하는 방식 
+> TIP 프로그래밍에서 그래프를 표현하는 방법
+>
+> 1. 인접 행렬 : 2차원 배열로 그래프의 연결 관계를 표현하는 방식
+> 2. 인접 리스트 : 리스트로 그래프의 연결관계를 표현하는 방식
 
 - **DFS**
+
   - 깊이 운선 탐색
   - 그래프에서 깊은 부분을 우선적으로 탐색하는 알고리즘.
   - 동작 과정
@@ -32,15 +36,17 @@ draft : false
 
 - **BFS**
   - 너비 우선 탐색
-  - 가까운 노드부터 탐색하는 알고리즘 
-  - 동작 과정 
+  - 가까운 노드부터 탐색하는 알고리즘
+  - 동작 과정
     1. 탐색 시작 노드를 큐에 삽입하고 방문 처리를 한다.
     2. 큐에서 노드를 꺼내 해당 노드의 인접 노드 중에서 방문하지 않은 노드를 모두 큐에 삽입하고 방문 처리를 한다.
     3. 2번의 과정을 더 이상 수행할 수 없을 때까지 반복한다.
   - 시간 복잡도 : O(n)의 시간이 소요됨.
 
-### 예제 
+### 예제
+
 **음료수 얼려먹기**
+
 ```kotlin
     fun freezeDrinks(board: Array<IntArray>): Int {
         val n = board.size
@@ -82,8 +88,8 @@ draft : false
     }
 ```
 
-
 **미로탈출**
+
 ```kotlin
     fun mazeEscape(n:Int, m:Int, maze:Array<IntArray>):Int{
 
@@ -94,7 +100,7 @@ draft : false
         needVisit.add(intArrayOf(0,0,1))
 
         while (needVisit.isNotEmpty()){
-           
+
             val (y,x, count) = needVisit.pop()
 
             for(i in 0..3) {

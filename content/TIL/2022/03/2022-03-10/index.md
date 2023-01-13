@@ -1,8 +1,8 @@
 ---
-title: "20220310 TIL"
+title: '20220310 TIL'
 path: blog/TIL/2022-03-10
 tags: [TIL]
-cover:  "./TIL.png"
+cover: './TIL.png'
 date: 2022-03-10
 excerpt: 2022년 3월 10일 TIL
 ---
@@ -10,8 +10,8 @@ excerpt: 2022년 3월 10일 TIL
 ## Facts.
 
 - 코딩 테스트 연습을 했습니다.
-    - 프로그래머스 - 거리두기 확인하기 문제를 풀었습니다.
-    - 이것이 코딩 테스트다 그리디 2문제를 풀었습니다.
+  - 프로그래머스 - 거리두기 확인하기 문제를 풀었습니다.
+  - 이것이 코딩 테스트다 그리디 2문제를 풀었습니다.
 - 안드로이드 관련 아티클 - [ViewModel의 B에서 D까지](https://pluu.github.io/blog/android/2020/05/04/viewmodel-b-to-d/) 를 읽고 간단하게 정리했습니다.
 - 밀리밤 프로젝트 리팩터링을 진행하고 있습니다.
 

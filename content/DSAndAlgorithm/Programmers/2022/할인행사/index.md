@@ -1,8 +1,8 @@
 ---
-title: "[문제풀이] 할인행사"
+title: '[문제풀이] 할인행사'
 path: blog/daily-algorithm-221104-2
 tags: [DSAndAlgorithm]
-cover:  "./cover.png"
+cover: './cover.png'
 date: 2022-11-04
 excerpt: 프로그래머스 -할인행사
 ---
@@ -30,28 +30,28 @@ excerpt: 프로그래머스 -할인행사
 ```jsx
 // javascript
 const solution = (want, number, discount) => {
-  const map = new Map();
+  const map = new Map()
 
   want.forEach((e, i) => {
-    map[e] = number[i];
-  });
+    map[e] = number[i]
+  })
 
-  let count = 0; // 조건에 맞는 회원 등록이 가능한 일수 
+  let count = 0 // 조건에 맞는 회원 등록이 가능한 일수
   for (let i = 0; i <= discount.length - 10; i++) {
-		// 원하는 제품과 수량 map 복사
-    const copyMap = Object.assign({}, map);
+    // 원하는 제품과 수량 map 복사
+    const copyMap = Object.assign({}, map)
 
-		// 10일 동안 할인하는 제품이 원하는 제품에 있으면 해당 수량 하나씩 차감
+    // 10일 동안 할인하는 제품이 원하는 제품에 있으면 해당 수량 하나씩 차감
     for (let j = 0; j < 10; j++) {
-      copyMap[discount[i + j]]--;
+      copyMap[discount[i + j]]--
     }
 
-		// 원하는 제품 모두 구매가 가능하면 count에 1추가
-    if (Object.values(copyMap).every((e) => e === 0)) count++;
+    // 원하는 제품 모두 구매가 가능하면 count에 1추가
+    if (Object.values(copyMap).every(e => e === 0)) count++
   }
 
-  return count;
-};
+  return count
+}
 ```
 
 ```kotlin

@@ -1,10 +1,10 @@
 ---
-title: "[알고리즘] 동적 프로그래밍"
+title: '[알고리즘] 동적 프로그래밍'
 path: blog/dynamic-programming
 tags: [DSAndAlgorithm]
-cover:  "./cover.png"
+cover: './cover.png'
 date: 2021-10-21
-excerpt: 메모이제이션을 사용하여 효과적으로 문제풀기 
+excerpt: 메모이제이션을 사용하여 효과적으로 문제풀기
 draft: false
 ---
 
@@ -18,9 +18,6 @@ draft: false
 
 ### 동적 프로그래밍 문제 LIST
 
-- 백준 : 평범한 배낭, 01타일, 가장 긴 증가하는 부분 수열 
+- 백준 : 평범한 배낭, 01타일, 가장 긴 증가하는 부분 수열
 - [백준 다이나믹 프로그래밍 기초 문제집](https://www.acmicpc.net/workbook/view/3939)
 - [프로그래머스 동적계획법 모음](https://programmers.co.kr/learn/courses/30/parts/12263)
-
-
-

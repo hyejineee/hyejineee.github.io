@@ -1,8 +1,8 @@
 ---
-title: "20220711 TIL"
+title: '20220711 TIL'
 path: blog/TIL/2022-07-11
 tags: [TIL]
-cover: "./TIL.png"
+cover: './TIL.png'
 date: 2022-07-11
 excerpt: 2022년 7월 11일 TIL
 ---
@@ -41,11 +41,11 @@ excerpt: 2022년 7월 11일 TIL
   - 자바스크립트 정규식 클래스(RegExp) 사용시 두번째 인자로 태그값을 받습니다. (g 같은거 )
   - 정규식 참고 : [https://curryyou.tistory.com/234](https://curryyou.tistory.com/234)
   - optional-chaning
-      - 코틀린의 safe call 연산자와 비슷한 기능을 합니다.
+    - 코틀린의 safe call 연산자와 비슷한 기능을 합니다.
   - 조건부 렌더링, nullish-coalescing
-      - 1 || 2 → 1이 참이면 1을 보여주고, 거짓이면 2를 보여줍니다. 기본 값을 보여줄 때 주로 사용합니다.
-      - 1 && 2 → 1이 참이면 2를 보여줍니다.
-      - 1 ?? 2 → 1이 nullish(null, undefined)면 2를 보여줍니다.
+    - 1 || 2 → 1이 참이면 1을 보여주고, 거짓이면 2를 보여줍니다. 기본 값을 보여줄 때 주로 사용합니다.
+    - 1 && 2 → 1이 참이면 2를 보여줍니다.
+    - 1 ?? 2 → 1이 nullish(null, undefined)면 2를 보여줍니다.
 
 ## Future Action Plans.
 

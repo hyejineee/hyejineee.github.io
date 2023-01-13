@@ -1,8 +1,8 @@
 ---
-title: "위클리 회고"
+title: '위클리 회고'
 path: blog/TIL/2022-4th-week
 tags: [TIL]
-cover:  "./cover.png"
+cover: './cover.png'
 date: 2022-02-27
 excerpt: 2022년 2월 4째주 위클리 회고
 ---
@@ -11,12 +11,12 @@ excerpt: 2022년 2월 4째주 위클리 회고
 
 - 코딩테스트 연습을 했습니다. 새롭게 이것이 코딩 테스트다 책을 읽으면서 문제 유형을 익히고 있습니다.
 - 안드로이드 관련 내용들을 정리했습니다.
-    - viewModel() 확장 함수의 동작에 대해서 정리했습니다. 이것과 연결하여 hilt에서 @HiltViewModel이 어떻게 viewModel을 생성하고 주입하는지 알게 되었습니다.
-    - 안드로이드 면접 질문을 정리하기 시작했습니다.
+  - viewModel() 확장 함수의 동작에 대해서 정리했습니다. 이것과 연결하여 hilt에서 @HiltViewModel이 어떻게 viewModel을 생성하고 주입하는지 알게 되었습니다.
+  - 안드로이드 면접 질문을 정리하기 시작했습니다.
 - rx
-    - subject에 대해서 정리했습니다.
-    - compose연산자에 대해서 정리했습니다.
-    - behaviorSubject와 publishSubject를 각각 어떤 경우에 사용해야 하는지 비교하는 프로젝트를 생성하여 공부했습니다.
+  - subject에 대해서 정리했습니다.
+  - compose연산자에 대해서 정리했습니다.
+  - behaviorSubject와 publishSubject를 각각 어떤 경우에 사용해야 하는지 비교하는 프로젝트를 생성하여 공부했습니다.
 - 네트워크 스터디를 했습니다.
 - 경험 정리를 하면서 묵혀놨던 프로젝트를 다시 꺼내 정리하고 있습니다.
 - 면접왕 이형 GDR스트리밍에 참여했습니다.

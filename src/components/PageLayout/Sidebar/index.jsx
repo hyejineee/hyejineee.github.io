@@ -1,19 +1,15 @@
-import React from 'react';
-import {
-  Affix, Layout, Row, Col,
-} from 'antd';
-import FA from 'react-fontawesome';
-import FeatherIcon from 'feather-icons-react';
+import React from 'react'
+import { Affix, Layout, Row, Col } from 'antd'
+import FA from 'react-fontawesome'
+import FeatherIcon from 'feather-icons-react'
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { globalHistory } from '@reach/router';
-import style from './sidebar.module.less';
-import { useWindowSize } from '../../../utils/hooks';
-import Config from '../../../../config';
+import { globalHistory } from '@reach/router'
+import style from './sidebar.module.less'
+import { useWindowSize } from '../../../utils/hooks'
+import Config from '../../../../config'
 
-const { Content } = Layout;
-const {
-  facebook, github, instagram, twitter,
-} = Config.social;
+const { Content } = Layout
+const { facebook, github, instagram, twitter } = Config.social
 
 const DomContent = () => (
   <aside>
@@ -21,35 +17,64 @@ const DomContent = () => (
     <div className={`${style.name} centerAlign`}>
       <div className={`${style.boxName} centerAlign`}>
         <h2>
-          hello
-          {' '}
-          <span>hyejineee</span>
+          hello <span>hyejineee</span>
         </h2>
       </div>
-      <div className={`${style.badge} ${style.badgeGray}`}>Android developer</div>
+      <div className={`${style.badge} ${style.badgeGray}`}>
+        Android developer
+      </div>
       <div className="centerAlign box">
-        <a href={facebook} target="_blank" label="button" rel="noopener noreferrer"><FA name="facebook-f" /></a>
-        <a href={twitter} target="_blank" label="button" rel="noopener noreferrer"><FA name="twitter" /></a>
-        <a href={github} target="_blank" label="button" rel="noopener noreferrer"><FA name="github" /></a>
-        <a href={instagram} target="_blank" label="button" rel="noopener noreferrer"><FA name="instagram" /></a>
+        <a
+          href={facebook}
+          target="_blank"
+          label="button"
+          rel="noopener noreferrer"
+        >
+          <FA name="facebook-f" />
+        </a>
+        <a
+          href={twitter}
+          target="_blank"
+          label="button"
+          rel="noopener noreferrer"
+        >
+          <FA name="twitter" />
+        </a>
+        <a
+          href={github}
+          target="_blank"
+          label="button"
+          rel="noopener noreferrer"
+        >
+          <FA name="github" />
+        </a>
+        <a
+          href={instagram}
+          target="_blank"
+          label="button"
+          rel="noopener noreferrer"
+        >
+          <FA name="instagram" />
+        </a>
       </div>
       <ul className={`box ${style.badge} contactBlock`}>
         <li className={`${style.contactBlockItem}`}>
           <span>
-            <FeatherIcon size="19" icon="calendar" />
-            {' '}
+            <FeatherIcon size="19" icon="calendar" />{' '}
           </span>
-&nbsp; &nbsp; April 6,1995
+          &nbsp; &nbsp; April 6,1995
         </li>
         <li className={`${style.contactBlockItem}`}>
-          <span><FeatherIcon size="19" icon="map-pin" /></span>
-          {' '}
-&nbsp; &nbsp; South korea
+          <span>
+            <FeatherIcon size="19" icon="map-pin" />
+          </span>{' '}
+          &nbsp; &nbsp; South korea
         </li>
         <li className={`${style.contactBlockItem}`}>
-          <span><FeatherIcon size="19" icon="mail" /></span>
-          {' '}
-&nbsp; &nbsp;
+          <span>
+            <FeatherIcon size="19" icon="mail" />
+          </span>{' '}
+          &nbsp; &nbsp;
           <a
             href="&#77;&#65;&#73;&#108;&#84;&#79;&#58;&#48;&#52;&#106;&#105;&#110;&#101;&#101;&#101;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;"
             target="_top"
@@ -63,24 +88,24 @@ const DomContent = () => (
       </div> */}
     </div>
   </aside>
-);
+)
 
-const Sidebar = (props) => {
-  const [width] = useWindowSize();
-  const { children } = props;
-  const { pathname } = globalHistory.location;
-  let domContent = <DomContent />;
+const Sidebar = props => {
+  const [width] = useWindowSize()
+  const { children } = props
+  const { pathname } = globalHistory.location
+  let domContent = <DomContent />
   if (width > 997) {
     domContent = (
       <Affix offsetTop={0}>
         <DomContent />
       </Affix>
-    );
+    )
   }
   if (width < 768) {
-    domContent = <></>;
+    domContent = <></>
     if (pathname === '/') {
-      domContent = <DomContent />;
+      domContent = <DomContent />
     }
   }
   return (
@@ -89,35 +114,39 @@ const Sidebar = (props) => {
         <Content className={`${style.content} ${style.background}`}>
           <Row>
             <Col sm={24} md={9} lg={6} className={style.sidebarContent}>
-              { domContent }
+              {domContent}
             </Col>
             <Col sm={24} md={15} lg={18}>
-              <Layout className={`${style.background} ${style.boxContent} borderRadiusSection`}>
-                { children }
+              <Layout
+                className={`${style.background} ${style.boxContent} borderRadiusSection`}
+              >
+                {children}
               </Layout>
             </Col>
           </Row>
         </Content>
       </Layout>
     </>
-  );
-};
+  )
+}
 
-export const Sidebar404 = (props) => {
-  const { children } = props;
+export const Sidebar404 = props => {
+  const { children } = props
   return (
     <Layout>
       <Content className={`${style.content} ${style.background} `}>
         <Row>
           <Col sm={24} md={24} lg={24}>
-            <Layout className={`${style.background} ${style.boxContent} ${style.sideBar404Radius}`}>
+            <Layout
+              className={`${style.background} ${style.boxContent} ${style.sideBar404Radius}`}
+            >
               {children}
             </Layout>
           </Col>
         </Row>
       </Content>
     </Layout>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

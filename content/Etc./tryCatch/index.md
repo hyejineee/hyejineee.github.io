@@ -1,8 +1,8 @@
 ---
-title: "예외 처리에 대해서 "
+title: '예외 처리에 대해서 '
 path: blog/try-catch
 tags: [Frontend]
-cover: "./thumb.png"
+cover: './thumb.png'
 date: 2022-07-13
 excerpt: 예외 처리가 왜 필요한지? 과거에는 어떤 방법을 사용했는지 등에 대해서 공부합니다.
 ---

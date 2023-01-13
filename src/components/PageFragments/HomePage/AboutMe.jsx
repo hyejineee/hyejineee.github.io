@@ -1,12 +1,11 @@
-import React from 'react';
-import { Row, Col } from 'antd';
-import AboutTile from '../../AbouTile';
-import { stripTags, domHtml } from '../../../utils/stripTags';
+import React from 'react'
+import { Row, Col } from 'antd'
+import AboutTile from '../../AbouTile'
+import { stripTags, domHtml } from '../../../utils/stripTags'
 
-import SEO from '../../Seo';
+import SEO from '../../Seo'
 
 const pageText = {
-
   paraOne: `안녕하세요. 현혜진입니다!<br>
     산업 디자인을 전공하다 개발에 흥미를 느껴 개발자가 되기로 했습니다. 좋은 개발자가 되기 위해 학습하고 노력합니다. 
     근본적인 것에 대해 공부하는 것을 좋아합니다. 객체지향과 함수형, 클린 아키텍처, 도메인 주도 설계에 관심이 많습니다. 
@@ -21,10 +20,10 @@ const pageText = {
 
     자연으로 여행하는 것을 좋아합니다. 가방을 메고 자연으로 백패킹 여행을 떠납니다. 자전거 여행도 좋아합니다. 백패킹 + 자전거 = 최고의 여행😆😆
    `,
-};
+}
 
 const AboutMe = () => {
-  const description = `${stripTags(pageText.paraOne)}`;
+  const description = `${stripTags(pageText.paraOne)}`
   return (
     <>
       <div>
@@ -32,11 +31,19 @@ const AboutMe = () => {
           title="About"
           description={description}
           path=""
-          keywords={['hyejineee', 'Backpacking', 'android developer', 'Javascript', 'ReactJS', 'Android', 'Gatsby', 'Kotlin']}
+          keywords={[
+            'hyejineee',
+            'Backpacking',
+            'android developer',
+            'Javascript',
+            'ReactJS',
+            'Android',
+            'Gatsby',
+            'Kotlin',
+          ]}
         />
         <h1 className="titleSeparate">About Me</h1>
         <p dangerouslySetInnerHTML={domHtml(pageText.paraOne)} />
-
       </div>
       <Row gutter={[20, 20]}>
         <Col xs={24} sm={24} md={12} lg={8}>
@@ -69,6 +76,6 @@ const AboutMe = () => {
         </Col>
       </Row>
     </>
-  );
-};
-export default AboutMe;
+  )
+}
+export default AboutMe

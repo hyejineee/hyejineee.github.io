@@ -1,8 +1,8 @@
 ---
-title: "Dangder - Android 1주차 회고"
+title: 'Dangder - Android 1주차 회고'
 path: blog/dangder-android-1
 tags: [Retrospect]
-cover:  "./cover.png"
+cover: './cover.png'
 date: 2022-11-16
 excerpt: Dangder 안드로이드 개발일지
 draft: false
@@ -31,11 +31,3 @@ draft: false
 - 게으름 + 어떤 기술을 사용할까에 대한 끊임없는 고민으로 이번주 계획한 내용들을 구현하지 못했습니다. 아마 틀이 잡히면 금방 구현할 것 같긴 하지만 열심히 만들어야 겠습니다.
 - 사실 어제까지 고민해서 오늘 rx를 다 걷어내야 합니다.
 - 이슈에 있는 태스크들 처리하고 노션에 프로젝트 정리를 시작해야겠습니다.
-
-
-
-
-
-
-
-

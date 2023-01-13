@@ -1,8 +1,8 @@
 ---
-title: "[React] JSX란 무엇인가요?"
+title: '[React] JSX란 무엇인가요?'
 path: blog/frontend/jsx
 tags: [Frontend]
-cover: "./thumb.png"
+cover: './thumb.png'
 date: 2022-07-07
 excerpt: 리액트에서 사용하는 jsx에 대해서 공부합니다. jsx는 무엇이고? 왜 사용해야할까요?
 ---
@@ -24,14 +24,14 @@ jsx는 리액트에서 컴포넌트의 생김새 정의를 위해 사용되는 �
 // javascript
 /*#__PURE__*/
 React.createElement(
-  "div",
+  'div',
   null,
   /*#__PURE__*/
   React.createElement(
-    "div",
+    'div',
     null,
     /*#__PURE__*/
-    React.createElement("div", null, " hello jsx ")
+    React.createElement('div', null, ' hello jsx ')
   )
 )
 ```
@@ -69,26 +69,26 @@ function createElement(tag, props, ...children) {
 
 ```jsx
 // 제목
-const title = () => createElement("h1", null, "hello jsx!")
+const title = () => createElement('h1', null, 'hello jsx!')
 
 // 리스트의 아이템
-const item = data => createElement("li", null, data)
+const item = data => createElement('li', null, data)
 
 // 여러 아이템을 갖는 리스트
 const countList = () => {
   const items = [...Array(5).keys()].map(v => item(`item${v}`))
   console.log(items)
-  return createElement("ul", null, ...items)
+  return createElement('ul', null, ...items)
 }
 
 const root = createElement(
-  "div",
+  'div',
   null,
   title(),
   countList() // 의미를 담아서 만든 내용 추가
 )
 
-document.getElementById("app").appendChild(root)
+document.getElementById('app').appendChild(root)
 ```
 
 ## JSX는 왜 필요한가요?
@@ -112,25 +112,25 @@ document.getElementById("app").appendChild(root)
 
 // craateElement 사용
 // 제목
-const title = () => createElement("h1", null, "hello jsx!")
+const title = () => createElement('h1', null, 'hello jsx!')
 
 // 리스트의 아이템
-const item = data => createElement("li", null, data)
+const item = data => createElement('li', null, data)
 
 // 여러 아이템을 갖는 리스트
 const countList = () => {
   const items = [...Array(5).keys()].map(v => item(`item${v}`))
-  return createElement("ul", null, ...items)
+  return createElement('ul', null, ...items)
 }
 
 const root = createElement(
-  "div",
+  'div',
   null,
   title(),
   countList() // 의미를 담아서 만든 내용 추가
 )
 
-document.getElementById("app").appendChild(root)
+document.getElementById('app').appendChild(root)
 ```
 
 겉으로 보기에 createElement를 사용한 코드가 복잡해보이고 길어 보일 수 있지만 여러개의 리스트가 생기는 경우 아래의 코드를 사용하여 html 조각을 만드는 것이 더 편리하다고 느껴질 겁니다. 예를 들어 과일 리스트, 동물 리스트, 커피 리스트를 추가해보도록 하겠습니다. 먼저 평범한 html은 다음과 같이 아래 ul로 감싼 li들을 15개 추가해야 합니다.
@@ -179,45 +179,45 @@ document.getElementById("app").appendChild(root)
 ```jsx
 const listBox = datas => {
   const items = [...datas].map(v => item(v))
-  return createElement("ul", null, ...items)
+  return createElement('ul', null, ...items)
 }
 ```
 
 ```jsx
-const title = () => createElement("h1", null, "hello jsx!")
-const item = data => createElement("li", null, data)
+const title = () => createElement('h1', null, 'hello jsx!')
+const item = data => createElement('li', null, data)
 
 const listBox = datas => {
   const items = [...datas].map(v => item(v))
-  return createElement("ul", null, ...items)
+  return createElement('ul', null, ...items)
 }
 
 const fruitList = () => {
-  const fruits = ["사과", "배", "딸기", "포도", "키위"]
+  const fruits = ['사과', '배', '딸기', '포도', '키위']
   return listBox(fruits)
 }
 
 const animalList = () => {
-  const animal = ["너구리", "염소", "호랑이", "사자", "기린"]
+  const animal = ['너구리', '염소', '호랑이', '사자', '기린']
   return listBox(animal)
 }
 
 const coffeeList = () => {
-  const coffee = ["아메리카노", "라떼", "돌체라떼", "바닐라라떼", "카푸치노"]
+  const coffee = ['아메리카노', '라떼', '돌체라떼', '바닐라라떼', '카푸치노']
   return listBox(coffee)
 }
 
 const root = createElement(
-  "div",
+  'div',
   null,
   title(),
-  listBox(["item0", "item1", "item2", "item3", "item4"]),
+  listBox(['item0', 'item1', 'item2', 'item3', 'item4']),
   fruitsList(),
   animalList(),
   coffeeList()
 )
 
-document.getElementById("app").appendChild(root)
+document.getElementById('app').appendChild(root)
 ```
 
 ![결과](./result.png)
@@ -265,7 +265,7 @@ jsx를 사용하는 방법은 html과 매우 비슷합니다. html과 다른 점
 또한 jsx안에서 자바스크립트를 사용할 수 있습니다. 자바스크립트를 사용하기 위해서는 중괄호를 사용해야 합니다.
 
 ```jsx
-const title = "title"
+const title = 'title'
 return (
   <>
     <div> {title} </div>

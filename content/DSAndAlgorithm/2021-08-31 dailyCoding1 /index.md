@@ -1,26 +1,27 @@
 ---
-title: "[문제풀이] 신규 아이디 추천  "
+title: '[문제풀이] 신규 아이디 추천  '
 path: blog/daily-recommendation-new-id
 tags: [DSAndAlgorithm]
-cover:  "./cover.png"
+cover: './cover.png'
 date: 2021-08-31
-excerpt: 프로그래머스 - 신규 아이디 추천 
+excerpt: 프로그래머스 - 신규 아이디 추천
 draft: false
 ---
 
+## 신규 아이디 추천
 
-## 신규 아이디 추천 
-* [신규 아이디 추천 - 프로그래머스](https://programmers.co.kr/learn/courses/30/lessons/72410)
+- [신규 아이디 추천 - 프로그래머스](https://programmers.co.kr/learn/courses/30/lessons/72410)
 
-### 1. 이해 
-- 각 단계에서 요구하는 내용대로 구현하면 될듯하다. 
+### 1. 이해
+
+- 각 단계에서 요구하는 내용대로 구현하면 될듯하다.
 
 ### 2. 계획
 
-1. 각각 단계를 구현하고 let을 사용하여 연결 
-
+1. 각각 단계를 구현하고 let을 사용하여 연결
 
 ### 3. 실행
+
 ```kotlin
     fun recommendationNewId(newId: String): String = newId
         .toLowerCase()
@@ -72,7 +73,7 @@ draft: false
     }
 
 
-    // 우수 답안 
+    // 우수 답안
 
     class Solution {
         fun solution(newId: String) = newId.toLowerCase()
@@ -92,7 +93,7 @@ draft: false
 
 ```
 
-### 4. 회고 
+### 4. 회고
 
 정규식을 잘 활용할 수 있으면 좋을 것 같습니다. 우수 답안에서 사용된 정규식을 공부해야겠습니다. 또 코틀린 범위 함수를 사용하는 데 있어서 정확하게 사용하지 못한다는 느낌을 받았습니다.
 코틀린 범위 함수에 대해서 공부해야겠습니다.

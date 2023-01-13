@@ -1,13 +1,14 @@
 ---
-title: "[문제풀이] n진법 게임 "
+title: '[문제풀이] n진법 게임 '
 path: blog/daily-algorithm-221028-1
 tags: [DSAndAlgorithm]
-cover:  "./cover.png"
+cover: './cover.png'
 date: 2022-10-28
 excerpt: 프로그래머스 - n진법 게임
 ---
 
 [프로그래머스 - n진법 게임]("https://school.programmers.co.kr/learn/courses/30/lessons/17687)
+
 ### 구하고자 하는 것은 무엇인가?
 
 - 주어진 규칙과 같이 게임을 할 때 튜브가 말해야 하는 숫자 t개를 구해야 합니다.
@@ -29,26 +30,31 @@ excerpt: 프로그래머스 - n진법 게임
 
 ```jsx
 const solution = (n, t, m, p) => {
-  const arr = [];
-  const result = [];
+  const arr = []
+  const result = []
 
-  let e = 0;
+  let e = 0
   while (result.length < t) {
-    arr.push(...e.toString(n).split("").flat());
-    e++;
+    arr.push(
+      ...e
+        .toString(n)
+        .split('')
+        .flat()
+    )
+    e++
 
     if (arr.length >= m) {
       for (let i = 0; i < m; i++) {
-        const pop = arr.shift();
+        const pop = arr.shift()
         if (i % m === p - 1) {
-          result.push(pop);
+          result.push(pop)
         }
       }
     }
   }
 
-  return result.join("").toUpperCase();
-};
+  return result.join('').toUpperCase()
+}
 ```
 
 ### 4. 회고

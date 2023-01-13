@@ -1,7 +1,11 @@
 {
   "endOfLine": "lf",
+<<<<<<< Updated upstream
   "semi": false,
   "singleQuote": true,
+=======
+  "singleQuote": false,
+>>>>>>> Stashed changes
   "tabWidth": 2,
   "trailingComma": "es5"
 }

@@ -1,8 +1,8 @@
 ---
-title: "20220421 TIL"
+title: '20220421 TIL'
 path: blog/TIL/2022-04-21
 tags: [TIL]
-cover:  "./TIL.png"
+cover: './TIL.png'
 date: 2022-04-21
 excerpt: 2022년 4월 21일 TIL
 ---
@@ -10,7 +10,7 @@ excerpt: 2022년 4월 21일 TIL
 ## Facts.
 
 - 어제자 TIL 작성
-- 경제신문스크랩 : [****삼겹살만 830t 판매하는 '정육각'...초록마을에 통할까****](https://www.notion.so/830t-2bb731c5ef364afabc86c93b9652a1e8)
+- 경제신문스크랩 : [\***\*삼겹살만 830t 판매하는 '정육각'...초록마을에 통할까\*\***](https://www.notion.so/830t-2bb731c5ef364afabc86c93b9652a1e8)
 - coroutine & flow완전정복 : 1부 전체 수강 완료
 - 올인원 기본기 클래스 : 객체지향 5대 원칙, 테스트 코드 작성
 - compose 메모앱 : ContentBlockViewModel 정리 및 테스트 수정, master브랜치에 머지
@@ -24,7 +24,7 @@ excerpt: 2022년 4월 21일 TIL
 ## Findings.
 
 - 하나의 코루틴 안에 있는 suspend함수는 기본적으로 순차적으로 실행됩니다.
-    - 동시에 실행되고 싶으면 각 suspend함수를 실행시키는 자식 코루틴을 생성합니다.
+  - 동시에 실행되고 싶으면 각 suspend함수를 실행시키는 자식 코루틴을 생성합니다.
 - 결과값이 필요하면 async, 그렇지 않으면 launch 코루틴 빌더를 사용합니다.
 - 기본적으로 예외가 발생하면 부모, 형제, 자식 코루틴에게 영향을 미칩니다.
 - CEH(Coroutine Exception Handler)를 통해 예외처리 핸들러를 만들고 상위 코루틴 빌더에 등록하여 코루틴 예외처리를 합니다.

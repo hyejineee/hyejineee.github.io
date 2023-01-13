@@ -1,8 +1,8 @@
 ---
-title: "20221028 TIL"
+title: '20221028 TIL'
 path: blog/TIL/2022-10-28
 tags: [TIL]
-cover: "./TIL.png"
+cover: './TIL.png'
 date: 2022-10-28
 excerpt: 2022년 10월 28일 TIL
 ---
@@ -10,11 +10,11 @@ excerpt: 2022년 10월 28일 TIL
 ## Facts.
 
 - 프로그래머스 - n진수 게임, 프렌즈 4블록 문제를 풀었습니다.
-    - [n진수 게임 풀이](https://hyejineee.github.io/blog/daily-algorithm-221028-1)
-    - [프렌즈 4블록 풀이](https://hyejineee.github.io/blog/daily-algorithm-221028-2)
+  - [n진수 게임 풀이](https://hyejineee.github.io/blog/daily-algorithm-221028-1)
+  - [프렌즈 4블록 풀이](https://hyejineee.github.io/blog/daily-algorithm-221028-2)
 - 팀프로젝트
-    - 매칭 후기 관련 기능을 모두 구현했습니다.
-    - 그룹 채팅 페이지를 만들기 위해 기존에 만든 컴포넌트를 리팩토링 했습니다.
+  - 매칭 후기 관련 기능을 모두 구현했습니다.
+  - 그룹 채팅 페이지를 만들기 위해 기존에 만든 컴포넌트를 리팩토링 했습니다.
 - 가볍게 황룡산 자락에 있는 공원 한 바퀴 돌았습니다.
 
 ## Feelings.

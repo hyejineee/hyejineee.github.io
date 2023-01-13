@@ -1,9 +1,9 @@
-import React from 'react';
-import { Layout, Row, Col } from 'antd';
-import Header from '../../components/PageLayout/Header';
-import SidebarWrapper from '../../components/PageLayout/Sidebar';
-import ContactForm from '../../components/PageFragments/ContactForm';
-import SEO from '../../components/Seo';
+import React from 'react'
+import { Layout, Row, Col } from 'antd'
+import Header from '../../components/PageLayout/Header'
+import SidebarWrapper from '../../components/PageLayout/Sidebar'
+import ContactForm from '../../components/PageFragments/ContactForm'
+import SEO from '../../components/Seo'
 
 const Contact = () => (
   <Layout className="outerPadding">
@@ -37,4 +37,4 @@ const Contact = () => (
   </Layout>
 )
 
-export default Contact;
+export default Contact

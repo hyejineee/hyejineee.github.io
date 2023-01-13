@@ -1,8 +1,8 @@
 ---
-title: "[문제풀이] 두 큐 합 같게 만들기 "
+title: '[문제풀이] 두 큐 합 같게 만들기 '
 path: blog/daily-algorithm-221104-1
 tags: [DSAndAlgorithm]
-cover:  "./cover.png"
+cover: './cover.png'
 date: 2022-11-04
 excerpt: 프로그래머스 -두 큐 합 같게 만들기
 ---
@@ -84,7 +84,7 @@ const findChild = (tree, node, root) => {
 };
 ```
 
-```kotlin
+````kotlin
 import kotlin.math.*
 
 fun 전력망_둘로_나누기(n: Int, wires: Array<IntArray>): Int {
@@ -157,7 +157,7 @@ const solution = (queue1, queue2) => {
 const sum = (arr) => {
   return arr.reduce((acc, cur) => acc + cur, 0);
 };
-```
+````
 
 ```kotlin
 fun 두_큐_합_같게_만들기(queue1: IntArray, queue2: IntArray): Int {

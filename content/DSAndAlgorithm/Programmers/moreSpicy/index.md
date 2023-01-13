@@ -1,13 +1,12 @@
 ---
-title: "[문제풀이] 더 맵게 "
+title: '[문제풀이] 더 맵게 '
 path: blog/daily-programmers-more-spicy
 tags: [DSAndAlgorithm]
-cover:  "./cover.png"
+cover: './cover.png'
 date: 2022-02-16
-excerpt: 프로그래머스 - 더 맵게 
+excerpt: 프로그래머스 - 더 맵게
 draft: false
 ---
-
 
 ### 구하고자 하는 것은 무엇인가?
 
@@ -18,12 +17,13 @@ draft: false
 - 음식의 스코빌 지수 배열이 주어집니다. (scoville)
 - 원하는 스코빌 지수 k가 주어집니다.
 - 낮은 음식의 스코빌 지수를 높이는 방법은 가장 낮은 스코빌 음식 2개를 섞어 새로운 음식을 만드는 것입니다.
-    - 새로운 음식의 스코빌 지수 = 가장 낮은 스코빌 지수 + (2번째 낮은 스코빌 지수 *2)
+  - 새로운 음식의 스코빌 지수 = 가장 낮은 스코빌 지수 + (2번째 낮은 스코빌 지수 \*2)
 - 모든 음식의 스코빌 지수를 k이상으로 만들 수 없는 경우에 -1을 리턴합니다.
 
 ### 2.계획
 
 - 힙 자료구조를 사용하여 문제를 풉니다.
+
 1. 스코빌 지수 배열을 힙으로 만듭니다.
 2. 힙에서 가장 낮은 스코빌 지수를 pop합니다.
 3. pop한 스코빌 지수가 k보다 크거나 같다면 바로 count의 값을 리턴합니다.
@@ -38,23 +38,23 @@ draft: false
 import heapq
 
 def solution(scoville, K):
-    
+
     heapq.heapify(scoville)
     count = 0
-    
+
     while len(scoville) > 1:
         n1 = heapq.heappop(scoville)
-        
-        if n1 >= K : 
+
+        if n1 >= K :
             break
-        
+
         n2 = heapq.heappop(scoville)
         new = n1 + (n2*2)
-        
+
         heapq.heappush(scoville, new)
         count +=1
-        
-    if heapq.heappop(scoville) < K : 
+
+    if heapq.heappop(scoville) < K :
         return -1
     else :
         return count

@@ -1,8 +1,8 @@
 ---
-title: "20210716 TIL"
+title: '20210716 TIL'
 path: blog/TIL/20210716
 tags: [TIL]
-cover:  "./tilbanner.jpg"
+cover: './tilbanner.jpg'
 date: 2021-07-16
 excerpt: 재귀용법을 사용하는 코딩 테스트 문제를 풀었습니다.
 ---
@@ -10,17 +10,18 @@ excerpt: 재귀용법을 사용하는 코딩 테스트 문제를 풀었습니다
 ## Facts
 
 - 패스트 캠퍼스 자료구조 & 알고리즘 강의를 수강했습니다.
-    - 재귀용법을 사용하는 문제를 풀었습니다. 
+  - 재귀용법을 사용하는 문제를 풀었습니다.
 
 ## Feelings
 
-* 오랜만에 문제를 풀어서 그런지 재귀를 적용하는 것에 문제가 있어서 그런지 문제를 빨리빨리 풀지 못해서 답답합니다. 더워서 미칠 것 같은 것도 한 몫 하는 것 같습니다. 
-* 너무 더워요....
+- 오랜만에 문제를 풀어서 그런지 재귀를 적용하는 것에 문제가 있어서 그런지 문제를 빨리빨리 풀지 못해서 답답합니다. 더워서 미칠 것 같은 것도 한 몫 하는 것 같습니다.
+- 너무 더워요....
 
 ## Findings
 
-* [피보나치 수열](https://www.acmicpc.net/problem/1003) : 재귀 풀이 말고 다른 풀이 방법을 배웠습니다.
-```kotlin 
+- [피보나치 수열](https://www.acmicpc.net/problem/1003) : 재귀 풀이 말고 다른 풀이 방법을 배웠습니다.
+
+```kotlin
 fun fibonacci(n: Int): IntArray {
     var numberOf0 = 0
     var numberOf1 = 0
@@ -46,10 +47,10 @@ fun fibonacci(n: Int): IntArray {
 }
 ```
 
-* [z문제](https://www.acmicpc.net/problem/1074) 
-    * 리팩토링이 필요한 것 같습니다.
+- [z문제](https://www.acmicpc.net/problem/1074)
+  - 리팩토링이 필요한 것 같습니다.
 
-``` kotlin 
+```kotlin
 fun z(n: Long, r: Int, c: Int): Int {
     return findOrder(
         (2.0.pow(n.toDouble()) * 2.0.pow(n.toDouble())).toInt(),
@@ -107,9 +108,9 @@ fun findOrder(n: Int, r: Int, c: Int, start: Int): Int {
 }
 ```
 
-* [0만들기](https://www.acmicpc.net/problem/7490)
+- [0만들기](https://www.acmicpc.net/problem/7490)
 
-```kotlin 
+```kotlin
 
 fun make0(n: Int): List<String> {
     val operators = mutableListOf<List<Char>>()
@@ -177,6 +178,5 @@ fun makeOperators(operator: List<Char>, size: Int, operators: MutableList<List<C
 
 ## Future Action Plans
 
-* 고급 정렬 알고리즘 문제풀이 강의를 봅니다.
-* 안드로이드 테스트에 대해서 공부합니다.
-
+- 고급 정렬 알고리즘 문제풀이 강의를 봅니다.
+- 안드로이드 테스트에 대해서 공부합니다.

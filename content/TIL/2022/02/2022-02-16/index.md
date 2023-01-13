@@ -1,8 +1,8 @@
 ---
-title: "20220216 TIL"
+title: '20220216 TIL'
 path: blog/TIL/2022-02-16
 tags: [TIL]
-cover:  "./TIL.png"
+cover: './TIL.png'
 date: 2022-02-16
 excerpt: 2022년 2월 16일 TIL
 ---
@@ -11,7 +11,7 @@ excerpt: 2022년 2월 16일 TIL
 
 - 프로그래머스 - 더 맵게 문제를 풀었습니다.
 - 네트워크 스터디 책을 읽고, 스터디를 진행했습니다.
-- rx  핫 옵저버블, 콜드 옵저버블과 single, maybe, complete에 대해서 정리했습니다.
+- rx 핫 옵저버블, 콜드 옵저버블과 single, maybe, complete에 대해서 정리했습니다.
 - kotlin sealed class에 대해서 정리했습니다.
 - OOT 프로젝트를 진행했습니다. - 워크스페이스 참여, 워크스페이스 목록 가져오기
 

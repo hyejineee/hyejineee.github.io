@@ -1,18 +1,19 @@
 ---
-title: "[문제풀이] n개의 최소공배수  "
+title: '[문제풀이] n개의 최소공배수  '
 path: blog/daily-n-lcm
 tags: [DSAndAlgorithm]
-cover:  "./cover.png"
+cover: './cover.png'
 date: 2021-09-04
 excerpt: 프로그래머스 - n개의 최소공배수
 draft: false
 ---
 
+## n개의 최소공배수
 
-## n개의 최소공배수 
-* [n개의 최소공배수  - 프로그래머스](https://programmers.co.kr/learn/courses/30/lessons/12953)
+- [n개의 최소공배수 - 프로그래머스](https://programmers.co.kr/learn/courses/30/lessons/12953)
 
-### 1. 이해 
+### 1. 이해
+
 - n개의 수들의 최소공배수를 찾아라.
 
 ### 2. 계획
@@ -22,9 +23,8 @@ draft: false
 3. 주어진 수들이 2에서 찾은 약수에 포함되면 제일 큰 값과 곱한 i를 반환한다.
 4. i의 값과 최대값을 곱한 값을 리턴한다.
 
-
-
 ### 3. 실행
+
 ```kotlin
 
     fun nLCM(arr: IntArray): Int {
@@ -57,7 +57,7 @@ draft: false
         return aliquots.sorted()
     }
 
- 
+
     class Solution {
         fun solution(arr: IntArray): Int {
             var answer = 1
@@ -74,6 +74,6 @@ draft: false
 
 ```
 
-### 4. 회고 
+### 4. 회고
 
 while문을 사용할 수 밖에 없었나..?? 리팩토링을 잘 하지 못한 것 같아서 아쉽다. 우수 답안과 아이디어(?)는 비슷한 것 같은데... 구현에서 많이 차이가 났다.

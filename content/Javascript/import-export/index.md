@@ -1,8 +1,8 @@
 ---
-title: "[자바스크립트] Import & Export"
+title: '[자바스크립트] Import & Export'
 path: blog/frontend/javascript/import-export
 tags: [Frontend]
-cover: "./thumb.png"
+cover: './thumb.png'
 date: 2022-07-11
 excerpt: 자바스크립트에서 사용사는 import& export와 모듈 시스템에 대해서 살짝 공부한 내용을 정리합니다.
 ---
@@ -46,8 +46,8 @@ export default function DDD(){...}
 
 ```jsx
 //modules.js
-export const value1 = ""
-export const value2 = ""
+export const value1 = ''
+export const value2 = ''
 ```
 
 여러 개의 값을 내보내는 문법도 존재하지만 저는 주로 위의 문법을 사용하기 때문에 다른 설명은 skip하겠습니다. 궁금하신 분들은 [MDN - export](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/export), [MDN - modules](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Modules) 를 참고하시면 좋을 것 같습니다.
@@ -56,10 +56,10 @@ export const value2 = ""
 
 ```jsx
 // 기본으로 export된 값 가져오기
-import DDD from "./module.js"
+import DDD from './module.js'
 
 // 여러개로 export된 값 가져오기
-import { value1, value2 } from "./modules.js"
+import { value1, value2 } from './modules.js'
 ```
 
 모듈의 default를 가져오는 방법에 대해서 다른 방법도 있지만 역시 제가 많이 사용하는 문법만 소개해 드리도록 하겠습니다. 다른 방법이 궁금하신 분은 위에 언급한 MDN 문서를 참고하시면 좋을 것 같습니다.
@@ -92,40 +92,40 @@ import { value1, value2 } from "./modules.js"
 
 ```jsx
 // 이전 자바스크립트 코드
-const title = () => createElement("h1", null, "hello jsx!")
-const item = data => createElement("li", null, data)
+const title = () => createElement('h1', null, 'hello jsx!')
+const item = data => createElement('li', null, data)
 
 const listBox = datas => {
   const items = [...datas].map(v => item(v))
-  return createElement("ul", null, ...items)
+  return createElement('ul', null, ...items)
 }
 
 const fruitList = () => {
-  const fruits = ["사과", "배", "딸기", "포도", "키위"]
+  const fruits = ['사과', '배', '딸기', '포도', '키위']
   return listBox(fruits)
 }
 
 const animalList = () => {
-  const animal = ["너구리", "염소", "호랑이", "사자", "기린"]
+  const animal = ['너구리', '염소', '호랑이', '사자', '기린']
   return listBox(animal)
 }
 
 const coffeeList = () => {
-  const coffee = ["아메리카노", "라떼", "돌체라떼", "바닐라라떼", "카푸치노"]
+  const coffee = ['아메리카노', '라떼', '돌체라떼', '바닐라라떼', '카푸치노']
   return listBox(coffee)
 }
 
 const root = createElement(
-  "div",
+  'div',
   null,
   title(),
-  listBox(["item0", "item1", "item2", "item3", "item4"]),
+  listBox(['item0', 'item1', 'item2', 'item3', 'item4']),
   fruitsList(),
   animalList(),
   coffeeList()
 )
 
-document.getElementById("app").appendChild(root)
+document.getElementById('app').appendChild(root)
 ```
 
 ```jsx
@@ -156,34 +156,34 @@ export function createElement(tagName, props, ...children) {
 ```jsx
 // 분리된 자바스크립트 components.js
 
-import { createElement } from "./createElement.js"
+import { createElement } from './createElement.js'
 
-export const title = () => createElement("h1", null, "hello jsx!")
-const item = data => createElement("li", null, data)
+export const title = () => createElement('h1', null, 'hello jsx!')
+const item = data => createElement('li', null, data)
 
 export const listBox = datas => {
   const items = [...datas].map(v => item(v))
-  return createElement("ul", null, ...items)
+  return createElement('ul', null, ...items)
 }
 ```
 
 ```jsx
 //분리된 자바스크립트 listComponents.js
 
-import { listBox } from "./component.js"
+import { listBox } from './component.js'
 
 export const fruitList = () => {
-  const fruits = ["사과", "배", "딸기", "포도", "키위"]
+  const fruits = ['사과', '배', '딸기', '포도', '키위']
   return listBox(fruits)
 }
 
 export const animalList = () => {
-  const animal = ["너구리", "염소", "호랑이", "사자", "기린"]
+  const animal = ['너구리', '염소', '호랑이', '사자', '기린']
   return listBox(animal)
 }
 
 export const coffeeList = () => {
-  const coffee = ["아메리카노", "라떼", "돌체라떼", "바닐라라떼", "카푸치노"]
+  const coffee = ['아메리카노', '라떼', '돌체라떼', '바닐라라떼', '카푸치노']
   return listBox(coffee)
 }
 ```
@@ -191,21 +191,21 @@ export const coffeeList = () => {
 ```jsx
 //분리된 자바스크립트 root.js
 
-import { fruitList, animalList, coffeeList } from "./listComponent.js"
-import { title, listBox } from "./component.js"
-import { createElement } from "./createElement.js"
+import { fruitList, animalList, coffeeList } from './listComponent.js'
+import { title, listBox } from './component.js'
+import { createElement } from './createElement.js'
 
 const root = createElement(
-  "div",
+  'div',
   null,
   title(),
-  listBox(["item0", "item1", "item2", "item3", "item4"]),
+  listBox(['item0', 'item1', 'item2', 'item3', 'item4']),
   fruitList(),
   animalList(),
   coffeeList()
 )
 
-document.getElementById("app").appendChild(root)
+document.getElementById('app').appendChild(root)
 ```
 
 ## Ref.

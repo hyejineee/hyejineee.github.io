@@ -1,8 +1,8 @@
 ---
-title: "20220708 TIL"
+title: '20220708 TIL'
 path: blog/TIL/2022-07-08
 tags: [TIL]
-cover: "./TIL.png"
+cover: './TIL.png'
 date: 2022-07-08
 excerpt: 2022년 7월 8일 TIL
 ---
@@ -22,6 +22,7 @@ excerpt: 2022년 7월 8일 TIL
 ## Findings.
 
 - 라우팅
+
   - router 객체는 페이지 이동과 관련된 객체입니다.
     - 옆에 동기분께 router관련된 질문을 하셨는데 이렇게 대답했으면 더 좋을 것 같다는 생각이 듭니다.
   - next에서 제공하는 Router객체에 대해서 알게 되었습니다. next에서 제공하는 useRouter훅을 통해 router객체에 접근할 수 있습니다.
@@ -33,6 +34,7 @@ excerpt: 2022년 7월 8일 TIL
   - 동적 라우팅을 통해 url에 전달된 데이터는 router객체의 query를 통해 얻을 수 있습니다.
   - 테스트한 결과 url 뒤에 ?를 사용해서 쿼리한 데이터도 query에 들어가는 것을 알게 되었습니다.
   - 추가 학습
+
     - push와 replace의 차이
       - push는 말 그대로 새로운 url을 스택에 푸시합니다.
       - replace는 url스택에 맨 위에 있는 값을 말 그대로 replace합니다.
@@ -41,10 +43,12 @@ excerpt: 2022년 7월 8일 TIL
       - pathName은 쿼리를 제외한 현재 페이지의 url를 나타낸다.
       - asPath는 쿼리를 포함한 현제 페이지의 url을 나타낸다.
     - 리액트 라우터와 next 라우터 차이
+
       - 참고 : [https://velog.io/@moony_moon/React-Next-Router-vs-React-Router](https://velog.io/@moony_moon/React-Next-Router-vs-React-Router)
       - 리액트와 next의 차이가 가장 크게 나타나는 부분이 router라고 한다.
       - next에서 라우트 방식이 리액트보다 상대적으로 쉽다고 한다.
       - 리액트에서는 Router 컴포넌트를 사용하여 어떤 경로가 있는지 일일히 등록해줘야 한다. (아마도..?
+
         ```jsx
         //react routing
         import {BrowseRouter as Router, Switch, Route} from 'react-router-dom'
@@ -60,7 +64,9 @@ excerpt: 2022년 7월 8일 TIL
               </Switch>
         </Router>
         ```
+
       - next에서는 폴더 구조에 따라 경로를 router.push(경로)해주면 된다.
+
 - useQuery
   - 공식 문서 : [https://www.apollographql.com/docs/react/data/queries](https://www.apollographql.com/docs/react/data/queries)
   - graphql의 query를 사용하기 위해 apollo client에서 제공하는 리액트 훅
