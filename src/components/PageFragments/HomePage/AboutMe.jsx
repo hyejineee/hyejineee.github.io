@@ -7,18 +7,25 @@ import SEO from '../../Seo'
 
 const pageText = {
   paraOne: `안녕하세요. 현혜진입니다!<br>
-    산업 디자인을 전공하다 개발에 흥미를 느껴 개발자가 되기로 했습니다. 좋은 개발자가 되기 위해 학습하고 노력합니다. 
-    근본적인 것에 대해 공부하는 것을 좋아합니다. 객체지향과 함수형, 클린 아키텍처, 도메인 주도 설계에 관심이 많습니다. 
-    현재는 안드로이드 애플리케이션을 개발하고 있습니다. 모바일 환경에서 개발하는 것을 좋아합니다. 앞으로 ios 앱 개발 공부도 하고싶습니다. 
-
+    디자인과 전공 중 '디지털 미디어'수업에서 프로그래밍을 처음 접하였고, 상상했던 것을 직접 구현하는 것에 매료되어 대학 휴학 후 학원을 통해 안드로이드 개발에 입문하였습니다. 
+    
     <br><br>
 
-    사용자 경험을 디자인 하는 것에 관심이 있습니다. 어떤 정보를 어떤 방식으로 전달해야 내가 원하는 만큼의 가치를 사용자에게 전달할 수 있을까를 고민합니다. 
-    아직 자세하게 책을 읽거나 강의를 들으며 공부하고 있지는 않지만 기회가 된다면 UX에 대해서 제대로 공부하고 싶습니다. 
-
+    안드로이드 개발자로 아르바이트 활동과 외주 작업으로 전시에 사용되는 심리 테스트 사이트 작업을 하며 '프로그래밍'이 사람들에게 새로운 경험을 제시할 수 있다는 것을 깨달았습니다.
+     끊임없이 새로운 경험을 원하는 사람들의 니즈에 발맞춰 성장하는 개발자가 되고 싶습니다.
     <br><br>
 
-    자연으로 여행하는 것을 좋아합니다. 가방을 메고 자연으로 백패킹 여행을 떠납니다. 자전거 여행도 좋아합니다. 백패킹 + 자전거 = 최고의 여행😆😆
+    <ul>
+      <li>항상 코드가 어떻게 하면 더 효율적으로 동작할 수 있을지 고민하고, 더 나은 방법을 찾아 적용합니다.
+    그렇기에 변경의 전파가 적은 코드와 구조에 관심을 두고 프로젝트에 적용합니다.</li>
+    <li>호기심을 원동력으로 공부하고 있습니다. 항상 왜? 어떻게?라는 질문을 통해서 관심 있는 분야의 지식을 쌓습니다.</li>
+    <li>사용자 경험을 디자인 하는 것에 관심이 있습니다. 어떤 정보를 어떤 방식으로 전달해야 내가 원하는 만큼의 가치를 사용자에게 전달할 수 있을까를 고민합니다. 
+    기회가 된다면 UX에 대해서 제대로 공부하고 싶습니다. </li>
+    <li>모험을 좋아합니다. 새로운 것을 경험하면서 사는데 필요한 가치관을 찾아 가는 중입니다.</li>
+    </ul>
+  
+    <br><br>
+
    `,
 }
 
@@ -35,7 +42,10 @@ const AboutMe = () => {
             'hyejineee',
             'Backpacking',
             'android developer',
+            'frontend developer',
             'Javascript',
+            'Typescript',
+            'Nextjs',
             'ReactJS',
             'Android',
             'Gatsby',
@@ -45,36 +55,7 @@ const AboutMe = () => {
         <h1 className="titleSeparate">About Me</h1>
         <p dangerouslySetInnerHTML={domHtml(pageText.paraOne)} />
       </div>
-      <Row gutter={[20, 20]}>
-        <Col xs={24} sm={24} md={12} lg={8}>
-          <AboutTile
-            img="motorcycle.png"
-            alt="motorcycle image"
-            textH4="Journey"
-            textH3="자전거 + 백패킹 = 👍🏻"
-          />
-        </Col>
-        <Col xs={24} sm={24} md={12} lg={8}>
-          <AboutTile
-            img="web.png"
-            alt="web image"
-            textH4="Mobile app programming"
-            textH3="모바일 환경에서의 개발🙌🏻"
-            height={60}
-            width={60}
-          />
-        </Col>
-        <Col xs={24} sm={24} md={12} lg={8}>
-          <AboutTile
-            img="graduation.png"
-            alt="graduation image"
-            textH4="User Experience"
-            textH3="사용자 경험❓❓"
-            height={60}
-            width={60}
-          />
-        </Col>
-      </Row>
+      
     </>
   )
 }

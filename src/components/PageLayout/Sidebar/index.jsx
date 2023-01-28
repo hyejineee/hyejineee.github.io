@@ -21,7 +21,7 @@ const DomContent = () => (
         </h2>
       </div>
       <div className={`${style.badge} ${style.badgeGray}`}>
-        Android developer
+        Developer
       </div>
       <div className="centerAlign box">
         <a
@@ -32,14 +32,7 @@ const DomContent = () => (
         >
           <FA name="facebook-f" />
         </a>
-        <a
-          href={twitter}
-          target="_blank"
-          label="button"
-          rel="noopener noreferrer"
-        >
-          <FA name="twitter" />
-        </a>
+      
         <a
           href={github}
           target="_blank"
