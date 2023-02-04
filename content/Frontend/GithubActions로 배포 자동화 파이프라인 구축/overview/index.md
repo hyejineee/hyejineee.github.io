@@ -7,6 +7,11 @@ date: 2022-12-24
 excerpt: GithubActions + AWS + Docker로 정적 배포, 동적 배포를 자동화해보자!
 ---
 
+1. overview 👈🏻 현재 글 
+2. [🔗 정적 배포 자동화 하기](https://hyejineee.github.io/blog/frontend/nextjs-project-deploy-2) 
+3. [🔗 동적 배포 자동화 하기](https://hyejineee.github.io/blog/frontend/nextjs-project-deploy-3) 
+
+
 프론트엔드 프로젝트를 위해서 github actions를 사용해서 배포 CI/CD를 구축하고 있었는데 마침 원티드의 프리온보딩 세션에서 배포에 관한 내용을 배웠습니다. 배운 것을 정리하는 겸 제가 정적 배포, 동적 배포 자동화를 만들면서 고민했던 내용들을 기록하려고 합니다.
 
 ## CI /CD 란 무엇인가요?
