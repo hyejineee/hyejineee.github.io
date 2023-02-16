@@ -7,7 +7,7 @@ date: 2023-02-15
 excerpt: 열정 열정 열정
 ---
 
-![](./%ED%95%9C%EC%82%AC%EB%9E%91%20%EC%82%B0%EC%95%85%ED%9A%8C.jpeg)
+![](./1.jpeg)
 
 ## Facts.
 
