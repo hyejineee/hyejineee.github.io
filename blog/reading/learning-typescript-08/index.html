@@ -24,16 +24,17 @@
 <span class="token punctuation">}</span></code></pre></div>
 </li>
 </ul>
+</li>
+</ul>
 <p>new WithMethod().myMethod === new WithMethod().myMethod // true</p>
 <p>class WithProperty{
 myProperty : ()=>{}
 }</p>
-<p>new WithProperty().myProperty === new WithProperty().myProperty // false</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
-</li>
-<li>초기화 검사 : 타입스크립트는 undefined 타입으로 선언된 각 속성이 생성자에서 할당되었는지 확인함. -> 엄격한 초기화</li>
-<li>원시 초깃값을 갖는 readonly로 선언된 속성 -> 더 넓은 원싯값의 타입이 아니라 값의 타입이 가능한 한 좁혀진 리터럴 타입으로 유추됨.</li>
-</ul>
+<p>// false
+new WithProperty().myProperty === new WithProperty().myProperty </p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">* 초기화 검사 : 타입스크립트는 undefined 타입으로 선언된 각 속성이 생성자에서 할당되었는지 확인함. -> 엄격한 초기화
+
+* 원시 초깃값을 갖는 readonly로 선언된 속성 -> 더 넓은 원싯값의 타입이 아니라 값의 타입이 가능한 한 좁혀진 리터럴 타입으로 유추됨.</code></pre></div>
 </li>
 <li>
 <p>인터페이스 구현 </p>

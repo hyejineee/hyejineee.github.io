@@ -11,25 +11,25 @@
 <li>
 <p>객체 리터럴 타입 : 각자의 타입이 있는 키와 값의 집합</p>
 <ul>
-<li>
-<p>타입 별칭을 통해서 선언하는 방법 : 매개변수 타입이나 리턴값의 타입 선언할 때 사용하면 좋을 듯</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// 선언 방법1 - 객체 리터럴로 선언</span>
-<span class="token keyword">let</span> <span class="token literal-property property">poetLater</span> <span class="token operator">:</span><span class="token punctuation">{</span>
-<span class="token literal-property property">born</span> <span class="token operator">:</span> number<span class="token punctuation">;</span>
-<span class="token literal-property property">name</span> <span class="token operator">:</span> string<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre></div>
-</li>
+<li>타입 별칭을 통해서 선언하는 방법 : 매개변수 타입이나 리턴값의 타입 선언할 때 사용하면 좋을 듯</li>
 </ul>
-<p>// 선언방법 2 - 별칭
-type Poet = {
-born : number;
-name : string;
-}</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token comment">// 선언 방법1 - 객체 리터럴로 선언</span>
+<span class="token keyword">let</span> poetLater <span class="token operator">:</span><span class="token punctuation">{</span>
+	born <span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+	name <span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 선언방법 2 - 별칭 </span>
+<span class="token keyword">type</span> <span class="token class-name">Poet</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+	born <span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+	name <span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
 </li>
 <li>
 <p>구조적 타이핑</p>
 <ul>
+<li>객체가 어떤 속성들을 가지는지 -> 즉 구조를 기준으로 타입을 따진다.</li>
+<li>타입 스크립트의 타입은 집합 (어떤 조건에 따라 결정되는 요소의 모임)</li>
 <li>
 <p>자바스크립트는 덕 타입인 반면 타입스크립트는 구조적으로 타입화한다</p>
 <ul>
@@ -46,49 +46,49 @@ name : string;
 <li>객체가 선언될 때만 초과 속성이 있는지 검사한다. </li>
 <li>객체 선언 이후에는 초과 속성 검사를 하지 않기 때문에 에러가 발생하지 않는다.</li>
 </ul>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">type Poet <span class="token operator">=</span> <span class="token punctuation">{</span>
-	<span class="token literal-property property">born</span> <span class="token operator">:</span> number<span class="token punctuation">;</span>
-	<span class="token literal-property property">name</span> <span class="token operator">:</span> string<span class="token punctuation">;</span>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">type</span> <span class="token class-name">Poet</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+	born <span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+	name <span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>	
 
 <span class="token comment">// 초과 속성 에러 발생 </span>
-<span class="token keyword">const</span> <span class="token literal-property property">extraProperty</span> <span class="token operator">:</span> Poet <span class="token operator">=</span> <span class="token punctuation">{</span>
-	<span class="token literal-property property">activity</span> <span class="token operator">:</span> <span class="token string">'walking'</span><span class="token punctuation">,</span>
-	<span class="token literal-property property">born</span> <span class="token operator">:</span> <span class="token number">1995</span><span class="token punctuation">,</span>
-	<span class="token literal-property property">name</span> <span class="token operator">:</span> <span class="token string">'test'</span>
+<span class="token keyword">const</span> extraProperty <span class="token operator">:</span> Poet <span class="token operator">=</span> <span class="token punctuation">{</span>
+	activity <span class="token operator">:</span> <span class="token string">'walking'</span><span class="token punctuation">,</span>
+	born <span class="token operator">:</span> <span class="token number">1995</span><span class="token punctuation">,</span>
+	name <span class="token operator">:</span> <span class="token string">'test'</span>
 <span class="token punctuation">}</span>
 
 <span class="token comment">// 초과 속성 에러 발생 안함.</span>
 <span class="token keyword">const</span> extraProperty <span class="token operator">=</span> <span class="token punctuation">{</span>
-	<span class="token literal-property property">activity</span> <span class="token operator">:</span> <span class="token string">'walking'</span><span class="token punctuation">,</span>
-	<span class="token literal-property property">born</span> <span class="token operator">:</span> <span class="token number">1995</span><span class="token punctuation">,</span>
-	<span class="token literal-property property">name</span> <span class="token operator">:</span> <span class="token string">'test'</span>
+	activity <span class="token operator">:</span> <span class="token string">'walking'</span><span class="token punctuation">,</span>
+	born <span class="token operator">:</span> <span class="token number">1995</span><span class="token punctuation">,</span>
+	name <span class="token operator">:</span> <span class="token string">'test'</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">const</span> <span class="token literal-property property">extraPropertyButOk</span> <span class="token operator">:</span> Poet <span class="token operator">=</span> extraProperty</code></pre></div>
+<span class="token keyword">const</span> extraPropertyButOk <span class="token operator">:</span> Poet <span class="token operator">=</span> extraProperty</code></pre></div>
 </li>
 <li>
 <p>속성의 중첩과 선택적 속성</p>
 <ul>
 <li>선택적 속성은 undefined이 포함된 유니온 속성과 다르다.</li>
-<li>
-<p>undefined 포함된 유니온 속성은 값이 undefined 일지라도 반드시 존재해야 한다. </p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">type Author <span class="token operator">=</span> <span class="token punctuation">{</span>
-<span class="token literal-property property">firstName</span> <span class="token operator">:</span> string<span class="token punctuation">;</span>
-<span class="token literal-property property">lastName</span> <span class="token operator">:</span> string<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre></div>
-</li>
+<li>undefined 포함된 유니온 속성은 값이 undefined 일지라도 반드시 존재해야 한다. </li>
 </ul>
-<p>type Poem = {
-author? : Author; // 중첩 및 선택적 속성
-title : string;
-}</p>
-<p>// 선택적 속성과 undfined를 포함한 union 차이
-// 1. 선택적 속성일 경우
-const p1 = { title : "hello" } -> author가 없어도 에러 발생 안함.</p>
-<p>// 2. 선택적 속성이 아닌 Author | undefined 인 경우
-const p2 = {title : 'hello' } -> author의 값이 없기 때문에 에러 발생</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">type</span> <span class="token class-name">Author</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+	firstName <span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+	lastName <span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> <span class="token class-name">Poem</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+	author<span class="token operator">?</span> <span class="token operator">:</span> Author<span class="token punctuation">;</span> <span class="token comment">// 중첩 및 선택적 속성 </span>
+	title <span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 선택적 속성과 undfined를 포함한 union 차이</span>
+<span class="token comment">// 1. 선택적 속성일 경우 </span>
+<span class="token keyword">const</span> p1 <span class="token operator">=</span> <span class="token punctuation">{</span> title <span class="token operator">:</span> <span class="token string">"hello"</span> <span class="token punctuation">}</span> <span class="token operator">-</span><span class="token operator">></span> author가 없어도 에러 발생 안함<span class="token punctuation">.</span>
+
+<span class="token comment">// 2. 선택적 속성이 아닌 Author | undefined 인 경우 </span>
+<span class="token keyword">const</span> p2 <span class="token operator">=</span> <span class="token punctuation">{</span>title <span class="token operator">:</span> <span class="token string">'hello'</span> <span class="token punctuation">}</span> <span class="token operator">-</span><span class="token operator">></span> author의 값이 없기 때문에 에러 발생</code></pre></div>
 </li>
 <li>
 <p>객체 타입 내로잉 </p>
@@ -113,11 +113,11 @@ const p2 = {title : 'hello' } -> author의 값이 없기 때문에 에러 발생
 <li>판별된 유니언 : 객체의 속성이 객체의 형태를 나타내도록 함.</li>
 <li>
 <p>판별값 : 객체의 타입을 나타내는 속성 </p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token comment">// type 속성으로 객체의 타입을 판별함.</span>
-type PoemWIthPages <span class="token operator">=</span> <span class="token punctuation">{</span>
-<span class="token literal-property property">name</span> <span class="token operator">:</span> string<span class="token punctuation">;</span>
-<span class="token literal-property property">pages</span> <span class="token operator">:</span> number<span class="token punctuation">;</span>
-<span class="token literal-property property">type</span> <span class="token operator">:</span> <span class="token string">'pages'</span><span class="token punctuation">;</span>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token comment">// type 속성으로 객체의 타입을 판별함.</span>
+<span class="token keyword">type</span> <span class="token class-name">PoemWIthPages</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+name <span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+pages <span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+type <span class="token operator">:</span> <span class="token string">'pages'</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre></div>
 </li>
 </ul>
@@ -143,7 +143,7 @@ type : 'rhymes';
 <li>never 키워드와 never 타입은 프로그래밍 언어에서 bottom 또는 empty 타입을 뜻함.</li>
 <li>
 <p>값을 가질 수 없고, 차마조할 수 없는 타입을 의미</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js">type noPossible <span class="token operator">=</span> number <span class="token operator">&amp;</span> string <span class="token operator">-</span><span class="token operator">></span> never 타입이 됨<span class="token punctuation">.</span>	</code></pre></div>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">type</span> <span class="token class-name">noPossible</span> <span class="token operator">=</span> <span class="token builtin">number</span> <span class="token operator">&amp;</span> <span class="token builtin">string</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">never</span> 타입이 됨<span class="token punctuation">.</span>	</code></pre></div>
 </li>
 </ul>
 </li>
