@@ -87,27 +87,27 @@ excerpt: 읽고 또 읽어야지 라는 생각으로 빠르게 읽는 러닝 타
 	* 객체의 타입 내로잉 
 		* in 연산자를 사용 
 			* 존재하지 않는 객체의 속성에 접근하려고 시도하면 타입 가드처럼 작동하는 방식으로 사용되더라도 타입 오류로 간주한다.
-		```js
-		if('속성명' in 객체 타입) {...}
-		```
-
+			```typescript
+				if('속성명' in 객체 타입) {...}
+			```
 		* 판변된 유니언, 판별값
 			* 판별된 유니언 : 객체의 속성이 객체의 형태를 나타내도록 함.
 			* 판별값 : 객체의 타입을 나타내는 속성 
-		```ts
-		// type 속성으로 객체의 타입을 판별함.
-		type PoemWIthPages = {
-			name : string;
-			pages : number;
-			type : 'pages';
-		}
 
-		type PoemWithRhymes = {
-			name : string;
-			rhymes : boolean;
-			type : 'rhymes';
-		}
-		```
+			```ts
+				// type 속성으로 객체의 타입을 판별함.
+				type PoemWIthPages = {
+					name : string;
+					pages : number;
+					type : 'pages';
+				}
+
+				type PoemWithRhymes = {
+					name : string;
+					rhymes : boolean;
+					type : 'rhymes';
+				}
+			```
 
 * 교차 타입 
 	* &를 사용해 여러 타입을 동시에 나타냄 -> 합집합
@@ -115,6 +115,6 @@ excerpt: 읽고 또 읽어야지 라는 생각으로 빠르게 읽는 러닝 타
 	* 잘 못 사용할 경우 never 타입이 됨.
 		* never 키워드와 never 타입은 프로그래밍 언어에서 bottom 또는 empty 타입을 뜻함.
 		* 값을 가질 수 없고, 차마조할 수 없는 타입을 의미
-	```ts
-	type noPossible = number & string -> never 타입이 됨.	
-	```
+		```ts
+		type noPossible = number & string -> never 타입이 됨.	
+		```
