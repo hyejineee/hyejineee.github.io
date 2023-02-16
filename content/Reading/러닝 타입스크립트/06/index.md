@@ -1,6 +1,6 @@
 ---
 title: '[러닝 타입스크립트] 05. 함수'
-path: blog/reading/learning-typescript-05
+path: blog/reading/learning-typescript-04
 tags: [Reading]
 cover: './cover.png'
 date: 2023-02-15
