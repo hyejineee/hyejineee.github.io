@@ -1,6 +1,6 @@
 ---
 title: '[러닝 타입스크립트] 01. 자바스크립트에서 타입스크립트로'
-path: blog/TIL/2023-02-15
+path: blog/reading/learning-typescript-01
 tags: [Reading]
 cover: './cover.png'
 date: 2023-02-13
