@@ -14,16 +14,19 @@ excerpt: 읽고 또 읽어야지 라는 생각으로 빠르게 읽는 러닝 타
 		* 메서드 접근 방식은 함수를 클래스 프로토타입에 할당하므로 모든 클래스 인스턴스는 동일한 함수 정의를 사용함.
 		* 함수 속성으로 메서드를 정의할 경우 클래스의 인스턴스당 새로운 함수가 생성됨.
 	```js
-	class WithMehod {
-		myMethod (){}
-	}
-	new WithMethod().myMethod === new WithMethod().myMethod // true
+		class WithMehod {
+			myMethod (){}
+		}
 
-	class WithProperty{
-		myProperty : ()=>{} 
-	}
-	new WithProperty().myProperty === new WithProperty().myProperty // false
+		new WithMethod().myMethod === new WithMethod().myMethod // true
+
+		class WithProperty{
+			myProperty : ()=>{} 
+		}
+		
+		new WithProperty().myProperty === new WithProperty().myProperty // false
 	```
+	
 	* 초기화 검사 : 타입스크립트는 undefined 타입으로 선언된 각 속성이 생성자에서 할당되었는지 확인함. -> 엄격한 초기화
 
 	* 원시 초깃값을 갖는 readonly로 선언된 속성 -> 더 넓은 원싯값의 타입이 아니라 값의 타입이 가능한 한 좁혀진 리터럴 타입으로 유추됨.
@@ -62,7 +65,7 @@ excerpt: 읽고 또 읽어야지 라는 생각으로 빠르게 읽는 러닝 타
 	* 일부 메서드의 구현을 선언하지 않고, 대신 하위 클래스가 해당 메서드를 제공할 것을 예상하고 기본 클래스를 만드는 방법
 
 	* absract 키워드를 사용해서 선언
-	
+
 	* 구현이 존재한다고 가정할 수 있는 일부 메서드에 대한 정의가 없기 때문에 추상 클래스를 직접 인스턴스화 할 수 없다.
 
 * 멤버 접근성
