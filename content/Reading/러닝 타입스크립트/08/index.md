@@ -14,19 +14,20 @@ excerpt: 읽고 또 읽어야지 라는 생각으로 빠르게 읽는 러닝 타
 		* 메서드 접근 방식은 함수를 클래스 프로토타입에 할당하므로 모든 클래스 인스턴스는 동일한 함수 정의를 사용함.
 		* 함수 속성으로 메서드를 정의할 경우 클래스의 인스턴스당 새로운 함수가 생성됨.
 	```js
-		class WithMehod {
-			myMethod (){}
-		}
+	class WithMehod {
+		myMethod (){}
+	}
 
-		new WithMethod().myMethod === new WithMethod().myMethod // true
+	new WithMethod().myMethod === new WithMethod().myMethod // true
 
-		class WithProperty{
-			myProperty : ()=>{} 
-		}
-		
-		new WithProperty().myProperty === new WithProperty().myProperty // false
+	class WithProperty{
+		myProperty : ()=>{} 
+	}
+
+	// false
+	new WithProperty().myProperty === new WithProperty().myProperty 
 	```
-	
+
 	* 초기화 검사 : 타입스크립트는 undefined 타입으로 선언된 각 속성이 생성자에서 할당되었는지 확인함. -> 엄격한 초기화
 
 	* 원시 초깃값을 갖는 readonly로 선언된 속성 -> 더 넓은 원싯값의 타입이 아니라 값의 타입이 가능한 한 좁혀진 리터럴 타입으로 유추됨.
