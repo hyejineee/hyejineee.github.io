@@ -103,7 +103,7 @@
 <ul>
 <li>
 <p>존재하지 않는 객체의 속성에 접근하려고 시도하면 타입 가드처럼 작동하는 방식으로 사용되더라도 타입 오류로 간주한다.</p>
-<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">'속성명'</span> <span class="token keyword">in</span> 객체 타입<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span></code></pre></div>
+<div class="gatsby-highlight" data-language="typescript"><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">'속성명'</span> <span class="token keyword">in</span> 객체 타입<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token punctuation">}</span></code></pre></div>
 </li>
 </ul>
 </li>
@@ -111,24 +111,22 @@
 <p>판변된 유니언, 판별값</p>
 <ul>
 <li>판별된 유니언 : 객체의 속성이 객체의 형태를 나타내도록 함.</li>
-<li>
-<p>판별값 : 객체의 타입을 나타내는 속성 </p>
-<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token comment">// type 속성으로 객체의 타입을 판별함.</span>
-<span class="token keyword">type</span> <span class="token class-name">PoemWIthPages</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
-name <span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
-pages <span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
-type <span class="token operator">:</span> <span class="token string">'pages'</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre></div>
+<li>판별값 : 객체의 타입을 나타내는 속성 </li>
+</ul>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts">	<span class="token comment">// type 속성으로 객체의 타입을 판별함.</span>
+	<span class="token keyword">type</span> <span class="token class-name">PoemWIthPages</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+		name <span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+		pages <span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+		type <span class="token operator">:</span> <span class="token string">'pages'</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+
+	<span class="token keyword">type</span> <span class="token class-name">PoemWithRhymes</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+		name <span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+		rhymes <span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">;</span>
+		type <span class="token operator">:</span> <span class="token string">'rhymes'</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span></code></pre></div>
 </li>
 </ul>
-</li>
-</ul>
-<p>type PoemWithRhymes = {
-name : string;
-rhymes : boolean;
-type : 'rhymes';
-}</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
 </li>
 </ul>
 </li>
