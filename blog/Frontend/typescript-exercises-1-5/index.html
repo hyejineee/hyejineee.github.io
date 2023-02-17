@@ -21,8 +21,6 @@ occupation <span class="token operator">:</span> <span class="token builtin">str
 <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
 </li>
 </ul>
-</li>
-</ol>
 <p>export const users: User[] = [
 {
 name: 'Max Mustermann',
@@ -40,56 +38,62 @@ console.log(<code class="language-text">- ${user.name}, ${user.age}</code>);
 }</p>
 <p>console.log('Users:');
 users.forEach(logPerson);</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">2. Type "Person" is missing, please define it and use it in persons array and logPerson function in order to fix all the TS errors.
-	* User 인터페이스 외에 Admin 인터페이스가 추가되었습니다. persons 배열은 User 타입의 객체와 Admin 타입의 객체를 모두 받을 수 있도록 하는 배열 타입을 설정해 주어야 합니다. 
-	* persons는 요소로 User 또는 Admin을 받을 수 있기 때문에 Person의 타입으로 User | Admin 유니언 타입을 설정해 줍니다.
-	* 유니언 타입  
-		* 값에 허용된 타입을 두 개 이산의 가능한 타입으로 확장한 타입입니다.
-		* union으로 묶여 있는 모든 타입의 공통 속성에 대해서만 접근할 수 있습니다.
-```ts
-interface User {
-    name: string;
-    age: number;
-    occupation: string;
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
+</li>
+<li>
+<p>Type "Person" is missing, please define it and use it in persons array and logPerson function in order to fix all the TS errors.</p>
+<ul>
+<li>User 인터페이스 외에 Admin 인터페이스가 추가되었습니다. persons 배열은 User 타입의 객체와 Admin 타입의 객체를 모두 받을 수 있도록 하는 배열 타입을 설정해 주어야 합니다. </li>
+<li>persons는 요소로 User 또는 Admin을 받을 수 있기 때문에 Person의 타입으로 User | Admin 유니언 타입을 설정해 줍니다.</li>
+<li>
+<p>유니언 타입  </p>
+<ul>
+<li>값에 허용된 타입을 두 개 이산의 가능한 타입으로 확장한 타입입니다.</li>
+<li>
+<p>union으로 묶여 있는 모든 타입의 공통 속성에 대해서만 접근할 수 있습니다.</p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+occupation<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+</li>
+</ul>
+<p>interface Admin {
+name: string;
+age: number;
+role: string;
+}</p>
+<p>export type Person = User | Admin;</p>
+<p>export const persons: Person[] /* &#x3C;- Person[] */ = [
+{
+name: 'Max Mustermann',
+age: 25,
+occupation: 'Chimney sweep'
+},
+{
+name: 'Jane Doe',
+age: 32,
+role: 'Administrator'
+},
+{
+name: 'Kate Müller',
+age: 23,
+occupation: 'Astronaut'
+},
+{
+name: 'Bruce Willis',
+age: 64,
+role: 'World saver'
 }
-
-interface Admin {
-    name: string;
-    age: number;
-    role: string;
-}
-
-export type Person = User | Admin;
-
-export const persons: Person[] /* &lt;- Person[] */ = [
-    {
-        name: 'Max Mustermann',
-        age: 25,
-        occupation: 'Chimney sweep'
-    },
-    {
-        name: 'Jane Doe',
-        age: 32,
-        role: 'Administrator'
-    },
-    {
-        name: 'Kate Müller',
-        age: 23,
-        occupation: 'Astronaut'
-    },
-    {
-        name: 'Bruce Willis',
-        age: 64,
-        role: 'World saver'
-    }
-];
-
-export function logPerson(user: Person) {
-    console.log(` - ${user.name}, ${user.age}`);
-}
-
-persons.forEach(logPerson);</code></pre></div>
-<ol start="3">
+];</p>
+<p>export function logPerson(user: Person) {
+console.log(<code class="language-text">- ${user.name}, ${user.age}</code>);
+}</p>
+<p>persons.forEach(logPerson);</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
+</li>
+</ul>
+</li>
 <li>
 <p>Fix type errors in logPerson function. logPerson function should accept both User and Admin and should output relevant information according to the input: occupation for User and role for Admin.</p>
 <ul>
@@ -117,12 +121,6 @@ occupation<span class="token operator">:</span> <span class="token builtin">stri
 <span class="token punctuation">}</span></code></pre></div>
 </li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
 <p>interface Admin {
 name: string;
 age: number;
@@ -161,62 +159,64 @@ additionalInformation = person.occupation;
 console.log(<code class="language-text">- ${person.name}, ${person.age}, ${additionalInformation}</code>);
 }</p>
 <p>persons.forEach(logPerson);</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">4.  Figure out how to help TypeScript understand types in this situation and apply necessary fixes.
-	* 사용자 정의 타입 가드를 사용해 타입을 좁혀 에러를 없애야 합니다.
-	* 타입 서술어 : type predicate (= 사용자 정의 타입 가드)
-	* 인수가 특정 타입인지 여부를 나타내기 위해 boolean 값을 반환하는 함수를 위한 구문입니다. 
-	* 타입 서술어는 단순히 boolean 값을 반환하는 것이 아니라 인수가 더 구체적인 타입임을 나타냅니다. 
-```ts
-interface User {
-    type: 'user';
-    name: string;
-    age: number;
-    occupation: string;
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Figure out how to help TypeScript understand types in this situation and apply necessary fixes.</p>
+<ul>
+<li>사용자 정의 타입 가드를 사용해 타입을 좁혀 에러를 없애야 합니다.</li>
+<li>타입 서술어 : type predicate (= 사용자 정의 타입 가드)</li>
+<li>인수가 특정 타입인지 여부를 나타내기 위해 boolean 값을 반환하는 함수를 위한 구문입니다. </li>
+<li>
+<p>타입 서술어는 단순히 boolean 값을 반환하는 것이 아니라 인수가 더 구체적인 타입임을 나타냅니다. </p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+type<span class="token operator">:</span> <span class="token string">'user'</span><span class="token punctuation">;</span>
+name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+occupation<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+</li>
+</ul>
+<p>interface Admin {
+type: 'admin';
+name: string;
+age: number;
+role: string;
+}</p>
+<p>export type Person = User | Admin;</p>
+<p>export const persons: Person[] = [
+{ type: 'user', name: 'Max Mustermann', age: 25, occupation: 'Chimney sweep' },
+{ type: 'admin', name: 'Jane Doe', age: 32, role: 'Administrator' },
+{ type: 'user', name: 'Kate Müller', age: 23, occupation: 'Astronaut' },
+{ type: 'admin', name: 'Bruce Willis', age: 64, role: 'World saver' }
+];</p>
+<p>export function isAdmin(person: Person): person is Admin {
+return person.type === 'admin';
+}</p>
+<p>export function isUser(person: Person): person is User {
+return person.type === 'user';
+}</p>
+<p>export function logPerson(person: Person) {
+let additionalInformation: string = '';
+if (isAdmin(person)) {
+additionalInformation = person.role;
 }
-
-interface Admin {
-    type: 'admin';
-    name: string;
-    age: number;
-    role: string;
+if (isUser(person)) {
+additionalInformation = person.occupation;
 }
-
-export type Person = User | Admin;
-
-export const persons: Person[] = [
-    { type: 'user', name: 'Max Mustermann', age: 25, occupation: 'Chimney sweep' },
-    { type: 'admin', name: 'Jane Doe', age: 32, role: 'Administrator' },
-    { type: 'user', name: 'Kate Müller', age: 23, occupation: 'Astronaut' },
-    { type: 'admin', name: 'Bruce Willis', age: 64, role: 'World saver' }
-];
-
-export function isAdmin(person: Person): person is Admin {
-    return person.type === 'admin';
-}
-
-export function isUser(person: Person): person is User {
-    return person.type === 'user';
-}
-
-export function logPerson(person: Person) {
-    let additionalInformation: string = '';
-    if (isAdmin(person)) {
-        additionalInformation = person.role;
-    }
-    if (isUser(person)) {
-        additionalInformation = person.occupation;
-    }
-    console.log(` - ${person.name}, ${person.age}, ${additionalInformation}`);
-}
-
-console.log('Admins:');
-persons.filter(isAdmin).forEach(logPerson);
-
-console.log();
-
-console.log('Users:');
-persons.filter(isUser).forEach(logPerson);</code></pre></div>
-<ol start="5">
+console.log(<code class="language-text">- ${person.name}, ${person.age}, ${additionalInformation}</code>);
+}</p>
+<p>console.log('Admins:');
+persons.filter(isAdmin).forEach(logPerson);</p>
+<p>console.log();</p>
+<p>console.log('Users:');
+persons.filter(isUser).forEach(logPerson);</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
+</li>
 <li>
 <p>Without duplicating type structures, modify filterUsers function definition so that we can pass only those criteria which are needed, and not the whole User information as it is required now according to typing.</p>
 <ul>
@@ -233,8 +233,6 @@ occupation<span class="token operator">:</span> <span class="token builtin">stri
 <span class="token punctuation">}</span></code></pre></div>
 </li>
 </ul>
-</li>
-</ol>
 <p>interface Admin {
 type: 'admin';
 name: string;
@@ -302,7 +300,9 @@ persons,
 age: 23
 }
 ).forEach(logPerson);</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div></article><div><div id="disqus_thread"></div></div></div></section></div></div></main></section></section></section></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8B5ZGBRV2Y"></script><script>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
+</li>
+</ol></article><div><div id="disqus_thread"></div></div></div></section></div></div></main></section></section></section></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8B5ZGBRV2Y"></script><script>
     window.GATSBY_GTAG_PLUGIN_GA_TRACKING_ID = (
       'G-8B5ZGBRV2Y'
     );
