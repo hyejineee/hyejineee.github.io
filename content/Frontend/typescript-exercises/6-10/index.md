@@ -17,6 +17,7 @@ excerpt: https://typescript-exercises.github.io/
 		* 함수의 이름은 반드시 같아야 합니다.
 		* 매개변수의 순서는 서로 같아야 합니다. 
 		* 구현체는 오버로딩에 사용되는 모든 타입을 처리할 수 있어야 합니다.
+
         ```ts
         interface User {
             type: 'user';
@@ -74,7 +75,6 @@ excerpt: https://typescript-exercises.github.io/
 
         console.log('Admins of age 23:');
         adminsOfAge23.forEach(logPerson);
-                
         ```
 
 
@@ -88,6 +88,7 @@ excerpt: https://typescript-exercises.github.io/
     등의 구조체 내부에서 사용할 데이터의 타입을 외부에서 지정하는 기법입니다. 
 
 	* 리턴 타입을 위해서는 튜플 타입을 사용합니다.
+
     ```ts
     interface User {
         type: 'user';
@@ -194,6 +195,7 @@ excerpt: https://typescript-exercises.github.io/
 	* type 이외의 모든 속성을 합쳐야 하기 때문에 각 타입에서 type 속성을 제외한 하위 타입을 & 연산자를 사용해 교차 타입으로 만듭니다. 
 
 	* 교차 타입 : 여러 타입을 하나로 결합합니다. 기존 타입을 합쳐 필요한 기능을 모두 가진 단일 타입을 얻을 수 있습니다.
+
     ```ts
     interface User {
         type: 'user';
@@ -267,7 +269,6 @@ excerpt: https://typescript-exercises.github.io/
 
     console.log('Power users:');
     persons.filter(isPowerUser).forEach(logPerson);
-
     ```
 
 9. Remove UsersApiResponse and AdminsApiResponse types and use generic type ApiResponse in order to specify API response formats for each of the functions.
@@ -275,6 +276,7 @@ excerpt: https://typescript-exercises.github.io/
 	* AdminsApiResponse와 UsersApiResponse가 사용되는 자리에서 똑같이 사용될 수 있는  ApiResponse 타입을 만들어야 합니다. 
 
 	* User, Admin 뿐만 아니라 number 타입까지 처리할 수 있는 타입을 만들어야 하기 때문에 제네릭을 사용해서 문제를 해결합니다. 
+
     ```ts
     interface User {
         type: 'user';
@@ -413,6 +415,7 @@ excerpt: https://typescript-exercises.github.io/
 
 	* (await api.requestAdmins()) 이렇게 사용되고 있고, requestAdmins의 값은promisify(oldApi.requestAdmins) 입니다. 때문에 promisify(oldApi.requestAdmins)의 타입은 promise를 리턴하는 함수 타입니다. 
 		* (?) => Promise<?>
+
         ```ts
         export function promisify(arg: unknown): ()=> Promise {
             return () => new Promise((resolve, reject)=>{
@@ -420,161 +423,164 @@ excerpt: https://typescript-exercises.github.io/
             });
         }
         ```
+
 	* (await api.requestAdmins()) 와 비슷한 형태로 사용되는 곳을 보면 각각 다른 타입으로 사용되는 것을 알 수 있습니다. 여러 타입을 처리하기 위해서 제네릭을 사용합니다. 
 	* 제네릭을 사용하기 위해서 타입을 유추할 수 있는 인수를 받든지 타입 인수를 받아야 합니다. promisify를 사용하는 쪽에서 타입 인수를 받아 문제를 해결합니다.
 
-    ```ts
-    export function promisify<T>(arg: unknown): ()=> Promise<T> {
-        return () => new Promise((resolve, reject)=>{
+        ```ts
+        export function promisify<T>(arg: unknown): ()=> Promise<T> {
+            return () => new Promise((resolve, reject)=>{
 
-        });
-    }
+            });
+        }
 
-    export const api = {
-        requestAdmins: promisify<Admin[]>(oldApi.requestAdmins),
-        requestUsers: promisify<User[]>(oldApi.requestUsers),
-        requestCurrentServerTime: promisify<number>(oldApi.requestCurrentServerTime),
-        requestCoffeeMachineQueueLength: promisify<number>(oldApi.requestCoffeeMachineQueueLength)
-    };
-    ```
+        export const api = {
+            requestAdmins: promisify<Admin[]>(oldApi.requestAdmins),
+            requestUsers: promisify<User[]>(oldApi.requestUsers),
+            requestCurrentServerTime: promisify<number>(oldApi.requestCurrentServerTime),
+            requestCoffeeMachineQueueLength: promisify<number>(oldApi.requestCoffeeMachineQueueLength)
+        };
+        ```
+
         * 이렇게 까지만 해도 통과는 되지만 arg의 unknown 타입이 거슬리기 때문에 이도 고쳐줍니다. oldApi의 메서드는 (ApiResponse<T>) => void 타입의 콜백을 받고, 아무것도 리턴하지 않는 메서드 입니다. 
         * 때문에 promisify의 매개변수의 타입은 (ApiResponse<T> => void) => void 여야 합니다. 
-    ```ts
-    export type OldRequestType<T> = (callback : (response : ApiResponse<T>) => void)=>void
+        
+        ```ts
+        export type OldRequestType<T> = (callback : (response : ApiResponse<T>) => void)=>void
 
-    export function promisify<T>(arg: OldRequestType<T>): ()=> Promise<T> {
-        return () => new Promise((resolve, reject)=>{
-            arg((response)=>{
-                if('data' in response){
-                    resolve(response.data)
-                    return 
-                }
-                reject(response.error)
-            })
-        });
-    }
-    ```
-
-    ```ts
-    // 전체 코드
-    interface User {
-        type: 'user';
-        name: string;
-        age: number;
-        occupation: string;
-    }
-
-    interface Admin {
-        type: 'admin';
-        name: string;
-        age: number;
-        role: string;
-    }
-
-    type Person = User | Admin;
-
-    const admins: Admin[] = [
-        { type: 'admin', name: 'Jane Doe', age: 32, role: 'Administrator' },
-        { type: 'admin', name: 'Bruce Willis', age: 64, role: 'World saver' }
-    ];
-
-    const users: User[] = [
-        { type: 'user', name: 'Max Mustermann', age: 25, occupation: 'Chimney sweep' },
-        { type: 'user', name: 'Kate Müller', age: 23, occupation: 'Astronaut' }
-    ];
-
-    export type ApiResponse<T> = (
-        {
-            status: 'success';
-            data: T;
-        } |
-        {
-            status: 'error';
-            error: string;
-        }
-    );
-
-
-    export type OldRequestType<T> = (callback : (response : ApiResponse<T>) => void)=>void
-
-    export function promisify<T>(arg: OldRequestType<T>): ()=> Promise<T> {
-        return () => new Promise((resolve, reject)=>{
-            arg((response)=>{
-                if('data' in response){
-                    resolve(response.data)
-                    return 
-                }
-                reject(response.error)
-            })
-        });
-    }
-
-    const oldApi = {
-        requestAdmins(callback: (response: ApiResponse<Admin[]>) => void) {
-            callback({
-                status: 'success',
-                data: admins
-            });
-        },
-        requestUsers(callback: (response: ApiResponse<User[]>) => void) {
-            callback({
-                status: 'success',
-                data: users
-            });
-        },
-        requestCurrentServerTime(callback: (response: ApiResponse<number>) => void) {
-            callback({
-                status: 'success',
-                data: Date.now()
-            });
-        },
-        requestCoffeeMachineQueueLength(callback: (response: ApiResponse<number>) => void) {
-            callback({
-                status: 'error',
-                error: 'Numeric value has exceeded Number.MAX_SAFE_INTEGER.'
+        export function promisify<T>(arg: OldRequestType<T>): ()=> Promise<T> {
+            return () => new Promise((resolve, reject)=>{
+                arg((response)=>{
+                    if('data' in response){
+                        resolve(response.data)
+                        return 
+                    }
+                    reject(response.error)
+                })
             });
         }
-    };
+        ```
 
-    export const api = {
-        requestAdmins: promisify<Admin[]>(oldApi.requestAdmins),
-        requestUsers: promisify<User[]>(oldApi.requestUsers),
-        requestCurrentServerTime: promisify<number>(oldApi.requestCurrentServerTime),
-        requestCoffeeMachineQueueLength: promisify<number>(oldApi.requestCoffeeMachineQueueLength)
-    };
+        ```ts
+        // 전체 코드
+        interface User {
+            type: 'user';
+            name: string;
+            age: number;
+            occupation: string;
+        }
 
-    function logPerson(person: Person) {
-        console.log(
-            ` - ${person.name}, ${person.age}, ${person.type === 'admin' ? person.role : person.occupation}`
+        interface Admin {
+            type: 'admin';
+            name: string;
+            age: number;
+            role: string;
+        }
+
+        type Person = User | Admin;
+
+        const admins: Admin[] = [
+            { type: 'admin', name: 'Jane Doe', age: 32, role: 'Administrator' },
+            { type: 'admin', name: 'Bruce Willis', age: 64, role: 'World saver' }
+        ];
+
+        const users: User[] = [
+            { type: 'user', name: 'Max Mustermann', age: 25, occupation: 'Chimney sweep' },
+            { type: 'user', name: 'Kate Müller', age: 23, occupation: 'Astronaut' }
+        ];
+
+        export type ApiResponse<T> = (
+            {
+                status: 'success';
+                data: T;
+            } |
+            {
+                status: 'error';
+                error: string;
+            }
         );
-    }
 
-    async function startTheApp() {
-        console.log('Admins:');
-        (await api.requestAdmins()).forEach(logPerson);
-        console.log();
 
-        console.log('Users:');
-        (await api.requestUsers()).forEach(logPerson);
-        console.log();
+        export type OldRequestType<T> = (callback : (response : ApiResponse<T>) => void)=>void
 
-        console.log('Server time:');
-        console.log(`   ${new Date(await api.requestCurrentServerTime()).toLocaleString()}`);
-        console.log();
-
-        console.log('Coffee machine queue length:');
-        console.log(`   ${await api.requestCoffeeMachineQueueLength()}`);
-    }
-
-    startTheApp().then(
-        () => {
-            console.log('Success!');
-        },
-        (e: Error) => {
-            console.log(`Error: "${e.message}", but it's fine, sometimes errors are inevitable.`);
+        export function promisify<T>(arg: OldRequestType<T>): ()=> Promise<T> {
+            return () => new Promise((resolve, reject)=>{
+                arg((response)=>{
+                    if('data' in response){
+                        resolve(response.data)
+                        return 
+                    }
+                    reject(response.error)
+                })
+            });
         }
-    );
-    ```
+
+        const oldApi = {
+            requestAdmins(callback: (response: ApiResponse<Admin[]>) => void) {
+                callback({
+                    status: 'success',
+                    data: admins
+                });
+            },
+            requestUsers(callback: (response: ApiResponse<User[]>) => void) {
+                callback({
+                    status: 'success',
+                    data: users
+                });
+            },
+            requestCurrentServerTime(callback: (response: ApiResponse<number>) => void) {
+                callback({
+                    status: 'success',
+                    data: Date.now()
+                });
+            },
+            requestCoffeeMachineQueueLength(callback: (response: ApiResponse<number>) => void) {
+                callback({
+                    status: 'error',
+                    error: 'Numeric value has exceeded Number.MAX_SAFE_INTEGER.'
+                });
+            }
+        };
+
+        export const api = {
+            requestAdmins: promisify<Admin[]>(oldApi.requestAdmins),
+            requestUsers: promisify<User[]>(oldApi.requestUsers),
+            requestCurrentServerTime: promisify<number>(oldApi.requestCurrentServerTime),
+            requestCoffeeMachineQueueLength: promisify<number>(oldApi.requestCoffeeMachineQueueLength)
+        };
+
+        function logPerson(person: Person) {
+            console.log(
+                ` - ${person.name}, ${person.age}, ${person.type === 'admin' ? person.role : person.occupation}`
+            );
+        }
+
+        async function startTheApp() {
+            console.log('Admins:');
+            (await api.requestAdmins()).forEach(logPerson);
+            console.log();
+
+            console.log('Users:');
+            (await api.requestUsers()).forEach(logPerson);
+            console.log();
+
+            console.log('Server time:');
+            console.log(`   ${new Date(await api.requestCurrentServerTime()).toLocaleString()}`);
+            console.log();
+
+            console.log('Coffee machine queue length:');
+            console.log(`   ${await api.requestCoffeeMachineQueueLength()}`);
+        }
+
+        startTheApp().then(
+            () => {
+                console.log('Success!');
+            },
+            (e: Error) => {
+                console.log(`Error: "${e.message}", but it's fine, sometimes errors are inevitable.`);
+            }
+        );
+        ```
 
 
 
