@@ -15,30 +15,32 @@
 <li>
 <p>문제에 나와 있는 것 처럼 User 타입의 구조를 정하고 사용하면 됩니다.</p>
 <div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
-name <span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
-age <span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
-occupation <span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
+    name <span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+    age <span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+    occupation <span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> users<span class="token operator">:</span> User<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">'Max Mustermann'</span><span class="token punctuation">,</span>
+        age<span class="token operator">:</span> <span class="token number">25</span><span class="token punctuation">,</span>
+        occupation<span class="token operator">:</span> <span class="token string">'Chimney sweep'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">'Kate Müller'</span><span class="token punctuation">,</span>
+        age<span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span>
+        occupation<span class="token operator">:</span> <span class="token string">'Astronaut'</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">logPerson</span><span class="token punctuation">(</span>user<span class="token operator">:</span> User<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> - </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>user<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>user<span class="token punctuation">.</span>age<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Users:'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+users<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>logPerson<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 </li>
 </ul>
-<p>export const users: User[] = [
-{
-name: 'Max Mustermann',
-age: 25,
-occupation: 'Chimney sweep'
-},
-{
-name: 'Kate Müller',
-age: 23,
-occupation: 'Astronaut'
-}
-];</p>
-<p>export function logPerson(user: User) {
-console.log(<code class="language-text">- ${user.name}, ${user.age}</code>);
-}</p>
-<p>console.log('Users:');
-users.forEach(logPerson);</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
 </li>
 <li>
 <p>Type "Person" is missing, please define it and use it in persons array and logPerson function in order to fix all the TS errors.</p>
@@ -52,45 +54,49 @@ users.forEach(logPerson);</p>
 <li>
 <p>union으로 묶여 있는 모든 타입의 공통 속성에 대해서만 접근할 수 있습니다.</p>
 <div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
-name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
-age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
-occupation<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre></div>
+    name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+    age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+    occupation<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Admin</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+    age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+    role<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">Person</span> <span class="token operator">=</span> User <span class="token operator">|</span> Admin<span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> persons<span class="token operator">:</span> Person<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment">/* &lt;- Person[] */</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">'Max Mustermann'</span><span class="token punctuation">,</span>
+        age<span class="token operator">:</span> <span class="token number">25</span><span class="token punctuation">,</span>
+        occupation<span class="token operator">:</span> <span class="token string">'Chimney sweep'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">'Jane Doe'</span><span class="token punctuation">,</span>
+        age<span class="token operator">:</span> <span class="token number">32</span><span class="token punctuation">,</span>
+        role<span class="token operator">:</span> <span class="token string">'Administrator'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">'Kate Müller'</span><span class="token punctuation">,</span>
+        age<span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span>
+        occupation<span class="token operator">:</span> <span class="token string">'Astronaut'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">'Bruce Willis'</span><span class="token punctuation">,</span>
+        age<span class="token operator">:</span> <span class="token number">64</span><span class="token punctuation">,</span>
+        role<span class="token operator">:</span> <span class="token string">'World saver'</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">logPerson</span><span class="token punctuation">(</span>user<span class="token operator">:</span> Person<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> - </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>user<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>user<span class="token punctuation">.</span>age<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+persons<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>logPerson<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 </li>
 </ul>
-<p>interface Admin {
-name: string;
-age: number;
-role: string;
-}</p>
-<p>export type Person = User | Admin;</p>
-<p>export const persons: Person[] /* &#x3C;- Person[] */ = [
-{
-name: 'Max Mustermann',
-age: 25,
-occupation: 'Chimney sweep'
-},
-{
-name: 'Jane Doe',
-age: 32,
-role: 'Administrator'
-},
-{
-name: 'Kate Müller',
-age: 23,
-occupation: 'Astronaut'
-},
-{
-name: 'Bruce Willis',
-age: 64,
-role: 'World saver'
-}
-];</p>
-<p>export function logPerson(user: Person) {
-console.log(<code class="language-text">- ${user.name}, ${user.age}</code>);
-}</p>
-<p>persons.forEach(logPerson);</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
 </li>
 </ul>
 </li>
@@ -112,54 +118,56 @@ console.log(<code class="language-text">- ${user.name}, ${user.age}</code>);
 <li>조건 검사 </li>
 <li>typeof 연산자 사용</li>
 <li>in : 특정 속성이 타입에 있는지 확인하여 타입을 좁힙니다.</li>
-<li>
-<p>타입 서술어 (= 사용자 정의 타입 가드)</p>
-<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
-name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
-age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
-occupation<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre></div>
-</li>
+<li>타입 서술어 (= 사용자 정의 타입 가드)</li>
 </ul>
-<p>interface Admin {
-name: string;
-age: number;
-role: string;
-}</p>
-<p>export type Person = User | Admin;</p>
-<p>export const persons: Person[] = [
-{
-name: 'Max Mustermann',
-age: 25,
-occupation: 'Chimney sweep'
-},
-{
-name: 'Jane Doe',
-age: 32,
-role: 'Administrator'
-},
-{
-name: 'Kate Müller',
-age: 23,
-occupation: 'Astronaut'
-},
-{
-name: 'Bruce Willis',
-age: 64,
-role: 'World saver'
-}
-];</p>
-<p>export function logPerson(person: Person) {
-let additionalInformation: string;
-if ('role' in person) {
-additionalInformation = person.role;
-} else {
-additionalInformation = person.occupation;
-}
-console.log(<code class="language-text">- ${person.name}, ${person.age}, ${additionalInformation}</code>);
-}</p>
-<p>persons.forEach(logPerson);</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+    age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+    occupation<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Admin</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+    age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+    role<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">Person</span> <span class="token operator">=</span> User <span class="token operator">|</span> Admin<span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> persons<span class="token operator">:</span> Person<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">'Max Mustermann'</span><span class="token punctuation">,</span>
+        age<span class="token operator">:</span> <span class="token number">25</span><span class="token punctuation">,</span>
+        occupation<span class="token operator">:</span> <span class="token string">'Chimney sweep'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">'Jane Doe'</span><span class="token punctuation">,</span>
+        age<span class="token operator">:</span> <span class="token number">32</span><span class="token punctuation">,</span>
+        role<span class="token operator">:</span> <span class="token string">'Administrator'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">'Kate Müller'</span><span class="token punctuation">,</span>
+        age<span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span>
+        occupation<span class="token operator">:</span> <span class="token string">'Astronaut'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">'Bruce Willis'</span><span class="token punctuation">,</span>
+        age<span class="token operator">:</span> <span class="token number">64</span><span class="token punctuation">,</span>
+        role<span class="token operator">:</span> <span class="token string">'World saver'</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">logPerson</span><span class="token punctuation">(</span>person<span class="token operator">:</span> Person<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> additionalInformation<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">'role'</span> <span class="token keyword">in</span> person<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        additionalInformation <span class="token operator">=</span> person<span class="token punctuation">.</span>role<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        additionalInformation <span class="token operator">=</span> person<span class="token punctuation">.</span>occupation<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> - </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>person<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>person<span class="token punctuation">.</span>age<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>additionalInformation<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+persons<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>logPerson<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 </li>
 </ul>
 </li>
@@ -171,51 +179,57 @@ console.log(<code class="language-text">- ${person.name}, ${person.age}, ${addit
 <li>사용자 정의 타입 가드를 사용해 타입을 좁혀 에러를 없애야 합니다.</li>
 <li>타입 서술어 : type predicate (= 사용자 정의 타입 가드)</li>
 <li>인수가 특정 타입인지 여부를 나타내기 위해 boolean 값을 반환하는 함수를 위한 구문입니다. </li>
-<li>
-<p>타입 서술어는 단순히 boolean 값을 반환하는 것이 아니라 인수가 더 구체적인 타입임을 나타냅니다. </p>
-<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
-type<span class="token operator">:</span> <span class="token string">'user'</span><span class="token punctuation">;</span>
-name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
-age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
-occupation<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre></div>
-</li>
+<li>타입 서술어는 단순히 boolean 값을 반환하는 것이 아니라 인수가 더 구체적인 타입임을 나타냅니다. </li>
 </ul>
-<p>interface Admin {
-type: 'admin';
-name: string;
-age: number;
-role: string;
-}</p>
-<p>export type Person = User | Admin;</p>
-<p>export const persons: Person[] = [
-{ type: 'user', name: 'Max Mustermann', age: 25, occupation: 'Chimney sweep' },
-{ type: 'admin', name: 'Jane Doe', age: 32, role: 'Administrator' },
-{ type: 'user', name: 'Kate Müller', age: 23, occupation: 'Astronaut' },
-{ type: 'admin', name: 'Bruce Willis', age: 64, role: 'World saver' }
-];</p>
-<p>export function isAdmin(person: Person): person is Admin {
-return person.type === 'admin';
-}</p>
-<p>export function isUser(person: Person): person is User {
-return person.type === 'user';
-}</p>
-<p>export function logPerson(person: Person) {
-let additionalInformation: string = '';
-if (isAdmin(person)) {
-additionalInformation = person.role;
-}
-if (isUser(person)) {
-additionalInformation = person.occupation;
-}
-console.log(<code class="language-text">- ${person.name}, ${person.age}, ${additionalInformation}</code>);
-}</p>
-<p>console.log('Admins:');
-persons.filter(isAdmin).forEach(logPerson);</p>
-<p>console.log();</p>
-<p>console.log('Users:');
-persons.filter(isUser).forEach(logPerson);</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+    type<span class="token operator">:</span> <span class="token string">'user'</span><span class="token punctuation">;</span>
+    name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+    age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+    occupation<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Admin</span> <span class="token punctuation">{</span>
+    type<span class="token operator">:</span> <span class="token string">'admin'</span><span class="token punctuation">;</span>
+    name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+    age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+    role<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">Person</span> <span class="token operator">=</span> User <span class="token operator">|</span> Admin<span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> persons<span class="token operator">:</span> Person<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'user'</span><span class="token punctuation">,</span> name<span class="token operator">:</span> <span class="token string">'Max Mustermann'</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">25</span><span class="token punctuation">,</span> occupation<span class="token operator">:</span> <span class="token string">'Chimney sweep'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'admin'</span><span class="token punctuation">,</span> name<span class="token operator">:</span> <span class="token string">'Jane Doe'</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">32</span><span class="token punctuation">,</span> role<span class="token operator">:</span> <span class="token string">'Administrator'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'user'</span><span class="token punctuation">,</span> name<span class="token operator">:</span> <span class="token string">'Kate Müller'</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span> occupation<span class="token operator">:</span> <span class="token string">'Astronaut'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'admin'</span><span class="token punctuation">,</span> name<span class="token operator">:</span> <span class="token string">'Bruce Willis'</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">64</span><span class="token punctuation">,</span> role<span class="token operator">:</span> <span class="token string">'World saver'</span> <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">isAdmin</span><span class="token punctuation">(</span>person<span class="token operator">:</span> Person<span class="token punctuation">)</span><span class="token operator">:</span> person <span class="token keyword">is</span> Admin <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> person<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">'admin'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">isUser</span><span class="token punctuation">(</span>person<span class="token operator">:</span> Person<span class="token punctuation">)</span><span class="token operator">:</span> person <span class="token keyword">is</span> User <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> person<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">'user'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">logPerson</span><span class="token punctuation">(</span>person<span class="token operator">:</span> Person<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> additionalInformation<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isAdmin</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        additionalInformation <span class="token operator">=</span> person<span class="token punctuation">.</span>role<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isUser</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        additionalInformation <span class="token operator">=</span> person<span class="token punctuation">.</span>occupation<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> - </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>person<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>person<span class="token punctuation">.</span>age<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>additionalInformation<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Admins:'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+persons<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>isAdmin<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>logPerson<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Users:'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+persons<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>isUser<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>logPerson<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 </li>
 <li>
 <p>Without duplicating type structures, modify filterUsers function definition so that we can pass only those criteria which are needed, and not the whole User information as it is required now according to typing.</p>
@@ -223,84 +237,89 @@ persons.filter(isUser).forEach(logPerson);</p>
 <li>User 타입의 일부 속성을 통해서 Person 배열을 필터링 할 수 있도록 함수를 고쳐야 합니다. </li>
 <li>User 타입 내부에 있는 모든 속성을 모두 nullable 하게 만들어 어떤 속성만 사용해도 함수가 정상적으로 동작하도록 만들어야 합니다. </li>
 <li>모든 속성을 선택적으로 만들기 위해 Partial<T> 유틸리티 타입을 사용합니다. </li>
-<li>
-<p>추가로 type속성은 필터링할 수 있는 속성에서 제외해야 하기 때문에 Omit&#x3C;T, K> 유틸리티 타입을 사용합니다. Omit&#x3C;T, K> 타입은 T를 구성한 속성에서 K 속성을 제거한 타입을 구성합니다. </p>
-<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
-type<span class="token operator">:</span> <span class="token string">'user'</span><span class="token punctuation">;</span>
-name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
-age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
-occupation<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre></div>
-</li>
+<li>추가로 type속성은 필터링할 수 있는 속성에서 제외해야 하기 때문에 Omit&#x3C;T, K> 유틸리티 타입을 사용합니다. Omit&#x3C;T, K> 타입은 T를 구성한 속성에서 K 속성을 제거한 타입을 구성합니다. </li>
 </ul>
-<p>interface Admin {
-type: 'admin';
-name: string;
-age: number;
-role: string;
-}</p>
-<p>export type Person = User | Admin;</p>
-<p>export const persons: Person[] = [
-{ type: 'user', name: 'Max Mustermann', age: 25, occupation: 'Chimney sweep' },
-{
-type: 'admin',
-name: 'Jane Doe',
-age: 32,
-role: 'Administrator'
-},
-{
-type: 'user',
-name: 'Kate Müller',
-age: 23,
-occupation: 'Astronaut'
-},
-{
-type: 'admin',
-name: 'Bruce Willis',
-age: 64,
-role: 'World saver'
-},
-{
-type: 'user',
-name: 'Wilson',
-age: 23,
-occupation: 'Ball'
-},
-{
-type: 'admin',
-name: 'Agent Smith',
-age: 23,
-role: 'Administrator'
-}
-];</p>
-<p>export const isAdmin = (person: Person): person is Admin => person.type === 'admin';
-export const isUser = (person: Person): person is User => person.type === 'user';</p>
-<p>export function logPerson(person: Person) {
-let additionalInformation = '';
-if (isAdmin(person)) {
-additionalInformation = person.role;
-}
-if (isUser(person)) {
-additionalInformation = person.occupation;
-}
-console.log(<code class="language-text">- ${person.name}, ${person.age}, ${additionalInformation}</code>);
-}</p>
-<p>export function filterUsers(persons: Person[], criteria: Partial&#x3C;Omit&#x3C;User, 'type'>>): User[] {
-return persons.filter(isUser).filter((user) => {
-const criteriaKeys = Object.keys(criteria) as (keyof Partial&#x3C;Omit&#x3C;User, 'type'>>)[];
-return criteriaKeys.every((fieldName) => {
-return user[fieldName] === criteria[fieldName];
-});
-});
-}</p>
-<p>console.log('Users of age 23:');</p>
-<p>filterUsers(
-persons,
-{
-age: 23
-}
-).forEach(logPerson);</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text"></code></pre></div>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">interface</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+    type<span class="token operator">:</span> <span class="token string">'user'</span><span class="token punctuation">;</span>
+    name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+    age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+    occupation<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Admin</span> <span class="token punctuation">{</span>
+    type<span class="token operator">:</span> <span class="token string">'admin'</span><span class="token punctuation">;</span>
+    name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+    age<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+    role<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">type</span> <span class="token class-name">Person</span> <span class="token operator">=</span> User <span class="token operator">|</span> Admin<span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> persons<span class="token operator">:</span> Person<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> type<span class="token operator">:</span> <span class="token string">'user'</span><span class="token punctuation">,</span> name<span class="token operator">:</span> <span class="token string">'Max Mustermann'</span><span class="token punctuation">,</span> age<span class="token operator">:</span> <span class="token number">25</span><span class="token punctuation">,</span> occupation<span class="token operator">:</span> <span class="token string">'Chimney sweep'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        type<span class="token operator">:</span> <span class="token string">'admin'</span><span class="token punctuation">,</span>
+        name<span class="token operator">:</span> <span class="token string">'Jane Doe'</span><span class="token punctuation">,</span>
+        age<span class="token operator">:</span> <span class="token number">32</span><span class="token punctuation">,</span>
+        role<span class="token operator">:</span> <span class="token string">'Administrator'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        type<span class="token operator">:</span> <span class="token string">'user'</span><span class="token punctuation">,</span>
+        name<span class="token operator">:</span> <span class="token string">'Kate Müller'</span><span class="token punctuation">,</span>
+        age<span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span>
+        occupation<span class="token operator">:</span> <span class="token string">'Astronaut'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        type<span class="token operator">:</span> <span class="token string">'admin'</span><span class="token punctuation">,</span>
+        name<span class="token operator">:</span> <span class="token string">'Bruce Willis'</span><span class="token punctuation">,</span>
+        age<span class="token operator">:</span> <span class="token number">64</span><span class="token punctuation">,</span>
+        role<span class="token operator">:</span> <span class="token string">'World saver'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        type<span class="token operator">:</span> <span class="token string">'user'</span><span class="token punctuation">,</span>
+        name<span class="token operator">:</span> <span class="token string">'Wilson'</span><span class="token punctuation">,</span>
+        age<span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span>
+        occupation<span class="token operator">:</span> <span class="token string">'Ball'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        type<span class="token operator">:</span> <span class="token string">'admin'</span><span class="token punctuation">,</span>
+        name<span class="token operator">:</span> <span class="token string">'Agent Smith'</span><span class="token punctuation">,</span>
+        age<span class="token operator">:</span> <span class="token number">23</span><span class="token punctuation">,</span>
+        role<span class="token operator">:</span> <span class="token string">'Administrator'</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> isAdmin <span class="token operator">=</span> <span class="token punctuation">(</span>person<span class="token operator">:</span> Person<span class="token punctuation">)</span><span class="token operator">:</span> person <span class="token keyword">is</span> Admin <span class="token operator">=></span> person<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">'admin'</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> isUser <span class="token operator">=</span> <span class="token punctuation">(</span>person<span class="token operator">:</span> Person<span class="token punctuation">)</span><span class="token operator">:</span> person <span class="token keyword">is</span> User <span class="token operator">=></span> person<span class="token punctuation">.</span>type <span class="token operator">===</span> <span class="token string">'user'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">logPerson</span><span class="token punctuation">(</span>person<span class="token operator">:</span> Person<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> additionalInformation <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isAdmin</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        additionalInformation <span class="token operator">=</span> person<span class="token punctuation">.</span>role<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isUser</span><span class="token punctuation">(</span>person<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        additionalInformation <span class="token operator">=</span> person<span class="token punctuation">.</span>occupation<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string"> - </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>person<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>person<span class="token punctuation">.</span>age<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">, </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>additionalInformation<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">filterUsers</span><span class="token punctuation">(</span>persons<span class="token operator">:</span> Person<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> criteria<span class="token operator">:</span> Partial<span class="token operator">&lt;</span>Omit<span class="token operator">&lt;</span>User<span class="token punctuation">,</span> <span class="token string">'type'</span><span class="token operator">>></span><span class="token punctuation">)</span><span class="token operator">:</span> User<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> persons<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>isUser<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span>user<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> criteriaKeys <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>criteria<span class="token punctuation">)</span> <span class="token keyword">as</span> <span class="token punctuation">(</span><span class="token keyword">keyof</span> Partial<span class="token operator">&lt;</span>Omit<span class="token operator">&lt;</span>User<span class="token punctuation">,</span> <span class="token string">'type'</span><span class="token operator">>></span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> criteriaKeys<span class="token punctuation">.</span><span class="token function">every</span><span class="token punctuation">(</span><span class="token punctuation">(</span>fieldName<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> user<span class="token punctuation">[</span>fieldName<span class="token punctuation">]</span> <span class="token operator">===</span> criteria<span class="token punctuation">[</span>fieldName<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Users of age 23:'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token function">filterUsers</span><span class="token punctuation">(</span>
+    persons<span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        age<span class="token operator">:</span> <span class="token number">23</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>logPerson<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 </li>
 </ol></article><div><div id="disqus_thread"></div></div></div></section></div></div></main></section></section></section></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-8B5ZGBRV2Y"></script><script>
     window.GATSBY_GTAG_PLUGIN_GA_TRACKING_ID = (
