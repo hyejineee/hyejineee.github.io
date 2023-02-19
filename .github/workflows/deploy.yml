@@ -21,6 +21,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Install NodeJS
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16.16.0'
+        cache: 'yarn'
+
       - name: yarn install
         run: yarn install
 
@@ -35,9 +41,3 @@ jobs:
           branch: master # The branch the action should deploy to.
           folder: public # The folder the action should deploy.
 
-      # - name: deploy
-      #   uses: maxheld83/ghpages@v0.3.0
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GATSBY_TOKEN }}
-      #     GH_PAT: ${{ secrets.GATSBY_TOKEN }}
-      #     BUILD_DIR: 'public/'
