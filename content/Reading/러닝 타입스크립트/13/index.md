@@ -3,7 +3,7 @@ title: '[러닝 타입스크립트] 13. 구성 옵셥'
 path: blog/reading/learning-typescript-13
 tags: [Reading]
 cover: './cover.png'
-date: 2023-02-23
+date: 2023-02-22
 excerpt: 읽고 또 읽어야지 라는 생각으로 빠르게 읽는 러닝 타입스크립트
 ---
 
