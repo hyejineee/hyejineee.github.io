@@ -39,6 +39,7 @@ module.exports = [
     resolve: 'gatsby-transformer-remark',
     options: {
       plugins: [
+        
         {
           resolve: 'gatsby-remark-images',
           options: {
@@ -54,6 +55,7 @@ module.exports = [
             rel: 'nofollow',
           },
         },
+        'gatsby-remark-gifs',
         'gatsby-remark-prismjs',
       ],
     },
