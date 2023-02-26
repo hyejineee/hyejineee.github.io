@@ -1,5 +1,5 @@
 ---
-title: 'Retrospect 8'
+title: '2023 Retrospect 8'
 path: blog/retrospect/2023-8
 tags: [Retrospect]
 cover: './cover.png'
