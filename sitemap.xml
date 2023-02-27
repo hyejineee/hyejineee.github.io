@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://hyejineee.github.io/blog/TIL/2023-02-27</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/retrospect/2023-9</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/reading/learning-typescript-report</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/TIL/2023-02-24</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -277,9 +278,9 @@
 <url> <loc>https://hyejineee.github.io/blog/Reading/OO-design-and-practice-learning-with-tdd3</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/Reading/OO-design-and-practice-learning-with-tdd2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/Reading/OO-design-and-practice-learning-with-tdd</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://hyejineee.github.io/tags/TIL</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/tags/Retrospect</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/tags/Reading</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://hyejineee.github.io/tags/TIL</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/tags/Frontend</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/tags/Network</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/tags/DSAndAlgorithm</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
