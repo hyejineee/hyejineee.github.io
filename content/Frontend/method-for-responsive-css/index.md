@@ -1,6 +1,6 @@
 ---
 title: '미디어 쿼리 ctrl +c,v 없애기'
-path: blog/frontend/method-for-responsive-css
+path: blog/frontend/util-function-for-responsive-css
 tags: [Frontend]
 cover: './cover.png'
 date: 2023-03-04
