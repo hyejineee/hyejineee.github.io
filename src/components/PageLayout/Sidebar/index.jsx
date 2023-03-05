@@ -24,14 +24,7 @@ const DomContent = () => (
         Developer
       </div>
       <div className="centerAlign box">
-        <a
-          href={facebook}
-          target="_blank"
-          label="button"
-          rel="noopener noreferrer"
-        >
-          <FA name="facebook-f" />
-        </a>
+        
       
         <a
           href={github}
@@ -41,14 +34,7 @@ const DomContent = () => (
         >
           <FA name="github" />
         </a>
-        <a
-          href={instagram}
-          target="_blank"
-          label="button"
-          rel="noopener noreferrer"
-        >
-          <FA name="instagram" />
-        </a>
+        
       </div>
       <ul className={`box ${style.badge} contactBlock`}>
         <li className={`${style.contactBlockItem}`}>
