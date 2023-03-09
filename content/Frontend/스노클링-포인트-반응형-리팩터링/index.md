@@ -51,8 +51,9 @@ export const NormalSelect = styled(Select)`
 * 복사를 하기 위해 미디어 쿼리 부분이 있는 파일을 찾아 다녀야 했습니다. 
 * 만약 여기서 브레이크 포인트가 변경된다면 그거슨 재앙...
 
+
 > 이건 끔찍한 발상이다. 복사해서 붙여 넣은 중복코드는 유지보수를 어렵게 하고 버그를 만들어 낸다.   
-> - 루비로 배우는 객체지향 디자인 26p
+> 루비로 배우는 객체지향 디자인 26p
 
 변경점 투성이인 코드가 프로젝트 여기저기에 뿌려지는 것을 막아야 했습니다.
 
@@ -71,9 +72,12 @@ export const NormalSelect = styled(Select)`
 
 이 함수를 구현하기 위해서 emotion에 공식 문서를 뒤적 거리다 composition 파트를 발견하게 되었습니다. 
 
+
 > Composition is one of the most powerful and useful patterns in Emotion. You can compose styles together by interpolating value returned from css in another style block.  
 > 
 > [Emotion – Composition](https://emotion.sh/docs/composition)
+
+
 
 composition은 두 개 이상의 스타일 객체를 결합하여 새로운 객체를 생성하는 하는 것을 지원하는 패턴입니다. 
 
