@@ -4,7 +4,7 @@ path: blog/TIL/2023-03-09
 tags: [TIL]
 cover: './TIL.png'
 date: 2023-03-09
-excerpt: 자전거 고쳐야 돼....
+excerpt: 수정하기 쉬움이라는 가치 속에서 프로그래밍의 기술이 들어난다. 외부에 대한 의존성을 코드 속으로 스며들게 내버려 두지 말자.
 ---
 
 ## Facts.

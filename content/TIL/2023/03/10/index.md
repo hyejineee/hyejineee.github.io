@@ -4,7 +4,7 @@ path: blog/TIL/2023-03-10
 tags: [TIL]
 cover: './TIL.png'
 date: 2023-03-10
-excerpt: 진짜... chat gpt... 짱....
+excerpt: 루비로 배우는 객체지향 디자인 4장, 객체의 캡슐화, 맥락에서 독립적인 객체, render props
 ---
 
 ## Facts.

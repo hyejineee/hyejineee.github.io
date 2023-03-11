@@ -4,7 +4,7 @@ path: blog/TIL/2023-02-28
 tags: [TIL]
 cover: './TIL.png'
 date: 2023-02-28
-excerpt: ⛰️⛰️⛰️⛰️
+excerpt: 기준을 두고 프로젝트 폴더 구조 결정하기
 ---
 
 ## Facts.

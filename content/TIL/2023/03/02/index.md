@@ -4,7 +4,7 @@ path: blog/TIL/2023-03-02
 tags: [TIL]
 cover: './TIL.png'
 date: 2023-03-02
-excerpt: Suspense....
+excerpt: Nextjs 환경에서 useLayoutEffect 사용하기
 ---
 
 ## Facts.

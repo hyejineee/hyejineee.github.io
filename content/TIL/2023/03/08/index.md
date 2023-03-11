@@ -4,7 +4,7 @@ path: blog/TIL/2023-03-08
 tags: [TIL]
 cover: './TIL.png'
 date: 2023-03-08
-excerpt: 🥲
+excerpt: 문제는 기술에 대한 지식이 아니라 코드를 구성하고 배치하는 일이다. 우리는 코드를 짤 줄은 알지만 그것들을 어디에 어떻게 놓아야 하는지를 모르고 있다.
 ---
 
 ## Facts.
