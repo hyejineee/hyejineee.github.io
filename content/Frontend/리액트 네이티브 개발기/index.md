@@ -30,10 +30,12 @@ excerpt: 이럴바엔...!
 
 <br/>
 
-그래도 하라는데로 합니다. 먼저 xcode를 열어줍니다. 구매한지 5년이 지난 맥북은 xcode 여는 것만으로도 힘겨워 합니다. ~~맥부기 힘내~~ 그 다음 node_module의 react-native-vector-icons 모듈에 있는 Fonts를 복사해 프로젝트의 바로 아래에 복사 붙여 넣기를 해줍니다. 그리고 info.plist를 수정하고  **Copy Bundle Resources**에도 Fonts 폴더에서 사용하는 글꼴을 추가해 줍니다. 이럴 거면 ios 개발자, 안드로이드 개발자 따로 뽑아서 개발하는 게 더 빠르겠는데...? 라는 생각을 잠깐 합니다.  xcode 자체도 처음 보는 상태에서 저런 것들을 찾으려니 시간이 오래 걸렸습니다. info.plist 수정도 xcode에서 텍스트로 한 번에 복붙하고 싶었는데 텍스트 모드로 변환하는 방법을 찾는데 오래 걸려서 수정도 쉽지 않았습니다. 여튼 하라는 대로 다 하고 아이콘이 제대로 적용 되었는지 확인하는데 ios에서는 폰트를 못 찾고 있었습니다. 
+그래도 하라는 대로 합니다. 먼저 xcode를 열어줍니다. 구매한 지 5년이 지난 맥북은 xcode 여는 것만으로도 힘겨워합니다. 맥부기 힘내 그다음 node_module의 react-native-vector-icons 모듈에 있는 Fonts를 복사해 프로젝트의 바로 아래에 복사 붙여 넣기를 해줍니다. 그리고 info.plist를 수정하고 Copy Bundle Resources에도 Fonts 폴더에서 사용하는 글꼴을 추가해 줍니다. 이럴 거면 ios 개발자, 안드로이드 개발자 따로 뽑아서 개발하는 게 더 빠르겠는데...? 라는 생각을 잠깐 합니다. xcode 자체도 처음 보는 상태에서 저런 것들을 찾으려니 시간이 오래 걸렸습니다. info.plist 수정도 xcode에서 텍스트로 한 번에 복붙하고 싶었는데 텍스트 모드로 변환하는 방법을 찾는 데 오래 걸려서 수정도 쉽지 않았습니다. 여튼 하라는 대로 다 하고 아이콘이 제대로 적용되었는지 확인하는데 ios에서는 폰트를 못 찾고 있었습니다.
 
 <br/>
+
 ![](./2.jpeg)
+
 <br/>
 
 [이리저리 검색해서 찾아본 결과](https://github.com/oblador/react-native-vector-icons/issues/945#issuecomment-1255365833) Podfile이라는 파일에 `pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'`를 추가해서 문제를 해결했습니다. Podfile은 안드로이드에서 build.gradle 파일이 하는 역할과 비슷한 것 같습니다. android쪽 설정에서는 저런 방식으로 gradle 파일에 모듈을 추가하는데 왜 ios쪽 설정은 xcode 열고 파일 복사하고 하는 방식을 택했을까요...? 결국 동작하는 거는 저 방식인데??
