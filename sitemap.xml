@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://hyejineee.github.io/blog/reading/unit-test-06</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/reading/unit-test-05</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/reading/unit-test-04</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/reading/unit-test-03</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -204,9 +205,9 @@
 <url> <loc>https://hyejineee.github.io/blog/topological-sorting</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/TIL/20211020</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/TIL/20211019</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://hyejineee.github.io/blog/android-notification-basic</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/android-notification-implement</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/android-pending-intent</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://hyejineee.github.io/blog/android-notification-basic</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/daily-BOJ-2250</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/TIL/20211014</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hyejineee.github.io/blog/TIL/20211013</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
